@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectSpec>
+    <applicability>
+        <when>
+            <context
+                deviceFamily="MSP432"
+                deviceId="MSP432E401Y"
+            />
+        </when>
+    </applicability>
+
+    <import spec="${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/kernel/tirtos/builds/MSP_EXP432E401Y/release/gcc/tirtos_builds_MSP_EXP432E401Y_release_gcc.projectspec"/>
+
+    <project
+        title="Ethernet Wi-Fi TCP Echo"
+        name="ethernet_wifi_tcp_echo_MSP_EXP432E401Y_tirtos_gcc"
+        toolChain="GNU"
+        connection="TIXDS110_Connection.xml"
+        device="MSP432E401Y"
+        ignoreDefaultDeviceSettings="true"
+        ignoreDefaultCCSSettings="true"
+        references="tirtos_builds_MSP_EXP432E401Y_release_gcc"
+        products="com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN"
+        compilerBuildOptions="
+            -I${PROJECT_ROOT}
+            -DENABLE_EMAC
+            -I${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/source/ti/net/bsd
+            -I${COM_TI_SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR}/source
+            -I${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/source/third_party/CMSIS/Include
+            -I${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/source/third_party/mbedtls/include/
+            -I${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/source/ti/posix/gcc
+            -mcpu=cortex-m4
+            -march=armv7e-m
+            -mthumb
+            -mfloat-abi=hard
+            -mfpu=fpv4-sp-d16
+            -ffunction-sections
+            -fdata-sections
+            -g
+            -gstrict-dwarf
+            -Wall
+            -I${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/kernel/tirtos/packages/gnu/targets/arm/libs/install-native/arm-none-eabi/include/newlib-nano
+            -I${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/kernel/tirtos/packages/gnu/targets/arm/libs/install-native/arm-none-eabi/include
+            -I${CG_TOOL_ROOT}/arm-none-eabi/include
+        "
+        compilerBuildOptions_c="-std=c99"
+        compilerBuildOptions_cpp="-std=c++11"
+        linkerBuildOptions="
+             -L${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/source/ti/net/lib/gcc/m4f
+             -l:slnetsock_release.a
+             -L${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/source/ti/ndk/slnetif/lib
+             -l:slnetifndk.am4fg
+             -L${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/source/third_party/mbedtls/ti/lib/gcc/m4f
+             -l:mbedtls.a
+             -L${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/source/ti/ndk/hal/timer_bios/lib
+             -l:hal_timer.am4fg
+             -L${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/source/ti/ndk/hal/eth_stub/lib
+             -l:hal_eth_stub.am4fg
+             -L${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/source/ti/ndk/tools/hdlc/lib
+             -l:hdlc.am4fg
+             -L${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/source/ti/ndk/tools/console/lib
+             -l:console_min_ipv4.am4fg
+             -L${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/source/ti/ndk/netctrl/lib
+             -l:netctrl_min_ipv4.am4fg
+             -L${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/source/ti/ndk/nettools/lib
+             -l:nettool_ipv4.am4fg
+             -L${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/source/ti/ndk/hal/ser_stub/lib
+             -l:hal_ser_stub.am4fg
+             -L${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/source/ti/ndk/tools/servers/lib
+             -l:servers_min_ipv4.am4fg
+             -L${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/source/ti/ndk/hal/userled_stub/lib
+             -l:hal_userled_stub.am4fg
+             -L${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/source/ti/ndk/stack/lib
+             -l:stk.am4fg
+             -L${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/source/ti/ndk/os/lib
+             -l:os.am4fg
+             -nostartfiles
+             -L${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/source/ti/display/lib
+             -l:display.am4fg
+             -L${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/source/ti/drivers/lib
+             -l:drivers_msp432e4.am4fg
+             -L${COM_TI_SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR}/source/ti/net/lib/gcc/m4f/
+             -L${COM_TI_SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR}/source/ti/drivers/net/wifi/slnetif/ccs/Release/
+             -l:slnetifwifi.a
+             -L${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/source/third_party/fatfs/lib/gcc/m4f
+             -l:fatfs.a
+             -L${COM_TI_SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR}/source/ti/drivers/net/wifi/gcc/rtos
+             -l:simplelink.a
+             -L${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/kernel/tirtos/packages/ti/dpl/lib
+             -l:dpl_msp432e4.am4fg
+             -l${GENERATED_LIBRARIES}
+             -L${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/source/ti/devices/msp432e4/driverlib/lib/gcc/m4f
+             -l:msp432e4_driverlib.a
+             -march=armv7e-m
+             -mthumb
+             -mfloat-abi=hard
+             -mfpu=fpv4-sp-d16
+             -static
+             -Wl,--gc-sections
+             -L${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/kernel/tirtos/packages/gnu/targets/arm/libs/install-native/arm-none-eabi/lib/thumb/v7e-m/hard
+             -lgcc
+             -lc
+             -lm
+             -lnosys
+             --specs=nano.specs
+        "
+        preBuildStep="
+        "
+        postBuildStep="
+        "
+        description="TCP Echo between WiFi and Ethernet Interfaces">
+
+        <property name="buildProfile" value="release"/>
+        <property name="isHybrid" value="true"/>
+        <group id="ethernet_wifi_tcp_echo.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN.MSP_EXP432E401Y.demos.GCC"/>
+        <file path="../../ti_drivers_net_wifi_config.c" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../tirtos/main_tirtos.c" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../overview.rov.json" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../tirtos/ndk_config_tirtos.c" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="tirtos">
+        </file>
+        <file path="../../ethernet_wifi_tcp_echo.h" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../sl_host.c" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../ethernet_wifi_tcp_echo.c" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../ethernet_tcp_handler.c" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../ethernet_tcp_handler_hooks.c" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../network_if.h" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../wifi_tcp_handler.c" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../README.html" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../network_if.c" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../tirtos/gcc/MSP_EXP432E401Y_TIRTOS.lds" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../Board.html" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../ti_drivers_config.h" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../ti_drivers_config.c" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+    </project>
+</projectSpec>
+

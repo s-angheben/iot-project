@@ -1,0 +1,19 @@
+[
+    {
+        "files": [
+            "+../../uart_term.c -> uart_term.c",
+            "+../../uart_term.h -> uart_term.h",
+            "+../../ti_drivers_net_wifi_config.c -> ti_drivers_net_wifi_config.c",
+            "+../main_tirtos.c -> main_tirtos.c",
+            "+../../common.h -> common.h",
+            "+../../platform.h -> platform.h",
+            "+../../platform.c -> platform.c",
+            "+../../power_measure.c -> power_measure.c",
+            "+../../README.html -> README.html",
+            "+../../Board.html -> Board.html",
+            "+../../ti_drivers_config.h -> ti_drivers_config.h",
+            "+../../ti_drivers_config.c -> ti_drivers_config.c",
+            "+MSP_EXP432P4111_TIRTOS.icf -> MSP_EXP432P4111_TIRTOS.icf"
+        ]
+    }
+]

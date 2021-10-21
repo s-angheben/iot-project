@@ -1,0 +1,22 @@
+[
+    {
+        "files": [
+            "+../source/CdnClient.c -> CdnClient.c",
+            "+../source/ota_archive.c -> ota_archive.c",
+            "+../source/ota_httpclient.c -> ota_httpclient.c",
+            "+../source/ota_json.c -> ota_json.c",
+            "+../source/ota_lib.c -> ota_lib.c",
+            "+../source/CdnVendors/CdnDropboxV2.c -> CdnVendors/CdnDropboxV2.c",
+            "+../source/CdnVendors/CdnGithub.c -> CdnVendors/CdnGithub.c",
+            "+../source/CdnClient.h -> CdnClient.h",
+            "+../source/ota_archive.h -> ota_archive.h",
+            "+../source/ota_httpclient.h -> ota_httpclient.h",
+            "+../source/ota_json.h -> ota_json.h",
+            "+../source/ota_lib.h -> ota_lib.h",
+            "+../source/CdnVendors/CdnDropboxV2.h -> CdnVendors/CdnDropboxV2.h",
+            "+../source/CdnVendors/CdnGithub.h -> CdnVendors/CdnGithub.h",
+            "+../ota.h -> ota.h",
+            "+../otauser.h -> otauser.h"
+        ]
+    }
+]

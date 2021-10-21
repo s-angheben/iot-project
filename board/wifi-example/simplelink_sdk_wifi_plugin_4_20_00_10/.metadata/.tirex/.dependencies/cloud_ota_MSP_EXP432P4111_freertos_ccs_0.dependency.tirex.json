@@ -1,0 +1,23 @@
+[
+    {
+        "files": [
+            "+../../ota_extended.h -> ota_extended.h",
+            "+../../msp432p4111_bootloader.c -> msp432p4111_bootloader.c",
+            "+../../uart_term.c -> uart_term.c",
+            "+../../uart_term.h -> uart_term.h",
+            "+../main_freertos.c -> main_freertos.c",
+            "+../../ti_drivers_net_wifi_config.c -> ti_drivers_net_wifi_config.c",
+            "+../../appConfig.h -> appConfig.h",
+            "+../../platform.h -> platform.h",
+            "+../../cloud_ota.c -> cloud_ota.c",
+            "+startup_msp432_ccs.c -> freertos/ccs/startup_msp432_ccs.c",
+            "+MSP_EXP432P4111_FREERTOS.cmd -> MSP_EXP432P4111_FREERTOS.cmd",
+            "+../../cloud_ota.h -> cloud_ota.h",
+            "+../../platform.c -> platform.c",
+            "+../../README.html -> README.html",
+            "+../../Board.html -> Board.html",
+            "+../../ti_drivers_config.h -> ti_drivers_config.h",
+            "+../../ti_drivers_config.c -> ti_drivers_config.c"
+        ]
+    }
+]

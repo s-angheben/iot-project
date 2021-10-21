@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectSpec>
+    <applicability>
+        <when>
+            <context
+                deviceFamily="MSP432"
+                deviceId="MSP432P4111"
+            />
+        </when>
+    </applicability>
+
+
+    <project
+        title="MSP432P4111 BootLoader"
+        name="msp432p4111_bootloader_MSP_EXP432P4111_nortos_ccs"
+        toolChain="TI"
+        connection="TIXDS110_Connection.xml"
+        device="MSP432P4111"
+        ignoreDefaultDeviceSettings="true"
+        ignoreDefaultCCSSettings="true"
+        products="com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN;com.ti.SIMPLELINK_MSP432_SDK"
+        compilerBuildOptions="
+            -I${PROJECT_ROOT}
+            -I${COM_TI_SIMPLELINK_MSP432_SDK_INSTALL_DIR}/source
+            -I${COM_TI_SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR}/source
+            -I${COM_TI_SIMPLELINK_MSP432_SDK_INSTALL_DIR}/source/third_party/CMSIS/Include
+            -I${COM_TI_SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR}/source/third_party/mbedtls/include/
+            -D__MSP432P4111__
+            -DDeviceFamily_MSP432P4x1xI
+            --advice:power=none
+            -DNORTOS_SUPPORT
+            -I${COM_TI_SIMPLELINK_MSP432_SDK_INSTALL_DIR}/kernel/nortos
+            -I${COM_TI_SIMPLELINK_MSP432_SDK_INSTALL_DIR}/kernel/nortos/posix
+            --silicon_version=7M4
+            --code_state=16
+            --little_endian
+            --display_error_number
+            --diag_warning=255
+            --diag_wrap=off
+            --gen_func_subsections=on
+            --float_support=FPv4SPD16
+            --symdebug:dwarf
+            -I${CG_TOOL_ROOT}/include
+        "
+        linkerBuildOptions="
+             -l${COM_TI_SIMPLELINK_MSP432_SDK_INSTALL_DIR}/source/ti/display/lib/display.aem4f
+             -l${COM_TI_SIMPLELINK_MSP432_SDK_INSTALL_DIR}/source/ti/drivers/lib/drivers_msp432p4x1xi.aem4f
+             -l${COM_TI_SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR}/source/ti/net/lib/ccs/m4f/slnetsock_release.a
+             -l${COM_TI_SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR}/source/ti/drivers/net/wifi/slnetif/ccs/Release/slnetifwifi.a
+             -l${COM_TI_SIMPLELINK_MSP432_SDK_INSTALL_DIR}/source/third_party/fatfs/lib/ccs/m4f/fatfs.a
+             --diag_suppress=10063
+             --entry_point=resetISR
+             -l${COM_TI_SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR}/source/ti/drivers/net/wifi/ccs/nortos/simplelink.a
+             -l${COM_TI_SIMPLELINK_MSP432_SDK_INSTALL_DIR}/kernel/nortos/lib/nortos_msp432p4x1xi.aem4f
+             -l${COM_TI_SIMPLELINK_MSP432_SDK_INSTALL_DIR}/source/ti/devices/msp432p4xx/driverlib/ccs/msp432p4xx_driverlib.lib
+             --warn_sections
+             --display_error_number
+             --diag_wrap=off
+             --rom_model
+             -i${CG_TOOL_ROOT}/lib
+             -llibc.a
+        "
+        preBuildStep="
+        "
+        postBuildStep="
+        "
+        description="Simple NoRTOS bootloader that bootloads firmware form CC3120">
+
+        <property name="buildProfile" value="release"/>
+        <property name="isHybrid" value="true"/>
+        <group id="msp432p4111_bootloader.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN.MSP_EXP432P4111.demos.TI"/>
+        <file path="../ota_extended.h" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../ti_drivers_net_wifi_config.c" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../main_nortos.c" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../msp432p4111_ota_bootloader.c" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../README.html" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../Board.html" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../ti_drivers_config.h" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../ccs/MSP_EXP432P4111_NoRTOS.cmd" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../ti_drivers_config.c" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+    </project>
+</projectSpec>
+

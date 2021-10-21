@@ -1,0 +1,22 @@
+[
+    {
+        "files": [
+            "+../../source/device.c -> device.c",
+            "+../../source/driver.c -> driver.c",
+            "+../../source/flowcont.c -> flowcont.c",
+            "+../../source/fs.c -> fs.c",
+            "+../../source/netapp.c -> netapp.c",
+            "+../../source/netcfg.c -> netcfg.c",
+            "+../../source/netutil.c -> netutil.c",
+            "+../../source/nonos.c -> nonos.c",
+            "+../../source/sl_socket.c -> sl_socket.c",
+            "+../../source/spawn.c -> spawn.c",
+            "+../../source/wlan.c -> wlan.c",
+            "+../../porting/cc_pal.c -> cc_pal.c",
+            "+../../porting/cc_pal.h -> cc_pal.h",
+            "+../../porting/SIMPLELINKWIFI.h -> SIMPLELINKWIFI.h",
+            "+../../porting/user.h -> user.h",
+            "+../../eventreg.c -> eventreg.c"
+        ]
+    }
+]

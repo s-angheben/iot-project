@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectSpec>
+    <applicability>
+        <when>
+            <context
+                deviceFamily="MSP432"
+                deviceId="MSP432P4111"
+            />
+        </when>
+    </applicability>
+
+    <import spec="${COM_TI_SIMPLELINK_MSP432_SDK_INSTALL_DIR}/kernel/freertos/builds/MSP_EXP432P4111/release/gcc/freertos_builds_MSP_EXP432P4111_release_gcc.projectspec"/>
+
+    <project
+        title="MQTT Client Server App"
+        name="mqtt_client_server_MSP_EXP432P4111_freertos_gcc"
+        toolChain="GNU"
+        connection="TIXDS110_Connection.xml"
+        device="MSP432P4111"
+        ignoreDefaultDeviceSettings="true"
+        ignoreDefaultCCSSettings="true"
+        references="freertos_builds_MSP_EXP432P4111_release_gcc"
+        products="com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN"
+        requiredVariables="FREERTOS_INSTALL_DIR"
+        compilerBuildOptions="
+            -I${PROJECT_ROOT}
+            -I${COM_TI_SIMPLELINK_MSP432_SDK_INSTALL_DIR}/source
+            -I${COM_TI_SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR}/source
+            -I${COM_TI_SIMPLELINK_MSP432_SDK_INSTALL_DIR}/source/third_party/CMSIS/Include
+            -I${COM_TI_SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR}/source/third_party/mbedtls/include/
+            -D__MSP432P4111__
+            -DDeviceFamily_MSP432P4x1xI
+            -I${COM_TI_SIMPLELINK_MSP432_SDK_INSTALL_DIR}/source/ti/posix/gcc
+            -I${FREERTOS_INSTALL_DIR}/FreeRTOS/Source/include
+            -I${FREERTOS_INSTALL_DIR}/FreeRTOS/Source/portable/GCC/ARM_CM4F
+            -I${WORKSPACE_LOC}/freertos_builds_MSP_EXP432P4111_release_gcc
+            -mcpu=cortex-m4
+            -march=armv7e-m
+            -mthumb
+            -mfloat-abi=hard
+            -mfpu=fpv4-sp-d16
+            -ffunction-sections
+            -fdata-sections
+            -g
+            -gstrict-dwarf
+            -Wall
+            -I${CG_TOOL_ROOT}/arm-none-eabi/include/newlib-nano
+            -I${CG_TOOL_ROOT}/arm-none-eabi/include
+        "
+        compilerBuildOptions_c="-std=c99"
+        compilerBuildOptions_cpp="-std=c++11"
+        linkerBuildOptions="
+             -L${COM_TI_SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR}/source/ti/net/mqtt/lib/gcc/m4f/
+             -l:mqtt_release.a
+             -nostartfiles
+             -L${COM_TI_SIMPLELINK_MSP432_SDK_INSTALL_DIR}/source/ti/display/lib
+             -l:display.am4fg
+             -L${COM_TI_SIMPLELINK_MSP432_SDK_INSTALL_DIR}/source/ti/drivers/lib
+             -l:drivers_msp432p4x1xi.am4fg
+             -L${COM_TI_SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR}/source/ti/net/lib/gcc/m4f/
+             -l:slnetsock_release.a
+             -L${COM_TI_SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR}/source/ti/drivers/net/wifi/slnetif/ccs/Release/
+             -l:slnetifwifi.a
+             -L${COM_TI_SIMPLELINK_MSP432_SDK_INSTALL_DIR}/source/third_party/fatfs/lib/gcc/m4f
+             -l:fatfs.a
+             -L${COM_TI_SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR}/source/ti/drivers/net/wifi/gcc/rtos
+             -l:simplelink.a
+             -L${WORKSPACE_LOC}/freertos_builds_MSP_EXP432P4111_release_gcc/Debug
+             -l:libfreertos_builds_MSP_EXP432P4111_release_gcc.a
+             -L${COM_TI_SIMPLELINK_MSP432_SDK_INSTALL_DIR}/source/ti/devices/msp432p4xx/driverlib/gcc
+             -l:msp432p4xx_driverlib.a
+             -march=armv7e-m
+             -mthumb
+             -mfloat-abi=hard
+             -mfpu=fpv4-sp-d16
+             -static
+             -Wl,--gc-sections
+             -L${CG_TOOL_ROOT}/arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard
+             -lgcc
+             -lc
+             -lm
+             -lnosys
+             --specs=nano.specs
+        "
+        preBuildStep="
+        "
+        postBuildStep="
+        "
+        description="MQTT Client Server demo application">
+
+        <property name="buildProfile" value="release"/>
+        <property name="isHybrid" value="true"/>
+        <group id="mqtt_client_server.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN.MSP_EXP432P4111.demos.GCC"/>
+        <file path="../../uart_term.c" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../uart_term.h" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../ti_drivers_net_wifi_config.c" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../freertos/main_freertos.c" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../server_client_cbs.h" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../mqtt_server_app.c" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../network_if.h" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../README.html" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../network_if.c" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../server_client_cbs.c" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../Board.html" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../freertos/gcc/MSP_EXP432P4111_FREERTOS.lds" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../ti_drivers_config.h" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../ti_drivers_config.c" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+    </project>
+</projectSpec>
+

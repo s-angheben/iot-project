@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.net.sntp" version="1, 0, 0" producerId="undefined">
+    <units>
+    </units>
+    <sources>
+        <srcFile name="package/package_ti.net.sntp.c"/>
+        <srcFile name="sntp.c"/>
+    </sources>
+    <configscripts>
+    </configscripts>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="lib/ccs/m4/sntp_debug.a.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ccs/m4/sntp_debug/package/package_ti.net.sntp.oem4.dep" src="package/package_ti.net.sntp.c"/>
+        <srcFile name="package/lib/lib/ccs/m4/sntp_debug/sntp.oem4.dep" src="sntp.c"/>
+        <srcFile name="lib/ccs/m4/sntp_release.a.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ccs/m4/sntp_release/package/package_ti.net.sntp.oem4.dep" src="package/package_ti.net.sntp.c"/>
+        <srcFile name="package/lib/lib/ccs/m4/sntp_release/sntp.oem4.dep" src="sntp.c"/>
+        <srcFile name="lib/iar/m4/sntp_debug.a.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/iar/m4/sntp_debug/package/package_ti.net.sntp.orm4.dep" src="package/package_ti.net.sntp.c"/>
+        <srcFile name="package/lib/lib/iar/m4/sntp_debug/sntp.orm4.dep" src="sntp.c"/>
+        <srcFile name="lib/iar/m4/sntp_release.a.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/iar/m4/sntp_release/package/package_ti.net.sntp.orm4.dep" src="package/package_ti.net.sntp.c"/>
+        <srcFile name="package/lib/lib/iar/m4/sntp_release/sntp.orm4.dep" src="sntp.c"/>
+        <srcFile name="lib/gcc/m4/sntp_debug.a.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/gcc/m4/sntp_debug/package/package_ti.net.sntp.om4g.dep" src="package/package_ti.net.sntp.c"/>
+        <srcFile name="package/lib/lib/gcc/m4/sntp_debug/sntp.om4g.dep" src="sntp.c"/>
+        <srcFile name="lib/gcc/m4/sntp_release.a.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/gcc/m4/sntp_release/package/package_ti.net.sntp.om4g.dep" src="package/package_ti.net.sntp.c"/>
+        <srcFile name="package/lib/lib/gcc/m4/sntp_release/sntp.om4g.dep" src="sntp.c"/>
+        <srcFile name="lib/ccs/r5f/sntp_debug.a.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ccs/r5f/sntp_debug/package/package_ti.net.sntp.oer5f.dep" src="package/package_ti.net.sntp.c"/>
+        <srcFile name="package/lib/lib/ccs/r5f/sntp_debug/sntp.oer5f.dep" src="sntp.c"/>
+        <srcFile name="lib/ccs/r5f/sntp_release.a.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ccs/r5f/sntp_release/package/package_ti.net.sntp.oer5f.dep" src="package/package_ti.net.sntp.c"/>
+        <srcFile name="package/lib/lib/ccs/r5f/sntp_release/sntp.oer5f.dep" src="sntp.c"/>
+        <srcFile name="lib/ccs/r5ft/sntp_debug.a.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ccs/r5ft/sntp_debug/package/package_ti.net.sntp.oer5ft.dep" src="package/package_ti.net.sntp.c"/>
+        <srcFile name="package/lib/lib/ccs/r5ft/sntp_debug/sntp.oer5ft.dep" src="sntp.c"/>
+        <srcFile name="lib/ccs/r5ft/sntp_release.a.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ccs/r5ft/sntp_release/package/package_ti.net.sntp.oer5ft.dep" src="package/package_ti.net.sntp.c"/>
+        <srcFile name="package/lib/lib/ccs/r5ft/sntp_release/sntp.oer5ft.dep" src="sntp.c"/>
+        <srcFile name="lib/ccs/m4f/sntp_debug.a.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ccs/m4f/sntp_debug/package/package_ti.net.sntp.oem4f.dep" src="package/package_ti.net.sntp.c"/>
+        <srcFile name="package/lib/lib/ccs/m4f/sntp_debug/sntp.oem4f.dep" src="sntp.c"/>
+        <srcFile name="lib/ccs/m4f/sntp_release.a.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ccs/m4f/sntp_release/package/package_ti.net.sntp.oem4f.dep" src="package/package_ti.net.sntp.c"/>
+        <srcFile name="package/lib/lib/ccs/m4f/sntp_release/sntp.oem4f.dep" src="sntp.c"/>
+        <srcFile name="lib/ccs/arm9/sntp_debug.a.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ccs/arm9/sntp_debug/package/package_ti.net.sntp.oe9.dep" src="package/package_ti.net.sntp.c"/>
+        <srcFile name="package/lib/lib/ccs/arm9/sntp_debug/sntp.oe9.dep" src="sntp.c"/>
+        <srcFile name="lib/ccs/arm9/sntp_release.a.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ccs/arm9/sntp_release/package/package_ti.net.sntp.oe9.dep" src="package/package_ti.net.sntp.c"/>
+        <srcFile name="package/lib/lib/ccs/arm9/sntp_release/sntp.oe9.dep" src="sntp.c"/>
+        <srcFile name="lib/ccs/c66/sntp_debug.a.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ccs/c66/sntp_debug/package/package_ti.net.sntp.oe66.dep" src="package/package_ti.net.sntp.c"/>
+        <srcFile name="package/lib/lib/ccs/c66/sntp_debug/sntp.oe66.dep" src="sntp.c"/>
+        <srcFile name="lib/ccs/c66/sntp_release.a.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ccs/c66/sntp_release/package/package_ti.net.sntp.oe66.dep" src="package/package_ti.net.sntp.c"/>
+        <srcFile name="package/lib/lib/ccs/c66/sntp_release/sntp.oe66.dep" src="sntp.c"/>
+        <srcFile name="lib/ccs/c674/sntp_debug.a.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ccs/c674/sntp_debug/package/package_ti.net.sntp.oe674.dep" src="package/package_ti.net.sntp.c"/>
+        <srcFile name="package/lib/lib/ccs/c674/sntp_debug/sntp.oe674.dep" src="sntp.c"/>
+        <srcFile name="lib/ccs/c674/sntp_release.a.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ccs/c674/sntp_release/package/package_ti.net.sntp.oe674.dep" src="package/package_ti.net.sntp.c"/>
+        <srcFile name="package/lib/lib/ccs/c674/sntp_release/sntp.oe674.dep" src="sntp.c"/>
+        <srcFile name="lib/iar/m4f/sntp_debug.a.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/iar/m4f/sntp_debug/package/package_ti.net.sntp.orm4f.dep" src="package/package_ti.net.sntp.c"/>
+        <srcFile name="package/lib/lib/iar/m4f/sntp_debug/sntp.orm4f.dep" src="sntp.c"/>
+        <srcFile name="lib/iar/m4f/sntp_release.a.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/iar/m4f/sntp_release/package/package_ti.net.sntp.orm4f.dep" src="package/package_ti.net.sntp.c"/>
+        <srcFile name="package/lib/lib/iar/m4f/sntp_release/sntp.orm4f.dep" src="sntp.c"/>
+        <srcFile name="lib/gcc/m4f/sntp_debug.a.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/gcc/m4f/sntp_debug/package/package_ti.net.sntp.om4fg.dep" src="package/package_ti.net.sntp.c"/>
+        <srcFile name="package/lib/lib/gcc/m4f/sntp_debug/sntp.om4fg.dep" src="sntp.c"/>
+        <srcFile name="lib/gcc/m4f/sntp_release.a.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/gcc/m4f/sntp_release/package/package_ti.net.sntp.om4fg.dep" src="package/package_ti.net.sntp.c"/>
+        <srcFile name="package/lib/lib/gcc/m4f/sntp_release/sntp.om4fg.dep" src="sntp.c"/>
+        <srcFile name="lib/gcc/a8fg/sntp_debug.a.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/gcc/a8fg/sntp_debug/package/package_ti.net.sntp.oa8fg.dep" src="package/package_ti.net.sntp.c"/>
+        <srcFile name="package/lib/lib/gcc/a8fg/sntp_debug/sntp.oa8fg.dep" src="sntp.c"/>
+        <srcFile name="lib/gcc/a8fg/sntp_release.a.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/gcc/a8fg/sntp_release/package/package_ti.net.sntp.oa8fg.dep" src="package/package_ti.net.sntp.c"/>
+        <srcFile name="package/lib/lib/gcc/a8fg/sntp_release/sntp.oa8fg.dep" src="sntp.c"/>
+        <srcFile name="lib/gcc/a9fg/sntp_debug.a.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/gcc/a9fg/sntp_debug/package/package_ti.net.sntp.oa9fg.dep" src="package/package_ti.net.sntp.c"/>
+        <srcFile name="package/lib/lib/gcc/a9fg/sntp_debug/sntp.oa9fg.dep" src="sntp.c"/>
+        <srcFile name="lib/gcc/a9fg/sntp_release.a.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/gcc/a9fg/sntp_release/package/package_ti.net.sntp.oa9fg.dep" src="package/package_ti.net.sntp.c"/>
+        <srcFile name="package/lib/lib/gcc/a9fg/sntp_release/sntp.oa9fg.dep" src="sntp.c"/>
+        <srcFile name="lib/gcc/a15fg/sntp_debug.a.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/gcc/a15fg/sntp_debug/package/package_ti.net.sntp.oa15fg.dep" src="package/package_ti.net.sntp.c"/>
+        <srcFile name="package/lib/lib/gcc/a15fg/sntp_debug/sntp.oa15fg.dep" src="sntp.c"/>
+        <srcFile name="lib/gcc/a15fg/sntp_release.a.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/gcc/a15fg/sntp_release/package/package_ti.net.sntp.oa15fg.dep" src="package/package_ti.net.sntp.c"/>
+        <srcFile name="package/lib/lib/gcc/a15fg/sntp_release/sntp.oa15fg.dep" src="sntp.c"/>
+        <srcFile name="lib/gcc/a53fg/sntp_debug.a.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/gcc/a53fg/sntp_debug/package/package_ti.net.sntp.oa53fg.dep" src="package/package_ti.net.sntp.c"/>
+        <srcFile name="package/lib/lib/gcc/a53fg/sntp_debug/sntp.oa53fg.dep" src="sntp.c"/>
+        <srcFile name="lib/gcc/a53fg/sntp_release.a.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/gcc/a53fg/sntp_release/package/package_ti.net.sntp.oa53fg.dep" src="package/package_ti.net.sntp.c"/>
+        <srcFile name="package/lib/lib/gcc/a53fg/sntp_release/sntp.oa53fg.dep" src="sntp.c"/>
+        <srcFile name="package/rel/ti_net_sntp.zip.dep" src="package/rel/ti_net_sntp.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="ti.targets.arm.elf.M4"
+            version="ti.targets.arm.elf.M4{1,0,20.2,0"
+            rawVersion="20.2.0"
+            platform="ti.platforms.tiva:TM4C1294NCPDT:1"
+            isa="v7M4"
+            suffix="em4"
+            rootDir="/db/vendors/ti/arm/20.2.0.LTS/Linux"
+            os="undefined"
+            rts="ti.targets.arm.rtsarm">
+            <model endian="little"
+                codeModel="thumb2"
+                dataModel="undefined"/>
+        </target>
+        <target name="iar.targets.arm.M4"
+            version="iar.targets.arm.M4{1,0,8.50,1"
+            rawVersion="8.50.1.245"
+            platform="ti.platforms.tiva:TM4C1294NCPDT:1"
+            isa="v7M4"
+            suffix="rm4"
+            rootDir="/db/vendors/iar/arm/8.50.1/Linux"
+            os="undefined"
+            rts="iar.targets.arm.rts">
+            <model endian="little"
+                codeModel="thumb2"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.arm.M4"
+            version="gnu.targets.arm.M4{1,0,9.2,1"
+            rawVersion="9.2.1"
+            platform="ti.platforms.tiva:TM4C1294NCPDT"
+            isa="v7M4"
+            suffix="m4g"
+            rootDir="/db/vendors/arm/gcc-arm-none-eabi-9-2019-q4-major"
+            os="undefined"
+            rts="gnu.targets.arm.rtsv7M">
+            <model endian="little"
+                codeModel="thumb2"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.arm.elf.R5F"
+            version="ti.targets.arm.elf.R5F{1,0,20.2,0"
+            rawVersion="20.2.0"
+            platform="ti.platforms.cortexR:RM57L8XX:1"
+            isa="v7R"
+            suffix="er5f"
+            rootDir="/db/vendors/ti/arm/20.2.0.LTS/Linux"
+            os="undefined"
+            rts="ti.targets.arm.rtsarm">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.arm.elf.R5Ft"
+            version="ti.targets.arm.elf.R5Ft{1,0,20.2,0"
+            rawVersion="20.2.0"
+            platform="ti.platforms.cortexR:RM57L8XX:1"
+            isa="v7R"
+            suffix="er5ft"
+            rootDir="/db/vendors/ti/arm/20.2.0.LTS/Linux"
+            os="undefined"
+            rts="ti.targets.arm.rtsarm">
+            <model endian="little"
+                codeModel="thumb2"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.arm.elf.M4F"
+            version="ti.targets.arm.elf.M4F{1,0,20.2,0"
+            rawVersion="20.2.0"
+            platform="ti.platforms.tiva:TM4C1294NCPDT:1"
+            isa="v7M4"
+            suffix="em4f"
+            rootDir="/db/vendors/ti/arm/20.2.0.LTS/Linux"
+            os="undefined"
+            rts="ti.targets.arm.rtsarm">
+            <model endian="little"
+                codeModel="thumb2"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.arm.elf.Arm9"
+            version="ti.targets.arm.elf.Arm9{1,0,20.2,0"
+            rawVersion="20.2.0"
+            platform="ti.platforms.sim470xx"
+            isa="v5T"
+            suffix="e9"
+            rootDir="/db/vendors/ti/arm/20.2.0.LTS/Linux"
+            os="undefined"
+            rts="ti.targets.arm.rtsarm">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.elf.C66"
+            version="ti.targets.elf.C66{1,0,8.3,2"
+            rawVersion="8.3.2"
+            platform="ti.platforms.simTCI6616"
+            isa="66"
+            suffix="e66"
+            rootDir="/db/vendors/ti/c6x/8.3.2/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.elf.C674"
+            version="ti.targets.elf.C674{1,0,8.3,2"
+            rawVersion="8.3.2"
+            platform="ti.platforms.evmDA830"
+            isa="674"
+            suffix="e674"
+            rootDir="/db/vendors/ti/c6x/8.3.2/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="iar.targets.arm.M4F"
+            version="iar.targets.arm.M4F{1,0,8.50,1"
+            rawVersion="8.50.1.245"
+            platform="ti.platforms.tiva:TM4C1294NCPDT:1"
+            isa="v7M4"
+            suffix="rm4f"
+            rootDir="/db/vendors/iar/arm/8.50.1/Linux"
+            os="undefined"
+            rts="iar.targets.arm.rts">
+            <model endian="little"
+                codeModel="thumb2"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.arm.M4F"
+            version="gnu.targets.arm.M4F{1,0,9.2,1"
+            rawVersion="9.2.1"
+            platform="ti.platforms.tiva:TM4C1294NCPDT"
+            isa="v7M4"
+            suffix="m4fg"
+            rootDir="/db/vendors/arm/gcc-arm-none-eabi-9-2019-q4-major"
+            os="undefined"
+            rts="gnu.targets.arm.rtsv7M">
+            <model endian="little"
+                codeModel="thumb2"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.arm.A8F"
+            version="gnu.targets.arm.A8F{1,0,9.2,1"
+            rawVersion="9.2.1"
+            platform="ti.platforms.evmAM3359"
+            isa="v7A"
+            suffix="a8fg"
+            rootDir="/db/vendors/arm/gcc-arm-9.2-2019.12-x86_64-arm-none-eabi"
+            os="undefined"
+            rts="gnu.targets.arm.rtsv7A">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.arm.A9F"
+            version="gnu.targets.arm.A9F{1,0,9.2,1"
+            rawVersion="9.2.1"
+            platform="ti.platforms.sdp4430"
+            isa="v7A9"
+            suffix="a9fg"
+            rootDir="/db/vendors/arm/gcc-arm-9.2-2019.12-x86_64-arm-none-eabi"
+            os="undefined"
+            rts="gnu.targets.arm.rtsv7A">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.arm.A15F"
+            version="gnu.targets.arm.A15F{1,0,9.2,1"
+            rawVersion="9.2.1"
+            platform="ti.platforms.sdp5430"
+            isa="v7A15"
+            suffix="a15fg"
+            rootDir="/db/vendors/arm/gcc-arm-9.2-2019.12-x86_64-arm-none-eabi"
+            os="undefined"
+            rts="gnu.targets.arm.rtsv7A">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.arm.A53F"
+            version="gnu.targets.arm.A53F{1,0,9.2,1"
+            rawVersion="9.2.1"
+            platform="ti.platforms.cortexA:AM65X"
+            isa="v8A"
+            suffix="a53fg"
+            rootDir="/db/vendors/arm/gcc-arm-9.2-2019.12-x86_64-aarch64-none-elf"
+            os="undefined"
+            rts="gnu.targets.arm.rtsv8A">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    <library name="lib/ccs/m4/sntp_debug"
+        pname="lib/ccs/m4/sntp_debug.a"
+        profile="debug"
+        target="ti.targets.arm.elf.M4"/>
+    <library name="lib/ccs/m4/sntp_release"
+        pname="lib/ccs/m4/sntp_release.a"
+        profile="release"
+        target="ti.targets.arm.elf.M4"/>
+    <library name="lib/iar/m4/sntp_debug"
+        pname="lib/iar/m4/sntp_debug.a"
+        profile="debug"
+        target="iar.targets.arm.M4"/>
+    <library name="lib/iar/m4/sntp_release"
+        pname="lib/iar/m4/sntp_release.a"
+        profile="release"
+        target="iar.targets.arm.M4"/>
+    <library name="lib/gcc/m4/sntp_debug"
+        pname="lib/gcc/m4/sntp_debug.a"
+        profile="debug"
+        target="gnu.targets.arm.M4"/>
+    <library name="lib/gcc/m4/sntp_release"
+        pname="lib/gcc/m4/sntp_release.a"
+        profile="release"
+        target="gnu.targets.arm.M4"/>
+    <library name="lib/ccs/r5f/sntp_debug"
+        pname="lib/ccs/r5f/sntp_debug.a"
+        profile="debug"
+        target="ti.targets.arm.elf.R5F"/>
+    <library name="lib/ccs/r5f/sntp_release"
+        pname="lib/ccs/r5f/sntp_release.a"
+        profile="release"
+        target="ti.targets.arm.elf.R5F"/>
+    <library name="lib/ccs/r5ft/sntp_debug"
+        pname="lib/ccs/r5ft/sntp_debug.a"
+        profile="debug"
+        target="ti.targets.arm.elf.R5Ft"/>
+    <library name="lib/ccs/r5ft/sntp_release"
+        pname="lib/ccs/r5ft/sntp_release.a"
+        profile="release"
+        target="ti.targets.arm.elf.R5Ft"/>
+    <library name="lib/ccs/m4f/sntp_debug"
+        pname="lib/ccs/m4f/sntp_debug.a"
+        profile="debug"
+        target="ti.targets.arm.elf.M4F"/>
+    <library name="lib/ccs/m4f/sntp_release"
+        pname="lib/ccs/m4f/sntp_release.a"
+        profile="release"
+        target="ti.targets.arm.elf.M4F"/>
+    <library name="lib/ccs/arm9/sntp_debug"
+        pname="lib/ccs/arm9/sntp_debug.a"
+        profile="debug"
+        target="ti.targets.arm.elf.Arm9"/>
+    <library name="lib/ccs/arm9/sntp_release"
+        pname="lib/ccs/arm9/sntp_release.a"
+        profile="release"
+        target="ti.targets.arm.elf.Arm9"/>
+    <library name="lib/ccs/c66/sntp_debug"
+        pname="lib/ccs/c66/sntp_debug.a"
+        profile="debug"
+        target="ti.targets.elf.C66"/>
+    <library name="lib/ccs/c66/sntp_release"
+        pname="lib/ccs/c66/sntp_release.a"
+        profile="release"
+        target="ti.targets.elf.C66"/>
+    <library name="lib/ccs/c674/sntp_debug"
+        pname="lib/ccs/c674/sntp_debug.a"
+        profile="debug"
+        target="ti.targets.elf.C674"/>
+    <library name="lib/ccs/c674/sntp_release"
+        pname="lib/ccs/c674/sntp_release.a"
+        profile="release"
+        target="ti.targets.elf.C674"/>
+    <library name="lib/iar/m4f/sntp_debug"
+        pname="lib/iar/m4f/sntp_debug.a"
+        profile="debug"
+        target="iar.targets.arm.M4F"/>
+    <library name="lib/iar/m4f/sntp_release"
+        pname="lib/iar/m4f/sntp_release.a"
+        profile="release"
+        target="iar.targets.arm.M4F"/>
+    <library name="lib/gcc/m4f/sntp_debug"
+        pname="lib/gcc/m4f/sntp_debug.a"
+        profile="debug"
+        target="gnu.targets.arm.M4F"/>
+    <library name="lib/gcc/m4f/sntp_release"
+        pname="lib/gcc/m4f/sntp_release.a"
+        profile="release"
+        target="gnu.targets.arm.M4F"/>
+    <library name="lib/gcc/a8fg/sntp_debug"
+        pname="lib/gcc/a8fg/sntp_debug.a"
+        profile="debug"
+        target="gnu.targets.arm.A8F"/>
+    <library name="lib/gcc/a8fg/sntp_release"
+        pname="lib/gcc/a8fg/sntp_release.a"
+        profile="release"
+        target="gnu.targets.arm.A8F"/>
+    <library name="lib/gcc/a9fg/sntp_debug"
+        pname="lib/gcc/a9fg/sntp_debug.a"
+        profile="debug"
+        target="gnu.targets.arm.A9F"/>
+    <library name="lib/gcc/a9fg/sntp_release"
+        pname="lib/gcc/a9fg/sntp_release.a"
+        profile="release"
+        target="gnu.targets.arm.A9F"/>
+    <library name="lib/gcc/a15fg/sntp_debug"
+        pname="lib/gcc/a15fg/sntp_debug.a"
+        profile="debug"
+        target="gnu.targets.arm.A15F"/>
+    <library name="lib/gcc/a15fg/sntp_release"
+        pname="lib/gcc/a15fg/sntp_release.a"
+        profile="release"
+        target="gnu.targets.arm.A15F"/>
+    <library name="lib/gcc/a53fg/sntp_debug"
+        pname="lib/gcc/a53fg/sntp_debug.a"
+        profile="debug"
+        target="gnu.targets.arm.A53F"/>
+    <library name="lib/gcc/a53fg/sntp_release"
+        pname="lib/gcc/a53fg/sntp_release.a"
+        profile="release"
+        target="gnu.targets.arm.A53F"/>
+    </libraries>
+    <configurations>
+    </configurations>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_net_sntp"
+        pname="../../../../exports/ti_net_sntp.zip"
+        label="default"
+    >
+        <file name="package/package.bld.xml"/>
+        <file name="package/build.cfg"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="sntp.h"/>
+        <file name="package.bld"/>
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="lib/ccs/m4/sntp_debug.a"/>
+        <file name="package/package_ti.net.sntp.c"/>
+        <file name="sntp.c"/>
+        <file name="lib/ccs/m4/sntp_release.a"/>
+        <file name="lib/iar/m4/sntp_debug.a"/>
+        <file name="lib/iar/m4/sntp_release.a"/>
+        <file name="lib/gcc/m4/sntp_debug.a"/>
+        <file name="lib/gcc/m4/sntp_release.a"/>
+        <file name="lib/ccs/r5f/sntp_debug.a"/>
+        <file name="lib/ccs/r5f/sntp_release.a"/>
+        <file name="lib/ccs/r5ft/sntp_debug.a"/>
+        <file name="lib/ccs/r5ft/sntp_release.a"/>
+        <file name="lib/ccs/m4f/sntp_debug.a"/>
+        <file name="lib/ccs/m4f/sntp_release.a"/>
+        <file name="lib/ccs/arm9/sntp_debug.a"/>
+        <file name="lib/ccs/arm9/sntp_release.a"/>
+        <file name="lib/ccs/c66/sntp_debug.a"/>
+        <file name="lib/ccs/c66/sntp_release.a"/>
+        <file name="lib/ccs/c674/sntp_debug.a"/>
+        <file name="lib/ccs/c674/sntp_release.a"/>
+        <file name="lib/iar/m4f/sntp_debug.a"/>
+        <file name="lib/iar/m4f/sntp_release.a"/>
+        <file name="lib/gcc/m4f/sntp_debug.a"/>
+        <file name="lib/gcc/m4f/sntp_release.a"/>
+        <file name="lib/gcc/a8fg/sntp_debug.a"/>
+        <file name="lib/gcc/a8fg/sntp_release.a"/>
+        <file name="lib/gcc/a9fg/sntp_debug.a"/>
+        <file name="lib/gcc/a9fg/sntp_release.a"/>
+        <file name="lib/gcc/a15fg/sntp_debug.a"/>
+        <file name="lib/gcc/a15fg/sntp_release.a"/>
+        <file name="lib/gcc/a53fg/sntp_debug.a"/>
+        <file name="lib/gcc/a53fg/sntp_release.a"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

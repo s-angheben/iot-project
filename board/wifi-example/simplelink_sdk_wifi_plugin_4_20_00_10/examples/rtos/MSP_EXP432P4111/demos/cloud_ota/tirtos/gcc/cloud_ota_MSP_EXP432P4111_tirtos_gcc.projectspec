@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectSpec>
+    <applicability>
+        <when>
+            <context
+                deviceFamily="MSP432"
+                deviceId="MSP432P4111"
+            />
+        </when>
+    </applicability>
+
+    <import spec="${COM_TI_SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR}/source/ti/net/ota/gcc/ota.projectspec"/>
+    <import spec="${COM_TI_SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR}/kernel/tirtos/builds/MSP_EXP432P4111/release/gcc/tirtos_ota_builds_MSP_EXP432P4111_release_gcc.projectspec"/>
+
+    <project
+        title="Cloud OTA App"
+        name="cloud_ota_MSP_EXP432P4111_tirtos_gcc"
+        toolChain="GNU"
+        connection="TIXDS110_Connection.xml"
+        device="MSP432P4111"
+        ignoreDefaultDeviceSettings="true"
+        ignoreDefaultCCSSettings="true"
+        references="tirtos_ota_builds_MSP_EXP432P4111_release_gcc,ota_gcc"
+        products="com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN"
+        compilerBuildOptions="
+            -I${PROJECT_ROOT}
+            -I${COM_TI_SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR}/source
+            -I${COM_TI_SIMPLELINK_MSP432_SDK_INSTALL_DIR}/source/third_party/CMSIS/Include
+            -I${COM_TI_SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR}/source/third_party/mbedtls/include/
+            -D__MSP432P4111__
+            -DDeviceFamily_MSP432P4x1xI
+            -I${COM_TI_SIMPLELINK_MSP432_SDK_INSTALL_DIR}/source/ti/posix/gcc
+            -mcpu=cortex-m4
+            -march=armv7e-m
+            -mthumb
+            -mfloat-abi=hard
+            -mfpu=fpv4-sp-d16
+            -ffunction-sections
+            -fdata-sections
+            -g
+            -gstrict-dwarf
+            -Wall
+            -I${COM_TI_SIMPLELINK_MSP432_SDK_INSTALL_DIR}/kernel/tirtos/packages/gnu/targets/arm/libs/install-native/arm-none-eabi/include/newlib-nano
+            -I${COM_TI_SIMPLELINK_MSP432_SDK_INSTALL_DIR}/kernel/tirtos/packages/gnu/targets/arm/libs/install-native/arm-none-eabi/include
+            -I${CG_TOOL_ROOT}/arm-none-eabi/include
+        "
+        compilerBuildOptions_c="-std=c99"
+        compilerBuildOptions_cpp="-std=c++11"
+        linkerBuildOptions="
+             -L${COM_TI_SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR}/source/ti/net/ota/gcc/m4f/
+             -l:ota.a
+             -L${COM_TI_SIMPLELINK_MSP432_SDK_INSTALL_DIR}/source/ti/utils/json/lib/gcc//m4f
+             -l:json_release.a
+             -L${COM_TI_SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR}/source/third_party/mbedtls/ti/lib/gcc/m4f
+             -l:mbedtls.a
+             -nostartfiles
+             -L${COM_TI_SIMPLELINK_MSP432_SDK_INSTALL_DIR}/source/ti/display/lib
+             -l:display.am4fg
+             -L${COM_TI_SIMPLELINK_MSP432_SDK_INSTALL_DIR}/source/ti/drivers/lib
+             -l:drivers_msp432p4x1xi.am4fg
+             -L${COM_TI_SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR}/source/ti/net/lib/gcc/m4f/
+             -l:slnetsock_release.a
+             -L${COM_TI_SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR}/source/ti/drivers/net/wifi/slnetif/ccs/Release/
+             -l:slnetifwifi.a
+             -L${COM_TI_SIMPLELINK_MSP432_SDK_INSTALL_DIR}/source/third_party/fatfs/lib/gcc/m4f
+             -l:fatfs.a
+             -L${COM_TI_SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR}/source/ti/drivers/net/wifi/gcc/rtos
+             -l:simplelink.a
+             -L${COM_TI_SIMPLELINK_MSP432_SDK_INSTALL_DIR}/kernel/tirtos/packages/ti/dpl/lib
+             -l:dpl_msp432p4x1xi.am4fg
+             -l${GENERATED_LIBRARIES}
+             -L${COM_TI_SIMPLELINK_MSP432_SDK_INSTALL_DIR}/source/ti/devices/msp432p4xx/driverlib/gcc
+             -l:msp432p4xx_driverlib.a
+             -march=armv7e-m
+             -mthumb
+             -mfloat-abi=hard
+             -mfpu=fpv4-sp-d16
+             -static
+             -Wl,--gc-sections
+             -L${COM_TI_SIMPLELINK_MSP432_SDK_INSTALL_DIR}/kernel/tirtos/packages/gnu/targets/arm/libs/install-native/arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard
+             -lgcc
+             -lc
+             -lm
+             -lnosys
+             --specs=nano.specs
+        "
+        preBuildStep="
+        "
+        postBuildStep="
+        "
+        description="Cloud OTA demo application">
+
+        <property name="buildProfile" value="release"/>
+        <property name="isHybrid" value="true"/>
+        <group id="cloud_ota.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN.MSP_EXP432P4111.demos.GCC"/>
+        <file path="../../ota_extended.h" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../msp432p4111_bootloader.c" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../uart_term.c" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../uart_term.h" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../ti_drivers_net_wifi_config.c" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../tirtos/gcc/MSP_EXP432P4111_TIRTOS.lds" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../appConfig.h" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../platform.h" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../cloud_ota.c" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../cloud_ota.h" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../platform.c" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../README.html" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../tirtos/main_tirtos.c" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../Board.html" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../ti_drivers_config.h" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../ti_drivers_config.c" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+    </project>
+</projectSpec>
+

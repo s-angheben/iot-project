@@ -1,0 +1,734 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.net" version="2, 0, 0" producerId="undefined">
+    <units>
+    </units>
+    <sources>
+        <srcFile name="package/package_ti.net.c"/>
+        <srcFile name="slnetsock.c"/>
+        <srcFile name="slnetutils.c"/>
+        <srcFile name="slnetif.c"/>
+        <srcFile name="bsd/netdb.c"/>
+        <srcFile name="bsd/socket.c"/>
+        <srcFile name="bsd/errnoutil.c"/>
+    </sources>
+    <configscripts>
+    </configscripts>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="lib/ccs/m4/slnetsock_debug.a.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ccs/m4/slnetsock_debug/package/package_ti.net.oem4.dep" src="package/package_ti.net.c"/>
+        <srcFile name="package/lib/lib/ccs/m4/slnetsock_debug/slnetsock.oem4.dep" src="slnetsock.c"/>
+        <srcFile name="package/lib/lib/ccs/m4/slnetsock_debug/slnetutils.oem4.dep" src="slnetutils.c"/>
+        <srcFile name="package/lib/lib/ccs/m4/slnetsock_debug/slnetif.oem4.dep" src="slnetif.c"/>
+        <srcFile name="package/lib/lib/ccs/m4/slnetsock_debug/bsd/netdb.oem4.dep" src="bsd/netdb.c"/>
+        <srcFile name="package/lib/lib/ccs/m4/slnetsock_debug/bsd/socket.oem4.dep" src="bsd/socket.c"/>
+        <srcFile name="package/lib/lib/ccs/m4/slnetsock_debug/bsd/errnoutil.oem4.dep" src="bsd/errnoutil.c"/>
+        <srcFile name="lib/ccs/m4/slnetsock_release.a.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ccs/m4/slnetsock_release/package/package_ti.net.oem4.dep" src="package/package_ti.net.c"/>
+        <srcFile name="package/lib/lib/ccs/m4/slnetsock_release/slnetsock.oem4.dep" src="slnetsock.c"/>
+        <srcFile name="package/lib/lib/ccs/m4/slnetsock_release/slnetutils.oem4.dep" src="slnetutils.c"/>
+        <srcFile name="package/lib/lib/ccs/m4/slnetsock_release/slnetif.oem4.dep" src="slnetif.c"/>
+        <srcFile name="package/lib/lib/ccs/m4/slnetsock_release/bsd/netdb.oem4.dep" src="bsd/netdb.c"/>
+        <srcFile name="package/lib/lib/ccs/m4/slnetsock_release/bsd/socket.oem4.dep" src="bsd/socket.c"/>
+        <srcFile name="package/lib/lib/ccs/m4/slnetsock_release/bsd/errnoutil.oem4.dep" src="bsd/errnoutil.c"/>
+        <srcFile name="lib/iar/m4/slnetsock_debug.a.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/iar/m4/slnetsock_debug/package/package_ti.net.orm4.dep" src="package/package_ti.net.c"/>
+        <srcFile name="package/lib/lib/iar/m4/slnetsock_debug/slnetsock.orm4.dep" src="slnetsock.c"/>
+        <srcFile name="package/lib/lib/iar/m4/slnetsock_debug/slnetutils.orm4.dep" src="slnetutils.c"/>
+        <srcFile name="package/lib/lib/iar/m4/slnetsock_debug/slnetif.orm4.dep" src="slnetif.c"/>
+        <srcFile name="package/lib/lib/iar/m4/slnetsock_debug/bsd/netdb.orm4.dep" src="bsd/netdb.c"/>
+        <srcFile name="package/lib/lib/iar/m4/slnetsock_debug/bsd/socket.orm4.dep" src="bsd/socket.c"/>
+        <srcFile name="package/lib/lib/iar/m4/slnetsock_debug/bsd/errnoutil.orm4.dep" src="bsd/errnoutil.c"/>
+        <srcFile name="lib/iar/m4/slnetsock_release.a.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/iar/m4/slnetsock_release/package/package_ti.net.orm4.dep" src="package/package_ti.net.c"/>
+        <srcFile name="package/lib/lib/iar/m4/slnetsock_release/slnetsock.orm4.dep" src="slnetsock.c"/>
+        <srcFile name="package/lib/lib/iar/m4/slnetsock_release/slnetutils.orm4.dep" src="slnetutils.c"/>
+        <srcFile name="package/lib/lib/iar/m4/slnetsock_release/slnetif.orm4.dep" src="slnetif.c"/>
+        <srcFile name="package/lib/lib/iar/m4/slnetsock_release/bsd/netdb.orm4.dep" src="bsd/netdb.c"/>
+        <srcFile name="package/lib/lib/iar/m4/slnetsock_release/bsd/socket.orm4.dep" src="bsd/socket.c"/>
+        <srcFile name="package/lib/lib/iar/m4/slnetsock_release/bsd/errnoutil.orm4.dep" src="bsd/errnoutil.c"/>
+        <srcFile name="lib/gcc/m4/slnetsock_debug.a.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/gcc/m4/slnetsock_debug/package/package_ti.net.om4g.dep" src="package/package_ti.net.c"/>
+        <srcFile name="package/lib/lib/gcc/m4/slnetsock_debug/slnetsock.om4g.dep" src="slnetsock.c"/>
+        <srcFile name="package/lib/lib/gcc/m4/slnetsock_debug/slnetutils.om4g.dep" src="slnetutils.c"/>
+        <srcFile name="package/lib/lib/gcc/m4/slnetsock_debug/slnetif.om4g.dep" src="slnetif.c"/>
+        <srcFile name="package/lib/lib/gcc/m4/slnetsock_debug/bsd/netdb.om4g.dep" src="bsd/netdb.c"/>
+        <srcFile name="package/lib/lib/gcc/m4/slnetsock_debug/bsd/socket.om4g.dep" src="bsd/socket.c"/>
+        <srcFile name="package/lib/lib/gcc/m4/slnetsock_debug/bsd/errnoutil.om4g.dep" src="bsd/errnoutil.c"/>
+        <srcFile name="lib/gcc/m4/slnetsock_release.a.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/gcc/m4/slnetsock_release/package/package_ti.net.om4g.dep" src="package/package_ti.net.c"/>
+        <srcFile name="package/lib/lib/gcc/m4/slnetsock_release/slnetsock.om4g.dep" src="slnetsock.c"/>
+        <srcFile name="package/lib/lib/gcc/m4/slnetsock_release/slnetutils.om4g.dep" src="slnetutils.c"/>
+        <srcFile name="package/lib/lib/gcc/m4/slnetsock_release/slnetif.om4g.dep" src="slnetif.c"/>
+        <srcFile name="package/lib/lib/gcc/m4/slnetsock_release/bsd/netdb.om4g.dep" src="bsd/netdb.c"/>
+        <srcFile name="package/lib/lib/gcc/m4/slnetsock_release/bsd/socket.om4g.dep" src="bsd/socket.c"/>
+        <srcFile name="package/lib/lib/gcc/m4/slnetsock_release/bsd/errnoutil.om4g.dep" src="bsd/errnoutil.c"/>
+        <srcFile name="lib/ccs/r5f/slnetsock_debug.a.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ccs/r5f/slnetsock_debug/package/package_ti.net.oer5f.dep" src="package/package_ti.net.c"/>
+        <srcFile name="package/lib/lib/ccs/r5f/slnetsock_debug/slnetsock.oer5f.dep" src="slnetsock.c"/>
+        <srcFile name="package/lib/lib/ccs/r5f/slnetsock_debug/slnetutils.oer5f.dep" src="slnetutils.c"/>
+        <srcFile name="package/lib/lib/ccs/r5f/slnetsock_debug/slnetif.oer5f.dep" src="slnetif.c"/>
+        <srcFile name="package/lib/lib/ccs/r5f/slnetsock_debug/bsd/netdb.oer5f.dep" src="bsd/netdb.c"/>
+        <srcFile name="package/lib/lib/ccs/r5f/slnetsock_debug/bsd/socket.oer5f.dep" src="bsd/socket.c"/>
+        <srcFile name="package/lib/lib/ccs/r5f/slnetsock_debug/bsd/errnoutil.oer5f.dep" src="bsd/errnoutil.c"/>
+        <srcFile name="lib/ccs/r5f/slnetsock_release.a.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ccs/r5f/slnetsock_release/package/package_ti.net.oer5f.dep" src="package/package_ti.net.c"/>
+        <srcFile name="package/lib/lib/ccs/r5f/slnetsock_release/slnetsock.oer5f.dep" src="slnetsock.c"/>
+        <srcFile name="package/lib/lib/ccs/r5f/slnetsock_release/slnetutils.oer5f.dep" src="slnetutils.c"/>
+        <srcFile name="package/lib/lib/ccs/r5f/slnetsock_release/slnetif.oer5f.dep" src="slnetif.c"/>
+        <srcFile name="package/lib/lib/ccs/r5f/slnetsock_release/bsd/netdb.oer5f.dep" src="bsd/netdb.c"/>
+        <srcFile name="package/lib/lib/ccs/r5f/slnetsock_release/bsd/socket.oer5f.dep" src="bsd/socket.c"/>
+        <srcFile name="package/lib/lib/ccs/r5f/slnetsock_release/bsd/errnoutil.oer5f.dep" src="bsd/errnoutil.c"/>
+        <srcFile name="lib/ccs/r5ft/slnetsock_debug.a.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ccs/r5ft/slnetsock_debug/package/package_ti.net.oer5ft.dep" src="package/package_ti.net.c"/>
+        <srcFile name="package/lib/lib/ccs/r5ft/slnetsock_debug/slnetsock.oer5ft.dep" src="slnetsock.c"/>
+        <srcFile name="package/lib/lib/ccs/r5ft/slnetsock_debug/slnetutils.oer5ft.dep" src="slnetutils.c"/>
+        <srcFile name="package/lib/lib/ccs/r5ft/slnetsock_debug/slnetif.oer5ft.dep" src="slnetif.c"/>
+        <srcFile name="package/lib/lib/ccs/r5ft/slnetsock_debug/bsd/netdb.oer5ft.dep" src="bsd/netdb.c"/>
+        <srcFile name="package/lib/lib/ccs/r5ft/slnetsock_debug/bsd/socket.oer5ft.dep" src="bsd/socket.c"/>
+        <srcFile name="package/lib/lib/ccs/r5ft/slnetsock_debug/bsd/errnoutil.oer5ft.dep" src="bsd/errnoutil.c"/>
+        <srcFile name="lib/ccs/r5ft/slnetsock_release.a.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ccs/r5ft/slnetsock_release/package/package_ti.net.oer5ft.dep" src="package/package_ti.net.c"/>
+        <srcFile name="package/lib/lib/ccs/r5ft/slnetsock_release/slnetsock.oer5ft.dep" src="slnetsock.c"/>
+        <srcFile name="package/lib/lib/ccs/r5ft/slnetsock_release/slnetutils.oer5ft.dep" src="slnetutils.c"/>
+        <srcFile name="package/lib/lib/ccs/r5ft/slnetsock_release/slnetif.oer5ft.dep" src="slnetif.c"/>
+        <srcFile name="package/lib/lib/ccs/r5ft/slnetsock_release/bsd/netdb.oer5ft.dep" src="bsd/netdb.c"/>
+        <srcFile name="package/lib/lib/ccs/r5ft/slnetsock_release/bsd/socket.oer5ft.dep" src="bsd/socket.c"/>
+        <srcFile name="package/lib/lib/ccs/r5ft/slnetsock_release/bsd/errnoutil.oer5ft.dep" src="bsd/errnoutil.c"/>
+        <srcFile name="lib/ccs/m4f/slnetsock_debug.a.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ccs/m4f/slnetsock_debug/package/package_ti.net.oem4f.dep" src="package/package_ti.net.c"/>
+        <srcFile name="package/lib/lib/ccs/m4f/slnetsock_debug/slnetsock.oem4f.dep" src="slnetsock.c"/>
+        <srcFile name="package/lib/lib/ccs/m4f/slnetsock_debug/slnetutils.oem4f.dep" src="slnetutils.c"/>
+        <srcFile name="package/lib/lib/ccs/m4f/slnetsock_debug/slnetif.oem4f.dep" src="slnetif.c"/>
+        <srcFile name="package/lib/lib/ccs/m4f/slnetsock_debug/bsd/netdb.oem4f.dep" src="bsd/netdb.c"/>
+        <srcFile name="package/lib/lib/ccs/m4f/slnetsock_debug/bsd/socket.oem4f.dep" src="bsd/socket.c"/>
+        <srcFile name="package/lib/lib/ccs/m4f/slnetsock_debug/bsd/errnoutil.oem4f.dep" src="bsd/errnoutil.c"/>
+        <srcFile name="lib/ccs/m4f/slnetsock_release.a.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ccs/m4f/slnetsock_release/package/package_ti.net.oem4f.dep" src="package/package_ti.net.c"/>
+        <srcFile name="package/lib/lib/ccs/m4f/slnetsock_release/slnetsock.oem4f.dep" src="slnetsock.c"/>
+        <srcFile name="package/lib/lib/ccs/m4f/slnetsock_release/slnetutils.oem4f.dep" src="slnetutils.c"/>
+        <srcFile name="package/lib/lib/ccs/m4f/slnetsock_release/slnetif.oem4f.dep" src="slnetif.c"/>
+        <srcFile name="package/lib/lib/ccs/m4f/slnetsock_release/bsd/netdb.oem4f.dep" src="bsd/netdb.c"/>
+        <srcFile name="package/lib/lib/ccs/m4f/slnetsock_release/bsd/socket.oem4f.dep" src="bsd/socket.c"/>
+        <srcFile name="package/lib/lib/ccs/m4f/slnetsock_release/bsd/errnoutil.oem4f.dep" src="bsd/errnoutil.c"/>
+        <srcFile name="lib/ccs/arm9/slnetsock_debug.a.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ccs/arm9/slnetsock_debug/package/package_ti.net.oe9.dep" src="package/package_ti.net.c"/>
+        <srcFile name="package/lib/lib/ccs/arm9/slnetsock_debug/slnetsock.oe9.dep" src="slnetsock.c"/>
+        <srcFile name="package/lib/lib/ccs/arm9/slnetsock_debug/slnetutils.oe9.dep" src="slnetutils.c"/>
+        <srcFile name="package/lib/lib/ccs/arm9/slnetsock_debug/slnetif.oe9.dep" src="slnetif.c"/>
+        <srcFile name="package/lib/lib/ccs/arm9/slnetsock_debug/bsd/netdb.oe9.dep" src="bsd/netdb.c"/>
+        <srcFile name="package/lib/lib/ccs/arm9/slnetsock_debug/bsd/socket.oe9.dep" src="bsd/socket.c"/>
+        <srcFile name="package/lib/lib/ccs/arm9/slnetsock_debug/bsd/errnoutil.oe9.dep" src="bsd/errnoutil.c"/>
+        <srcFile name="lib/ccs/arm9/slnetsock_release.a.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ccs/arm9/slnetsock_release/package/package_ti.net.oe9.dep" src="package/package_ti.net.c"/>
+        <srcFile name="package/lib/lib/ccs/arm9/slnetsock_release/slnetsock.oe9.dep" src="slnetsock.c"/>
+        <srcFile name="package/lib/lib/ccs/arm9/slnetsock_release/slnetutils.oe9.dep" src="slnetutils.c"/>
+        <srcFile name="package/lib/lib/ccs/arm9/slnetsock_release/slnetif.oe9.dep" src="slnetif.c"/>
+        <srcFile name="package/lib/lib/ccs/arm9/slnetsock_release/bsd/netdb.oe9.dep" src="bsd/netdb.c"/>
+        <srcFile name="package/lib/lib/ccs/arm9/slnetsock_release/bsd/socket.oe9.dep" src="bsd/socket.c"/>
+        <srcFile name="package/lib/lib/ccs/arm9/slnetsock_release/bsd/errnoutil.oe9.dep" src="bsd/errnoutil.c"/>
+        <srcFile name="lib/ccs/c66/slnetsock_debug.a.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ccs/c66/slnetsock_debug/package/package_ti.net.oe66.dep" src="package/package_ti.net.c"/>
+        <srcFile name="package/lib/lib/ccs/c66/slnetsock_debug/slnetsock.oe66.dep" src="slnetsock.c"/>
+        <srcFile name="package/lib/lib/ccs/c66/slnetsock_debug/slnetutils.oe66.dep" src="slnetutils.c"/>
+        <srcFile name="package/lib/lib/ccs/c66/slnetsock_debug/slnetif.oe66.dep" src="slnetif.c"/>
+        <srcFile name="package/lib/lib/ccs/c66/slnetsock_debug/bsd/netdb.oe66.dep" src="bsd/netdb.c"/>
+        <srcFile name="package/lib/lib/ccs/c66/slnetsock_debug/bsd/socket.oe66.dep" src="bsd/socket.c"/>
+        <srcFile name="package/lib/lib/ccs/c66/slnetsock_debug/bsd/errnoutil.oe66.dep" src="bsd/errnoutil.c"/>
+        <srcFile name="lib/ccs/c66/slnetsock_release.a.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ccs/c66/slnetsock_release/package/package_ti.net.oe66.dep" src="package/package_ti.net.c"/>
+        <srcFile name="package/lib/lib/ccs/c66/slnetsock_release/slnetsock.oe66.dep" src="slnetsock.c"/>
+        <srcFile name="package/lib/lib/ccs/c66/slnetsock_release/slnetutils.oe66.dep" src="slnetutils.c"/>
+        <srcFile name="package/lib/lib/ccs/c66/slnetsock_release/slnetif.oe66.dep" src="slnetif.c"/>
+        <srcFile name="package/lib/lib/ccs/c66/slnetsock_release/bsd/netdb.oe66.dep" src="bsd/netdb.c"/>
+        <srcFile name="package/lib/lib/ccs/c66/slnetsock_release/bsd/socket.oe66.dep" src="bsd/socket.c"/>
+        <srcFile name="package/lib/lib/ccs/c66/slnetsock_release/bsd/errnoutil.oe66.dep" src="bsd/errnoutil.c"/>
+        <srcFile name="lib/ccs/c674/slnetsock_debug.a.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ccs/c674/slnetsock_debug/package/package_ti.net.oe674.dep" src="package/package_ti.net.c"/>
+        <srcFile name="package/lib/lib/ccs/c674/slnetsock_debug/slnetsock.oe674.dep" src="slnetsock.c"/>
+        <srcFile name="package/lib/lib/ccs/c674/slnetsock_debug/slnetutils.oe674.dep" src="slnetutils.c"/>
+        <srcFile name="package/lib/lib/ccs/c674/slnetsock_debug/slnetif.oe674.dep" src="slnetif.c"/>
+        <srcFile name="package/lib/lib/ccs/c674/slnetsock_debug/bsd/netdb.oe674.dep" src="bsd/netdb.c"/>
+        <srcFile name="package/lib/lib/ccs/c674/slnetsock_debug/bsd/socket.oe674.dep" src="bsd/socket.c"/>
+        <srcFile name="package/lib/lib/ccs/c674/slnetsock_debug/bsd/errnoutil.oe674.dep" src="bsd/errnoutil.c"/>
+        <srcFile name="lib/ccs/c674/slnetsock_release.a.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/ccs/c674/slnetsock_release/package/package_ti.net.oe674.dep" src="package/package_ti.net.c"/>
+        <srcFile name="package/lib/lib/ccs/c674/slnetsock_release/slnetsock.oe674.dep" src="slnetsock.c"/>
+        <srcFile name="package/lib/lib/ccs/c674/slnetsock_release/slnetutils.oe674.dep" src="slnetutils.c"/>
+        <srcFile name="package/lib/lib/ccs/c674/slnetsock_release/slnetif.oe674.dep" src="slnetif.c"/>
+        <srcFile name="package/lib/lib/ccs/c674/slnetsock_release/bsd/netdb.oe674.dep" src="bsd/netdb.c"/>
+        <srcFile name="package/lib/lib/ccs/c674/slnetsock_release/bsd/socket.oe674.dep" src="bsd/socket.c"/>
+        <srcFile name="package/lib/lib/ccs/c674/slnetsock_release/bsd/errnoutil.oe674.dep" src="bsd/errnoutil.c"/>
+        <srcFile name="lib/iar/m4f/slnetsock_debug.a.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/iar/m4f/slnetsock_debug/package/package_ti.net.orm4f.dep" src="package/package_ti.net.c"/>
+        <srcFile name="package/lib/lib/iar/m4f/slnetsock_debug/slnetsock.orm4f.dep" src="slnetsock.c"/>
+        <srcFile name="package/lib/lib/iar/m4f/slnetsock_debug/slnetutils.orm4f.dep" src="slnetutils.c"/>
+        <srcFile name="package/lib/lib/iar/m4f/slnetsock_debug/slnetif.orm4f.dep" src="slnetif.c"/>
+        <srcFile name="package/lib/lib/iar/m4f/slnetsock_debug/bsd/netdb.orm4f.dep" src="bsd/netdb.c"/>
+        <srcFile name="package/lib/lib/iar/m4f/slnetsock_debug/bsd/socket.orm4f.dep" src="bsd/socket.c"/>
+        <srcFile name="package/lib/lib/iar/m4f/slnetsock_debug/bsd/errnoutil.orm4f.dep" src="bsd/errnoutil.c"/>
+        <srcFile name="lib/iar/m4f/slnetsock_release.a.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/iar/m4f/slnetsock_release/package/package_ti.net.orm4f.dep" src="package/package_ti.net.c"/>
+        <srcFile name="package/lib/lib/iar/m4f/slnetsock_release/slnetsock.orm4f.dep" src="slnetsock.c"/>
+        <srcFile name="package/lib/lib/iar/m4f/slnetsock_release/slnetutils.orm4f.dep" src="slnetutils.c"/>
+        <srcFile name="package/lib/lib/iar/m4f/slnetsock_release/slnetif.orm4f.dep" src="slnetif.c"/>
+        <srcFile name="package/lib/lib/iar/m4f/slnetsock_release/bsd/netdb.orm4f.dep" src="bsd/netdb.c"/>
+        <srcFile name="package/lib/lib/iar/m4f/slnetsock_release/bsd/socket.orm4f.dep" src="bsd/socket.c"/>
+        <srcFile name="package/lib/lib/iar/m4f/slnetsock_release/bsd/errnoutil.orm4f.dep" src="bsd/errnoutil.c"/>
+        <srcFile name="lib/gcc/m4f/slnetsock_debug.a.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/gcc/m4f/slnetsock_debug/package/package_ti.net.om4fg.dep" src="package/package_ti.net.c"/>
+        <srcFile name="package/lib/lib/gcc/m4f/slnetsock_debug/slnetsock.om4fg.dep" src="slnetsock.c"/>
+        <srcFile name="package/lib/lib/gcc/m4f/slnetsock_debug/slnetutils.om4fg.dep" src="slnetutils.c"/>
+        <srcFile name="package/lib/lib/gcc/m4f/slnetsock_debug/slnetif.om4fg.dep" src="slnetif.c"/>
+        <srcFile name="package/lib/lib/gcc/m4f/slnetsock_debug/bsd/netdb.om4fg.dep" src="bsd/netdb.c"/>
+        <srcFile name="package/lib/lib/gcc/m4f/slnetsock_debug/bsd/socket.om4fg.dep" src="bsd/socket.c"/>
+        <srcFile name="package/lib/lib/gcc/m4f/slnetsock_debug/bsd/errnoutil.om4fg.dep" src="bsd/errnoutil.c"/>
+        <srcFile name="lib/gcc/m4f/slnetsock_release.a.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/gcc/m4f/slnetsock_release/package/package_ti.net.om4fg.dep" src="package/package_ti.net.c"/>
+        <srcFile name="package/lib/lib/gcc/m4f/slnetsock_release/slnetsock.om4fg.dep" src="slnetsock.c"/>
+        <srcFile name="package/lib/lib/gcc/m4f/slnetsock_release/slnetutils.om4fg.dep" src="slnetutils.c"/>
+        <srcFile name="package/lib/lib/gcc/m4f/slnetsock_release/slnetif.om4fg.dep" src="slnetif.c"/>
+        <srcFile name="package/lib/lib/gcc/m4f/slnetsock_release/bsd/netdb.om4fg.dep" src="bsd/netdb.c"/>
+        <srcFile name="package/lib/lib/gcc/m4f/slnetsock_release/bsd/socket.om4fg.dep" src="bsd/socket.c"/>
+        <srcFile name="package/lib/lib/gcc/m4f/slnetsock_release/bsd/errnoutil.om4fg.dep" src="bsd/errnoutil.c"/>
+        <srcFile name="lib/gcc/a8fg/slnetsock_debug.a.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/gcc/a8fg/slnetsock_debug/package/package_ti.net.oa8fg.dep" src="package/package_ti.net.c"/>
+        <srcFile name="package/lib/lib/gcc/a8fg/slnetsock_debug/slnetsock.oa8fg.dep" src="slnetsock.c"/>
+        <srcFile name="package/lib/lib/gcc/a8fg/slnetsock_debug/slnetutils.oa8fg.dep" src="slnetutils.c"/>
+        <srcFile name="package/lib/lib/gcc/a8fg/slnetsock_debug/slnetif.oa8fg.dep" src="slnetif.c"/>
+        <srcFile name="package/lib/lib/gcc/a8fg/slnetsock_debug/bsd/netdb.oa8fg.dep" src="bsd/netdb.c"/>
+        <srcFile name="package/lib/lib/gcc/a8fg/slnetsock_debug/bsd/socket.oa8fg.dep" src="bsd/socket.c"/>
+        <srcFile name="package/lib/lib/gcc/a8fg/slnetsock_debug/bsd/errnoutil.oa8fg.dep" src="bsd/errnoutil.c"/>
+        <srcFile name="lib/gcc/a8fg/slnetsock_release.a.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/gcc/a8fg/slnetsock_release/package/package_ti.net.oa8fg.dep" src="package/package_ti.net.c"/>
+        <srcFile name="package/lib/lib/gcc/a8fg/slnetsock_release/slnetsock.oa8fg.dep" src="slnetsock.c"/>
+        <srcFile name="package/lib/lib/gcc/a8fg/slnetsock_release/slnetutils.oa8fg.dep" src="slnetutils.c"/>
+        <srcFile name="package/lib/lib/gcc/a8fg/slnetsock_release/slnetif.oa8fg.dep" src="slnetif.c"/>
+        <srcFile name="package/lib/lib/gcc/a8fg/slnetsock_release/bsd/netdb.oa8fg.dep" src="bsd/netdb.c"/>
+        <srcFile name="package/lib/lib/gcc/a8fg/slnetsock_release/bsd/socket.oa8fg.dep" src="bsd/socket.c"/>
+        <srcFile name="package/lib/lib/gcc/a8fg/slnetsock_release/bsd/errnoutil.oa8fg.dep" src="bsd/errnoutil.c"/>
+        <srcFile name="lib/gcc/a9fg/slnetsock_debug.a.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/gcc/a9fg/slnetsock_debug/package/package_ti.net.oa9fg.dep" src="package/package_ti.net.c"/>
+        <srcFile name="package/lib/lib/gcc/a9fg/slnetsock_debug/slnetsock.oa9fg.dep" src="slnetsock.c"/>
+        <srcFile name="package/lib/lib/gcc/a9fg/slnetsock_debug/slnetutils.oa9fg.dep" src="slnetutils.c"/>
+        <srcFile name="package/lib/lib/gcc/a9fg/slnetsock_debug/slnetif.oa9fg.dep" src="slnetif.c"/>
+        <srcFile name="package/lib/lib/gcc/a9fg/slnetsock_debug/bsd/netdb.oa9fg.dep" src="bsd/netdb.c"/>
+        <srcFile name="package/lib/lib/gcc/a9fg/slnetsock_debug/bsd/socket.oa9fg.dep" src="bsd/socket.c"/>
+        <srcFile name="package/lib/lib/gcc/a9fg/slnetsock_debug/bsd/errnoutil.oa9fg.dep" src="bsd/errnoutil.c"/>
+        <srcFile name="lib/gcc/a9fg/slnetsock_release.a.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/gcc/a9fg/slnetsock_release/package/package_ti.net.oa9fg.dep" src="package/package_ti.net.c"/>
+        <srcFile name="package/lib/lib/gcc/a9fg/slnetsock_release/slnetsock.oa9fg.dep" src="slnetsock.c"/>
+        <srcFile name="package/lib/lib/gcc/a9fg/slnetsock_release/slnetutils.oa9fg.dep" src="slnetutils.c"/>
+        <srcFile name="package/lib/lib/gcc/a9fg/slnetsock_release/slnetif.oa9fg.dep" src="slnetif.c"/>
+        <srcFile name="package/lib/lib/gcc/a9fg/slnetsock_release/bsd/netdb.oa9fg.dep" src="bsd/netdb.c"/>
+        <srcFile name="package/lib/lib/gcc/a9fg/slnetsock_release/bsd/socket.oa9fg.dep" src="bsd/socket.c"/>
+        <srcFile name="package/lib/lib/gcc/a9fg/slnetsock_release/bsd/errnoutil.oa9fg.dep" src="bsd/errnoutil.c"/>
+        <srcFile name="lib/gcc/a15fg/slnetsock_debug.a.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/gcc/a15fg/slnetsock_debug/package/package_ti.net.oa15fg.dep" src="package/package_ti.net.c"/>
+        <srcFile name="package/lib/lib/gcc/a15fg/slnetsock_debug/slnetsock.oa15fg.dep" src="slnetsock.c"/>
+        <srcFile name="package/lib/lib/gcc/a15fg/slnetsock_debug/slnetutils.oa15fg.dep" src="slnetutils.c"/>
+        <srcFile name="package/lib/lib/gcc/a15fg/slnetsock_debug/slnetif.oa15fg.dep" src="slnetif.c"/>
+        <srcFile name="package/lib/lib/gcc/a15fg/slnetsock_debug/bsd/netdb.oa15fg.dep" src="bsd/netdb.c"/>
+        <srcFile name="package/lib/lib/gcc/a15fg/slnetsock_debug/bsd/socket.oa15fg.dep" src="bsd/socket.c"/>
+        <srcFile name="package/lib/lib/gcc/a15fg/slnetsock_debug/bsd/errnoutil.oa15fg.dep" src="bsd/errnoutil.c"/>
+        <srcFile name="lib/gcc/a15fg/slnetsock_release.a.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/gcc/a15fg/slnetsock_release/package/package_ti.net.oa15fg.dep" src="package/package_ti.net.c"/>
+        <srcFile name="package/lib/lib/gcc/a15fg/slnetsock_release/slnetsock.oa15fg.dep" src="slnetsock.c"/>
+        <srcFile name="package/lib/lib/gcc/a15fg/slnetsock_release/slnetutils.oa15fg.dep" src="slnetutils.c"/>
+        <srcFile name="package/lib/lib/gcc/a15fg/slnetsock_release/slnetif.oa15fg.dep" src="slnetif.c"/>
+        <srcFile name="package/lib/lib/gcc/a15fg/slnetsock_release/bsd/netdb.oa15fg.dep" src="bsd/netdb.c"/>
+        <srcFile name="package/lib/lib/gcc/a15fg/slnetsock_release/bsd/socket.oa15fg.dep" src="bsd/socket.c"/>
+        <srcFile name="package/lib/lib/gcc/a15fg/slnetsock_release/bsd/errnoutil.oa15fg.dep" src="bsd/errnoutil.c"/>
+        <srcFile name="lib/gcc/a53fg/slnetsock_debug.a.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/gcc/a53fg/slnetsock_debug/package/package_ti.net.oa53fg.dep" src="package/package_ti.net.c"/>
+        <srcFile name="package/lib/lib/gcc/a53fg/slnetsock_debug/slnetsock.oa53fg.dep" src="slnetsock.c"/>
+        <srcFile name="package/lib/lib/gcc/a53fg/slnetsock_debug/slnetutils.oa53fg.dep" src="slnetutils.c"/>
+        <srcFile name="package/lib/lib/gcc/a53fg/slnetsock_debug/slnetif.oa53fg.dep" src="slnetif.c"/>
+        <srcFile name="package/lib/lib/gcc/a53fg/slnetsock_debug/bsd/netdb.oa53fg.dep" src="bsd/netdb.c"/>
+        <srcFile name="package/lib/lib/gcc/a53fg/slnetsock_debug/bsd/socket.oa53fg.dep" src="bsd/socket.c"/>
+        <srcFile name="package/lib/lib/gcc/a53fg/slnetsock_debug/bsd/errnoutil.oa53fg.dep" src="bsd/errnoutil.c"/>
+        <srcFile name="lib/gcc/a53fg/slnetsock_release.a.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/gcc/a53fg/slnetsock_release/package/package_ti.net.oa53fg.dep" src="package/package_ti.net.c"/>
+        <srcFile name="package/lib/lib/gcc/a53fg/slnetsock_release/slnetsock.oa53fg.dep" src="slnetsock.c"/>
+        <srcFile name="package/lib/lib/gcc/a53fg/slnetsock_release/slnetutils.oa53fg.dep" src="slnetutils.c"/>
+        <srcFile name="package/lib/lib/gcc/a53fg/slnetsock_release/slnetif.oa53fg.dep" src="slnetif.c"/>
+        <srcFile name="package/lib/lib/gcc/a53fg/slnetsock_release/bsd/netdb.oa53fg.dep" src="bsd/netdb.c"/>
+        <srcFile name="package/lib/lib/gcc/a53fg/slnetsock_release/bsd/socket.oa53fg.dep" src="bsd/socket.c"/>
+        <srcFile name="package/lib/lib/gcc/a53fg/slnetsock_release/bsd/errnoutil.oa53fg.dep" src="bsd/errnoutil.c"/>
+        <srcFile name="lib/gcc/v7AF/slnetsock_debug.a.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/gcc/v7AF/slnetsock_debug/package/package_ti.net.ov7AF.dep" src="package/package_ti.net.c"/>
+        <srcFile name="package/lib/lib/gcc/v7AF/slnetsock_debug/slnetsock.ov7AF.dep" src="slnetsock.c"/>
+        <srcFile name="package/lib/lib/gcc/v7AF/slnetsock_debug/slnetutils.ov7AF.dep" src="slnetutils.c"/>
+        <srcFile name="package/lib/lib/gcc/v7AF/slnetsock_debug/slnetif.ov7AF.dep" src="slnetif.c"/>
+        <srcFile name="package/lib/lib/gcc/v7AF/slnetsock_debug/bsd/netdb.ov7AF.dep" src="bsd/netdb.c"/>
+        <srcFile name="package/lib/lib/gcc/v7AF/slnetsock_debug/bsd/socket.ov7AF.dep" src="bsd/socket.c"/>
+        <srcFile name="package/lib/lib/gcc/v7AF/slnetsock_debug/bsd/errnoutil.ov7AF.dep" src="bsd/errnoutil.c"/>
+        <srcFile name="lib/gcc/v7AF/slnetsock_release.a.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/gcc/v7AF/slnetsock_release/package/package_ti.net.ov7AF.dep" src="package/package_ti.net.c"/>
+        <srcFile name="package/lib/lib/gcc/v7AF/slnetsock_release/slnetsock.ov7AF.dep" src="slnetsock.c"/>
+        <srcFile name="package/lib/lib/gcc/v7AF/slnetsock_release/slnetutils.ov7AF.dep" src="slnetutils.c"/>
+        <srcFile name="package/lib/lib/gcc/v7AF/slnetsock_release/slnetif.ov7AF.dep" src="slnetif.c"/>
+        <srcFile name="package/lib/lib/gcc/v7AF/slnetsock_release/bsd/netdb.ov7AF.dep" src="bsd/netdb.c"/>
+        <srcFile name="package/lib/lib/gcc/v7AF/slnetsock_release/bsd/socket.ov7AF.dep" src="bsd/socket.c"/>
+        <srcFile name="package/lib/lib/gcc/v7AF/slnetsock_release/bsd/errnoutil.ov7AF.dep" src="bsd/errnoutil.c"/>
+        <srcFile name="lib/gcc/86U/slnetsock_debug.a.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/gcc/86U/slnetsock_debug/package/package_ti.net.o86U.dep" src="package/package_ti.net.c"/>
+        <srcFile name="package/lib/lib/gcc/86U/slnetsock_debug/slnetsock.o86U.dep" src="slnetsock.c"/>
+        <srcFile name="package/lib/lib/gcc/86U/slnetsock_debug/slnetutils.o86U.dep" src="slnetutils.c"/>
+        <srcFile name="package/lib/lib/gcc/86U/slnetsock_debug/slnetif.o86U.dep" src="slnetif.c"/>
+        <srcFile name="package/lib/lib/gcc/86U/slnetsock_debug/bsd/netdb.o86U.dep" src="bsd/netdb.c"/>
+        <srcFile name="package/lib/lib/gcc/86U/slnetsock_debug/bsd/socket.o86U.dep" src="bsd/socket.c"/>
+        <srcFile name="package/lib/lib/gcc/86U/slnetsock_debug/bsd/errnoutil.o86U.dep" src="bsd/errnoutil.c"/>
+        <srcFile name="lib/gcc/86U/slnetsock_release.a.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/gcc/86U/slnetsock_release/package/package_ti.net.o86U.dep" src="package/package_ti.net.c"/>
+        <srcFile name="package/lib/lib/gcc/86U/slnetsock_release/slnetsock.o86U.dep" src="slnetsock.c"/>
+        <srcFile name="package/lib/lib/gcc/86U/slnetsock_release/slnetutils.o86U.dep" src="slnetutils.c"/>
+        <srcFile name="package/lib/lib/gcc/86U/slnetsock_release/slnetif.o86U.dep" src="slnetif.c"/>
+        <srcFile name="package/lib/lib/gcc/86U/slnetsock_release/bsd/netdb.o86U.dep" src="bsd/netdb.c"/>
+        <srcFile name="package/lib/lib/gcc/86U/slnetsock_release/bsd/socket.o86U.dep" src="bsd/socket.c"/>
+        <srcFile name="package/lib/lib/gcc/86U/slnetsock_release/bsd/errnoutil.o86U.dep" src="bsd/errnoutil.c"/>
+        <srcFile name="package/rel/ti_net.zip.dep" src="package/rel/ti_net.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="ti.targets.arm.elf.M4"
+            version="ti.targets.arm.elf.M4{1,0,20.2,0"
+            rawVersion="20.2.0"
+            platform="ti.platforms.tiva:TM4C1294NCPDT:1"
+            isa="v7M4"
+            suffix="em4"
+            rootDir="/db/vendors/ti/arm/20.2.0.LTS/Linux"
+            os="undefined"
+            rts="ti.targets.arm.rtsarm">
+            <model endian="little"
+                codeModel="thumb2"
+                dataModel="undefined"/>
+        </target>
+        <target name="iar.targets.arm.M4"
+            version="iar.targets.arm.M4{1,0,8.50,1"
+            rawVersion="8.50.1.245"
+            platform="ti.platforms.tiva:TM4C1294NCPDT:1"
+            isa="v7M4"
+            suffix="rm4"
+            rootDir="/db/vendors/iar/arm/8.50.1/Linux"
+            os="undefined"
+            rts="iar.targets.arm.rts">
+            <model endian="little"
+                codeModel="thumb2"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.arm.M4"
+            version="gnu.targets.arm.M4{1,0,9.2,1"
+            rawVersion="9.2.1"
+            platform="ti.platforms.tiva:TM4C1294NCPDT"
+            isa="v7M4"
+            suffix="m4g"
+            rootDir="/db/vendors/arm/gcc-arm-none-eabi-9-2019-q4-major"
+            os="undefined"
+            rts="gnu.targets.arm.rtsv7M">
+            <model endian="little"
+                codeModel="thumb2"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.arm.elf.R5F"
+            version="ti.targets.arm.elf.R5F{1,0,20.2,0"
+            rawVersion="20.2.0"
+            platform="ti.platforms.cortexR:RM57L8XX:1"
+            isa="v7R"
+            suffix="er5f"
+            rootDir="/db/vendors/ti/arm/20.2.0.LTS/Linux"
+            os="undefined"
+            rts="ti.targets.arm.rtsarm">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.arm.elf.R5Ft"
+            version="ti.targets.arm.elf.R5Ft{1,0,20.2,0"
+            rawVersion="20.2.0"
+            platform="ti.platforms.cortexR:RM57L8XX:1"
+            isa="v7R"
+            suffix="er5ft"
+            rootDir="/db/vendors/ti/arm/20.2.0.LTS/Linux"
+            os="undefined"
+            rts="ti.targets.arm.rtsarm">
+            <model endian="little"
+                codeModel="thumb2"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.arm.elf.M4F"
+            version="ti.targets.arm.elf.M4F{1,0,20.2,0"
+            rawVersion="20.2.0"
+            platform="ti.platforms.tiva:TM4C1294NCPDT:1"
+            isa="v7M4"
+            suffix="em4f"
+            rootDir="/db/vendors/ti/arm/20.2.0.LTS/Linux"
+            os="undefined"
+            rts="ti.targets.arm.rtsarm">
+            <model endian="little"
+                codeModel="thumb2"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.arm.elf.Arm9"
+            version="ti.targets.arm.elf.Arm9{1,0,20.2,0"
+            rawVersion="20.2.0"
+            platform="ti.platforms.sim470xx"
+            isa="v5T"
+            suffix="e9"
+            rootDir="/db/vendors/ti/arm/20.2.0.LTS/Linux"
+            os="undefined"
+            rts="ti.targets.arm.rtsarm">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.elf.C66"
+            version="ti.targets.elf.C66{1,0,8.3,2"
+            rawVersion="8.3.2"
+            platform="ti.platforms.simTCI6616"
+            isa="66"
+            suffix="e66"
+            rootDir="/db/vendors/ti/c6x/8.3.2/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.elf.C674"
+            version="ti.targets.elf.C674{1,0,8.3,2"
+            rawVersion="8.3.2"
+            platform="ti.platforms.evmDA830"
+            isa="674"
+            suffix="e674"
+            rootDir="/db/vendors/ti/c6x/8.3.2/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="iar.targets.arm.M4F"
+            version="iar.targets.arm.M4F{1,0,8.50,1"
+            rawVersion="8.50.1.245"
+            platform="ti.platforms.tiva:TM4C1294NCPDT:1"
+            isa="v7M4"
+            suffix="rm4f"
+            rootDir="/db/vendors/iar/arm/8.50.1/Linux"
+            os="undefined"
+            rts="iar.targets.arm.rts">
+            <model endian="little"
+                codeModel="thumb2"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.arm.M4F"
+            version="gnu.targets.arm.M4F{1,0,9.2,1"
+            rawVersion="9.2.1"
+            platform="ti.platforms.tiva:TM4C1294NCPDT"
+            isa="v7M4"
+            suffix="m4fg"
+            rootDir="/db/vendors/arm/gcc-arm-none-eabi-9-2019-q4-major"
+            os="undefined"
+            rts="gnu.targets.arm.rtsv7M">
+            <model endian="little"
+                codeModel="thumb2"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.arm.A8F"
+            version="gnu.targets.arm.A8F{1,0,9.2,1"
+            rawVersion="9.2.1"
+            platform="ti.platforms.evmAM3359"
+            isa="v7A"
+            suffix="a8fg"
+            rootDir="/db/vendors/arm/gcc-arm-9.2-2019.12-x86_64-arm-none-eabi"
+            os="undefined"
+            rts="gnu.targets.arm.rtsv7A">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.arm.A9F"
+            version="gnu.targets.arm.A9F{1,0,9.2,1"
+            rawVersion="9.2.1"
+            platform="ti.platforms.sdp4430"
+            isa="v7A9"
+            suffix="a9fg"
+            rootDir="/db/vendors/arm/gcc-arm-9.2-2019.12-x86_64-arm-none-eabi"
+            os="undefined"
+            rts="gnu.targets.arm.rtsv7A">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.arm.A15F"
+            version="gnu.targets.arm.A15F{1,0,9.2,1"
+            rawVersion="9.2.1"
+            platform="ti.platforms.sdp5430"
+            isa="v7A15"
+            suffix="a15fg"
+            rootDir="/db/vendors/arm/gcc-arm-9.2-2019.12-x86_64-arm-none-eabi"
+            os="undefined"
+            rts="gnu.targets.arm.rtsv7A">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.arm.A53F"
+            version="gnu.targets.arm.A53F{1,0,9.2,1"
+            rawVersion="9.2.1"
+            platform="ti.platforms.cortexA:AM65X"
+            isa="v8A"
+            suffix="a53fg"
+            rootDir="/db/vendors/arm/gcc-arm-9.2-2019.12-x86_64-aarch64-none-elf"
+            os="undefined"
+            rts="gnu.targets.arm.rtsv8A">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.arm.GCArmv7AF"
+            version="gnu.targets.arm.GCArmv7AF{1,0,5.3,1"
+            rawVersion="5.3.1"
+            platform="host.platforms.arm"
+            isa="v7A"
+            suffix="v7AF"
+            rootDir="/db/builds/ramsey/devkit_am335x_3_02_00_05/sysroots/x86_64-arago-linux/usr"
+            os="Linux"
+            rts="gnu.targets.arm.rtsv7A">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.Linux86"
+            version="gnu.targets.Linux86{1,0,4.3,4"
+            rawVersion="4.3.4"
+            platform="host.platforms.PC"
+            isa="i686"
+            suffix="86U"
+            rootDir="/db/toolsrc/library/vendors2005/opensource/gcc/4.3.4/Linux"
+            os="Linux"
+            rts="gnu.targets.rts86U">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    <library name="lib/ccs/m4/slnetsock_debug"
+        pname="lib/ccs/m4/slnetsock_debug.a"
+        profile="debug"
+        target="ti.targets.arm.elf.M4"/>
+    <library name="lib/ccs/m4/slnetsock_release"
+        pname="lib/ccs/m4/slnetsock_release.a"
+        profile="release"
+        target="ti.targets.arm.elf.M4"/>
+    <library name="lib/iar/m4/slnetsock_debug"
+        pname="lib/iar/m4/slnetsock_debug.a"
+        profile="debug"
+        target="iar.targets.arm.M4"/>
+    <library name="lib/iar/m4/slnetsock_release"
+        pname="lib/iar/m4/slnetsock_release.a"
+        profile="release"
+        target="iar.targets.arm.M4"/>
+    <library name="lib/gcc/m4/slnetsock_debug"
+        pname="lib/gcc/m4/slnetsock_debug.a"
+        profile="debug"
+        target="gnu.targets.arm.M4"/>
+    <library name="lib/gcc/m4/slnetsock_release"
+        pname="lib/gcc/m4/slnetsock_release.a"
+        profile="release"
+        target="gnu.targets.arm.M4"/>
+    <library name="lib/ccs/r5f/slnetsock_debug"
+        pname="lib/ccs/r5f/slnetsock_debug.a"
+        profile="debug"
+        target="ti.targets.arm.elf.R5F"/>
+    <library name="lib/ccs/r5f/slnetsock_release"
+        pname="lib/ccs/r5f/slnetsock_release.a"
+        profile="release"
+        target="ti.targets.arm.elf.R5F"/>
+    <library name="lib/ccs/r5ft/slnetsock_debug"
+        pname="lib/ccs/r5ft/slnetsock_debug.a"
+        profile="debug"
+        target="ti.targets.arm.elf.R5Ft"/>
+    <library name="lib/ccs/r5ft/slnetsock_release"
+        pname="lib/ccs/r5ft/slnetsock_release.a"
+        profile="release"
+        target="ti.targets.arm.elf.R5Ft"/>
+    <library name="lib/ccs/m4f/slnetsock_debug"
+        pname="lib/ccs/m4f/slnetsock_debug.a"
+        profile="debug"
+        target="ti.targets.arm.elf.M4F"/>
+    <library name="lib/ccs/m4f/slnetsock_release"
+        pname="lib/ccs/m4f/slnetsock_release.a"
+        profile="release"
+        target="ti.targets.arm.elf.M4F"/>
+    <library name="lib/ccs/arm9/slnetsock_debug"
+        pname="lib/ccs/arm9/slnetsock_debug.a"
+        profile="debug"
+        target="ti.targets.arm.elf.Arm9"/>
+    <library name="lib/ccs/arm9/slnetsock_release"
+        pname="lib/ccs/arm9/slnetsock_release.a"
+        profile="release"
+        target="ti.targets.arm.elf.Arm9"/>
+    <library name="lib/ccs/c66/slnetsock_debug"
+        pname="lib/ccs/c66/slnetsock_debug.a"
+        profile="debug"
+        target="ti.targets.elf.C66"/>
+    <library name="lib/ccs/c66/slnetsock_release"
+        pname="lib/ccs/c66/slnetsock_release.a"
+        profile="release"
+        target="ti.targets.elf.C66"/>
+    <library name="lib/ccs/c674/slnetsock_debug"
+        pname="lib/ccs/c674/slnetsock_debug.a"
+        profile="debug"
+        target="ti.targets.elf.C674"/>
+    <library name="lib/ccs/c674/slnetsock_release"
+        pname="lib/ccs/c674/slnetsock_release.a"
+        profile="release"
+        target="ti.targets.elf.C674"/>
+    <library name="lib/iar/m4f/slnetsock_debug"
+        pname="lib/iar/m4f/slnetsock_debug.a"
+        profile="debug"
+        target="iar.targets.arm.M4F"/>
+    <library name="lib/iar/m4f/slnetsock_release"
+        pname="lib/iar/m4f/slnetsock_release.a"
+        profile="release"
+        target="iar.targets.arm.M4F"/>
+    <library name="lib/gcc/m4f/slnetsock_debug"
+        pname="lib/gcc/m4f/slnetsock_debug.a"
+        profile="debug"
+        target="gnu.targets.arm.M4F"/>
+    <library name="lib/gcc/m4f/slnetsock_release"
+        pname="lib/gcc/m4f/slnetsock_release.a"
+        profile="release"
+        target="gnu.targets.arm.M4F"/>
+    <library name="lib/gcc/a8fg/slnetsock_debug"
+        pname="lib/gcc/a8fg/slnetsock_debug.a"
+        profile="debug"
+        target="gnu.targets.arm.A8F"/>
+    <library name="lib/gcc/a8fg/slnetsock_release"
+        pname="lib/gcc/a8fg/slnetsock_release.a"
+        profile="release"
+        target="gnu.targets.arm.A8F"/>
+    <library name="lib/gcc/a9fg/slnetsock_debug"
+        pname="lib/gcc/a9fg/slnetsock_debug.a"
+        profile="debug"
+        target="gnu.targets.arm.A9F"/>
+    <library name="lib/gcc/a9fg/slnetsock_release"
+        pname="lib/gcc/a9fg/slnetsock_release.a"
+        profile="release"
+        target="gnu.targets.arm.A9F"/>
+    <library name="lib/gcc/a15fg/slnetsock_debug"
+        pname="lib/gcc/a15fg/slnetsock_debug.a"
+        profile="debug"
+        target="gnu.targets.arm.A15F"/>
+    <library name="lib/gcc/a15fg/slnetsock_release"
+        pname="lib/gcc/a15fg/slnetsock_release.a"
+        profile="release"
+        target="gnu.targets.arm.A15F"/>
+    <library name="lib/gcc/a53fg/slnetsock_debug"
+        pname="lib/gcc/a53fg/slnetsock_debug.a"
+        profile="debug"
+        target="gnu.targets.arm.A53F"/>
+    <library name="lib/gcc/a53fg/slnetsock_release"
+        pname="lib/gcc/a53fg/slnetsock_release.a"
+        profile="release"
+        target="gnu.targets.arm.A53F"/>
+    <library name="lib/gcc/v7AF/slnetsock_debug"
+        pname="lib/gcc/v7AF/slnetsock_debug.a"
+        profile="debug"
+        target="gnu.targets.arm.GCArmv7AF"/>
+    <library name="lib/gcc/v7AF/slnetsock_release"
+        pname="lib/gcc/v7AF/slnetsock_release.a"
+        profile="release"
+        target="gnu.targets.arm.GCArmv7AF"/>
+    <library name="lib/gcc/86U/slnetsock_debug"
+        pname="lib/gcc/86U/slnetsock_debug.a"
+        profile="debug"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/gcc/86U/slnetsock_release"
+        pname="lib/gcc/86U/slnetsock_release.a"
+        profile="release"
+        target="gnu.targets.Linux86"/>
+    </libraries>
+    <configurations>
+    </configurations>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_net"
+        pname="../../../exports/ti_net.zip"
+        label="default"
+    >
+        <file name="package/package.bld.xml"/>
+        <file name="package/build.cfg"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="slneterr.h"/>
+        <file name="slnetif.h"/>
+        <file name="slnetsock.h"/>
+        <file name="slnetutils.h"/>
+        <file name="slnet.h"/>
+        <file name="bsd/netdb.h"/>
+        <file name="bsd/sys/socket.h"/>
+        <file name="bsd/sys/select.h"/>
+        <file name="bsd/errnoutil.h"/>
+        <file name="bsd/netinet/in.h"/>
+        <file name="bsd/netinet/tcp.h"/>
+        <file name="bsd/arpa/inet.h"/>
+        <file name=".meta/ns.component.js"/>
+        <file name=".meta/SlNet.Config.c.xdt"/>
+        <file name=".meta/SlNet.syscfg.js"/>
+        <file name=".meta/SecObj.syscfg.js"/>
+        <file name=".meta/Config.c.xdt"/>
+        <file name="package.bld"/>
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="lib/ccs/m4/slnetsock_debug.a"/>
+        <file name="package/package_ti.net.c"/>
+        <file name="slnetsock.c"/>
+        <file name="slnetutils.c"/>
+        <file name="slnetif.c"/>
+        <file name="bsd/netdb.c"/>
+        <file name="bsd/socket.c"/>
+        <file name="bsd/errnoutil.c"/>
+        <file name="lib/ccs/m4/slnetsock_release.a"/>
+        <file name="lib/iar/m4/slnetsock_debug.a"/>
+        <file name="lib/iar/m4/slnetsock_release.a"/>
+        <file name="lib/gcc/m4/slnetsock_debug.a"/>
+        <file name="lib/gcc/m4/slnetsock_release.a"/>
+        <file name="lib/ccs/r5f/slnetsock_debug.a"/>
+        <file name="lib/ccs/r5f/slnetsock_release.a"/>
+        <file name="lib/ccs/r5ft/slnetsock_debug.a"/>
+        <file name="lib/ccs/r5ft/slnetsock_release.a"/>
+        <file name="lib/ccs/m4f/slnetsock_debug.a"/>
+        <file name="lib/ccs/m4f/slnetsock_release.a"/>
+        <file name="lib/ccs/arm9/slnetsock_debug.a"/>
+        <file name="lib/ccs/arm9/slnetsock_release.a"/>
+        <file name="lib/ccs/c66/slnetsock_debug.a"/>
+        <file name="lib/ccs/c66/slnetsock_release.a"/>
+        <file name="lib/ccs/c674/slnetsock_debug.a"/>
+        <file name="lib/ccs/c674/slnetsock_release.a"/>
+        <file name="lib/iar/m4f/slnetsock_debug.a"/>
+        <file name="lib/iar/m4f/slnetsock_release.a"/>
+        <file name="lib/gcc/m4f/slnetsock_debug.a"/>
+        <file name="lib/gcc/m4f/slnetsock_release.a"/>
+        <file name="lib/gcc/a8fg/slnetsock_debug.a"/>
+        <file name="lib/gcc/a8fg/slnetsock_release.a"/>
+        <file name="lib/gcc/a9fg/slnetsock_debug.a"/>
+        <file name="lib/gcc/a9fg/slnetsock_release.a"/>
+        <file name="lib/gcc/a15fg/slnetsock_debug.a"/>
+        <file name="lib/gcc/a15fg/slnetsock_release.a"/>
+        <file name="lib/gcc/a53fg/slnetsock_debug.a"/>
+        <file name="lib/gcc/a53fg/slnetsock_release.a"/>
+        <file name="lib/gcc/v7AF/slnetsock_debug.a"/>
+        <file name="lib/gcc/v7AF/slnetsock_release.a"/>
+        <file name="lib/gcc/86U/slnetsock_debug.a"/>
+        <file name="lib/gcc/86U/slnetsock_release.a"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IAR Project Connection File -->
+
+<iarProjectConnection version="1.8" name="network_terminal" oneShot="true"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema"
+  xsi:noNamespaceSchemaLocation="IarProjectConnection_1.8.xsd">
+
+  <device>
+    <name>MSP432P401R</name>
+  </device>
+
+  <includePath>
+    <path>$PROJ_DIR$</path>
+    <path>$SIMPLELINK_MSP432_SDK_INSTALL_DIR$/source</path>
+    <path>$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/source</path>
+    <path>$SIMPLELINK_MSP432_SDK_INSTALL_DIR$/source/third_party/CMSIS/Include</path>
+    <path>$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/source/third_party/mbedtls/include/</path>
+    <path>$SIMPLELINK_MSP432_SDK_INSTALL_DIR$/source/ti/posix/iar</path>
+    <path>$FREERTOS_INSTALL_DIR$/FreeRTOS/Source/include</path>
+    <path>$FREERTOS_INSTALL_DIR$/FreeRTOS/Source/portable/IAR/ARM_CM4F</path>
+    <path>$SIMPLELINK_MSP432_SDK_INSTALL_DIR$/kernel/freertos/builds/MSP_EXP432P401R/release</path>
+  </includePath>
+
+  <defines>
+    <define>__MSP432P401R__</define>
+    <define>DeviceFamily_MSP432P401x</define>
+  </defines>
+
+  <extraOptions>
+      <arg></arg>
+      <arg>--debug</arg>
+      <arg>--silent</arg>
+      <arg>-e</arg>
+      <arg>--aeabi</arg>
+      <arg>--thumb</arg>
+      <arg>--diag_suppress=Pa050</arg>
+  </extraOptions>
+
+  <asmIncludePath>
+    <path>$PROJ_DIR$</path>
+    <path>$SIMPLELINK_MSP432_SDK_INSTALL_DIR$/kernel/freertos/builds/MSP_EXP432P401R/release</path>
+  </asmIncludePath>
+
+  <asmDefines>
+  </asmDefines>
+
+  <linkerFile>
+    <override>true</override>
+    <path>$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/examples/rtos/MSP_EXP432P401R/demos/network_terminal/freertos/iar/MSP_EXP432P401R_FREERTOS.icf</path>
+  </linkerFile>
+
+  <linkerExtraOptions>
+    <args>
+      <arg>$SIMPLELINK_MSP432_SDK_INSTALL_DIR$/source/ti/display/lib/display.arm4f</arg>
+      <arg>$SIMPLELINK_MSP432_SDK_INSTALL_DIR$/source/ti/drivers/lib/drivers_msp432p401x.arm4f</arg>
+      <arg>$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/source/ti/drivers/net/wifi/slnetif/iar/Release/slnetifwifi.a</arg>
+      <arg>$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/source/ti/net/lib/iar/m4f/slnetsock_release.a</arg>
+      <arg>$SIMPLELINK_MSP432_SDK_INSTALL_DIR$/source/third_party/fatfs/lib/iar/m4f/fatfs.a</arg>
+      <arg>$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/source/ti/drivers/net/wifi/iar/rtos/simplelink.a</arg>
+      <arg>--threaded_lib</arg>
+      <arg>$SIMPLELINK_MSP432_SDK_INSTALL_DIR$/kernel/freertos/builds/MSP_EXP432P401R/release/iar/freertos.lib</arg>
+      <arg>$SIMPLELINK_MSP432_SDK_INSTALL_DIR$/source/ti/devices/msp432p4xx/driverlib/iar/msp432p4xx_driverlib.a</arg>
+      <arg>--silent</arg>
+      <arg>--cpu=Cortex-M4F</arg>
+    </args>
+  </linkerExtraOptions>
+
+  <customBuildTools>
+  </customBuildTools>
+
+  <heaps>
+    <heap> <!-- If omitted, id="0" -->
+      <size>0</size>
+    </heap>
+    <heap id="1">
+      <size>0</size>
+    </heap>
+  </heaps>
+  <stacks>
+    <stack> <!-- If omitted, id="0" -->
+      <size>512</size>
+    </stack>
+  </stacks>
+
+  <preBuild>
+    <command>iarbuild.exe $SIMPLELINK_MSP432_SDK_INSTALL_DIR$/kernel/freertos/builds/MSP_EXP432P401R/release/iar/freertos_builds_MSP_EXP432P401R_release.ewp Debug</command>
+  </preBuild>
+
+  <files>
+      <path copyTo="$PROJ_DIR$/uart_term.c">$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/examples/rtos/MSP_EXP432P401R/demos/network_terminal/uart_term.c</path>
+      <path copyTo="$PROJ_DIR$/uart_term.h">$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/examples/rtos/MSP_EXP432P401R/demos/network_terminal/uart_term.h</path>
+      <path copyTo="$PROJ_DIR$/ti_drivers_net_wifi_config.c">$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/examples/rtos/MSP_EXP432P401R/demos/network_terminal/ti_drivers_net_wifi_config.c</path>
+      <path copyTo="$PROJ_DIR$/main_freertos.c">$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/examples/rtos/MSP_EXP432P401R/demos/network_terminal/freertos/main_freertos.c</path>
+      <path copyTo="$PROJ_DIR$/transceiver_cmd.c">$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/examples/rtos/MSP_EXP432P401R/demos/network_terminal/transceiver_cmd.c</path>
+      <path copyTo="$PROJ_DIR$/radio_tool.c">$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/examples/rtos/MSP_EXP432P401R/demos/network_terminal/radio_tool.c</path>
+      <path copyTo="$PROJ_DIR$/wlan_cmd.h">$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/examples/rtos/MSP_EXP432P401R/demos/network_terminal/wlan_cmd.h</path>
+      <path copyTo="$PROJ_DIR$/socket_cmd.h">$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/examples/rtos/MSP_EXP432P401R/demos/network_terminal/socket_cmd.h</path>
+      <path copyTo="$PROJ_DIR$/str.c">$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/examples/rtos/MSP_EXP432P401R/demos/network_terminal/str.c</path>
+      <path copyTo="$PROJ_DIR$/cmd_parser.c">$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/examples/rtos/MSP_EXP432P401R/demos/network_terminal/cmd_parser.c</path>
+      <path copyTo="$PROJ_DIR$/netapp_cmd.c">$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/examples/rtos/MSP_EXP432P401R/demos/network_terminal/netapp_cmd.c</path>
+      <path copyTo="$PROJ_DIR$/transceiver_cmd.h">$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/examples/rtos/MSP_EXP432P401R/demos/network_terminal/transceiver_cmd.h</path>
+      <path copyTo="$PROJ_DIR$/radio_tool.h">$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/examples/rtos/MSP_EXP432P401R/demos/network_terminal/radio_tool.h</path>
+      <path copyTo="$PROJ_DIR$/cmd_parser.h">$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/examples/rtos/MSP_EXP432P401R/demos/network_terminal/cmd_parser.h</path>
+      <path copyTo="$PROJ_DIR$/wlan_cmd.c">$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/examples/rtos/MSP_EXP432P401R/demos/network_terminal/wlan_cmd.c</path>
+      <path copyTo="$PROJ_DIR$/network_terminal.c">$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/examples/rtos/MSP_EXP432P401R/demos/network_terminal/network_terminal.c</path>
+      <path copyTo="$PROJ_DIR$/socket_cmd.c">$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/examples/rtos/MSP_EXP432P401R/demos/network_terminal/socket_cmd.c</path>
+      <path copyTo="$PROJ_DIR$/README.html">$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/examples/rtos/MSP_EXP432P401R/demos/network_terminal/README.html</path>
+      <path copyTo="$PROJ_DIR$/netapp_cmd.h">$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/examples/rtos/MSP_EXP432P401R/demos/network_terminal/netapp_cmd.h</path>
+      <path copyTo="$PROJ_DIR$/str.h">$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/examples/rtos/MSP_EXP432P401R/demos/network_terminal/str.h</path>
+      <path copyTo="$PROJ_DIR$/network_terminal.h">$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/examples/rtos/MSP_EXP432P401R/demos/network_terminal/network_terminal.h</path>
+      <path copyTo="$PROJ_DIR$/Board.html">$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/examples/rtos/MSP_EXP432P401R/demos/network_terminal/Board.html</path>
+      <path copyTo="$PROJ_DIR$/MSP_EXP432P401R_FREERTOS.icf">$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/examples/rtos/MSP_EXP432P401R/demos/network_terminal/freertos/iar/MSP_EXP432P401R_FREERTOS.icf</path>
+      <path copyTo="$PROJ_DIR$/ti_drivers_config.h">$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/examples/rtos/MSP_EXP432P401R/demos/network_terminal/ti_drivers_config.h</path>
+      <path copyTo="$PROJ_DIR$/ti_drivers_config.c">$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/examples/rtos/MSP_EXP432P401R/demos/network_terminal/ti_drivers_config.c</path>
+  </files>
+</iarProjectConnection>

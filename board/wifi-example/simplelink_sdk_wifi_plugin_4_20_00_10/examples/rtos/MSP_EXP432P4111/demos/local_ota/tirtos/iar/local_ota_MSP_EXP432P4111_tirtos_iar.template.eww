@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<workspace>
+  <project>
+    <path>$WS_DIR$/local_ota_MSP_EXP432P4111_tirtos_iar.ewp</path>
+  </project>
+  <project>
+    <path>$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/kernel/tirtos/builds/MSP_EXP432P4111/release/iar/tirtos_ota_builds_MSP_EXP432P4111_release.ewp</path>
+  </project>
+
+  <project>
+    <path>$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/source/ti/net/ota/iar/ota.ewp</path>
+  </project>
+  <batchBuild/>
+</workspace>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IAR Project Connection File -->
+
+<iarProjectConnection version="1.8" name="cloud_ota" oneShot="true"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema"
+  xsi:noNamespaceSchemaLocation="IarProjectConnection_1.8.xsd">
+
+  <device>
+    <name>MSP432P401R</name>
+  </device>
+
+  <includePath>
+    <path>$PROJ_DIR$</path>
+    <path>$SIMPLELINK_MSP432_SDK_INSTALL_DIR$/source</path>
+    <path>$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/source</path>
+    <path>$SIMPLELINK_MSP432_SDK_INSTALL_DIR$/source/third_party/CMSIS/Include</path>
+    <path>$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/source/third_party/mbedtls/include/</path>
+    <path>$SIMPLELINK_MSP432_SDK_INSTALL_DIR$/source/ti/posix/iar</path>
+  </includePath>
+
+  <defines>
+    <define>__MSP432P401R__</define>
+    <define>DeviceFamily_MSP432P401x</define>
+  </defines>
+
+  <extraOptions>
+      <arg></arg>
+      <arg>-f$SIMPLELINK_MSP432_SDK_INSTALL_DIR$/kernel/tirtos/builds/MSP_EXP432P401R/release/iar/compiler.opt.defs</arg>
+      <arg>--debug</arg>
+      <arg>--silent</arg>
+      <arg>-e</arg>
+      <arg>--aeabi</arg>
+      <arg>--thumb</arg>
+      <arg>--diag_suppress=Pa050</arg>
+  </extraOptions>
+
+  <asmIncludePath>
+    <path>$PROJ_DIR$</path>
+  </asmIncludePath>
+
+  <asmDefines>
+  </asmDefines>
+
+  <linkerFile>
+    <override>true</override>
+    <path>$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/examples/rtos/MSP_EXP432P401R/demos/cloud_ota/cloud_ota_MSP_EXP432P401R_TIRTOS.icf</path>
+  </linkerFile>
+
+  <linkerExtraOptions>
+    <args>
+      <arg>$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/source/ti/net/ota/iar/m4f/ota.a</arg>
+      <arg>$SIMPLELINK_MSP432_SDK_INSTALL_DIR$/source/ti/utils/json/lib/iar/m4f/json_release.a</arg>
+      <arg>$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/source/third_party/mbedtls/ti/lib/iar/m4f/mbedtls.a</arg>
+      <arg>-f$SIMPLELINK_MSP432_SDK_INSTALL_DIR$/kernel/tirtos/builds/MSP_EXP432P401R/release/iar/linker.cmd</arg>
+      <arg>$SIMPLELINK_MSP432_SDK_INSTALL_DIR$/source/ti/display/lib/display.arm4f</arg>
+      <arg>$SIMPLELINK_MSP432_SDK_INSTALL_DIR$/source/ti/drivers/lib/drivers_msp432p401x.arm4f</arg>
+      <arg>$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/source/ti/drivers/net/wifi/slnetif/iar/Release/slnetifwifi.a</arg>
+      <arg>$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/source/ti/net/lib/iar/m4f/slnetsock_release.a</arg>
+      <arg>$SIMPLELINK_MSP432_SDK_INSTALL_DIR$/source/third_party/fatfs/lib/iar/m4f/fatfs.a</arg>
+      <arg>$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/source/ti/drivers/net/wifi/iar/rtos/simplelink.a</arg>
+      <arg>$SIMPLELINK_MSP432_SDK_INSTALL_DIR$/kernel/tirtos/packages/ti/dpl/lib/dpl_msp432p401x.arm4f</arg>
+      <arg>$SIMPLELINK_MSP432_SDK_INSTALL_DIR$/source/ti/devices/msp432p4xx/driverlib/iar/msp432p4xx_driverlib.a</arg>
+      <arg>--silent</arg>
+      <arg>--cpu=Cortex-M4F</arg>
+    </args>
+  </linkerExtraOptions>
+
+  <customBuildTools>
+  </customBuildTools>
+
+  <heaps>
+    <heap> <!-- If omitted, id="0" -->
+      <size>0</size>
+    </heap>
+    <heap id="1">
+      <size>0</size>
+    </heap>
+  </heaps>
+  <stacks>
+    <stack> <!-- If omitted, id="0" -->
+      <size>512</size>
+    </stack>
+  </stacks>
+
+  <preBuild>
+    <command>iarbuild.exe $SIMPLELINK_MSP432_SDK_INSTALL_DIR$/kernel/tirtos/builds/MSP_EXP432P401R/release/iar/tirtos_builds_MSP_EXP432P401R_release.ewp Debug -log all</command>
+  </preBuild>
+
+  <files>
+      <path copyTo="$PROJ_DIR$/ota_extended.h">$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/examples/rtos/MSP_EXP432P401R/demos/cloud_ota/ota_extended.h</path>
+      <path copyTo="$PROJ_DIR$/msp432p401_bootloader.c">$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/examples/rtos/MSP_EXP432P401R/demos/cloud_ota/msp432p401_bootloader.c</path>
+      <path copyTo="$PROJ_DIR$/uart_term.c">$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/examples/rtos/MSP_EXP432P401R/demos/cloud_ota/uart_term.c</path>
+      <path copyTo="$PROJ_DIR$/uart_term.h">$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/examples/rtos/MSP_EXP432P401R/demos/cloud_ota/uart_term.h</path>
+      <path copyTo="$PROJ_DIR$/ti_drivers_net_wifi_config.c">$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/examples/rtos/MSP_EXP432P401R/demos/cloud_ota/ti_drivers_net_wifi_config.c</path>
+      <path copyTo="$PROJ_DIR$/appConfig.h">$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/examples/rtos/MSP_EXP432P401R/demos/cloud_ota/appConfig.h</path>
+      <path copyTo="$PROJ_DIR$/platform.h">$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/examples/rtos/MSP_EXP432P401R/demos/cloud_ota/platform.h</path>
+      <path copyTo="$PROJ_DIR$/cloud_ota.c">$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/examples/rtos/MSP_EXP432P401R/demos/cloud_ota/cloud_ota.c</path>
+      <path copyTo="$PROJ_DIR$/cloud_ota_MSP_EXP432P401R_TIRTOS.icf">$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/examples/rtos/MSP_EXP432P401R/demos/cloud_ota/cloud_ota_MSP_EXP432P401R_TIRTOS.icf</path>
+      <path copyTo="$PROJ_DIR$/cloud_ota.h">$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/examples/rtos/MSP_EXP432P401R/demos/cloud_ota/cloud_ota.h</path>
+      <path copyTo="$PROJ_DIR$/platform.c">$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/examples/rtos/MSP_EXP432P401R/demos/cloud_ota/platform.c</path>
+      <path copyTo="$PROJ_DIR$/README.html">$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/examples/rtos/MSP_EXP432P401R/demos/cloud_ota/README.html</path>
+      <path copyTo="$PROJ_DIR$/main_tirtos.c">$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/examples/rtos/MSP_EXP432P401R/demos/cloud_ota/tirtos/main_tirtos.c</path>
+      <path copyTo="$PROJ_DIR$/MSP_EXP432P401R_TIRTOS.icf">$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/examples/rtos/MSP_EXP432P401R/demos/cloud_ota/tirtos/iar/MSP_EXP432P401R_TIRTOS.icf</path>
+      <path copyTo="$PROJ_DIR$/Board.html">$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/examples/rtos/MSP_EXP432P401R/demos/cloud_ota/Board.html</path>
+      <path copyTo="$PROJ_DIR$/ti_drivers_config.h">$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/examples/rtos/MSP_EXP432P401R/demos/cloud_ota/ti_drivers_config.h</path>
+      <path copyTo="$PROJ_DIR$/ti_drivers_config.c">$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/examples/rtos/MSP_EXP432P401R/demos/cloud_ota/ti_drivers_config.c</path>
+  </files>
+</iarProjectConnection>

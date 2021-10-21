@@ -1,0 +1,21 @@
+[
+    {
+        "files": [
+            "+../../uart_term.c -> uart_term.c",
+            "+../../uart_term.h -> uart_term.h",
+            "+../../ti_drivers_net_wifi_config.c -> ti_drivers_net_wifi_config.c",
+            "+../main_tirtos.c -> main_tirtos.c",
+            "+../../mqtt_client_app.c -> mqtt_client_app.c",
+            "+../../mqtt_if.c -> mqtt_if.c",
+            "+../../mqtt_if.h -> mqtt_if.h",
+            "+../../debug_if.h -> debug_if.h",
+            "+../../network_if.h -> network_if.h",
+            "+../../README.html -> README.html",
+            "+../../network_if.c -> network_if.c",
+            "+../../Board.html -> Board.html",
+            "+../../ti_drivers_config.h -> ti_drivers_config.h",
+            "+MSP_EXP432E401Y_TIRTOS.cmd -> MSP_EXP432E401Y_TIRTOS.cmd",
+            "+../../ti_drivers_config.c -> ti_drivers_config.c"
+        ]
+    }
+]

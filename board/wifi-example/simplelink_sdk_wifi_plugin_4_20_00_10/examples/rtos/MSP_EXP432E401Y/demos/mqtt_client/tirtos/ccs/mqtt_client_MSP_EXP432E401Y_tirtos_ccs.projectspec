@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectSpec>
+    <applicability>
+        <when>
+            <context
+                deviceFamily="MSP432"
+                deviceId="MSP432E401Y"
+            />
+        </when>
+    </applicability>
+
+    <import spec="${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/kernel/tirtos/builds/MSP_EXP432E401Y/release/ccs/tirtos_builds_MSP_EXP432E401Y_release_ccs.projectspec"/>
+
+    <project
+        title="MQTT Client App"
+        name="mqtt_client_MSP_EXP432E401Y_tirtos_ccs"
+        toolChain="TI"
+        connection="TIXDS110_Connection.xml"
+        device="MSP432E401Y"
+        ignoreDefaultDeviceSettings="true"
+        ignoreDefaultCCSSettings="true"
+        references="tirtos_builds_MSP_EXP432E401Y_release_ccs"
+        products="com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN"
+        compilerBuildOptions="
+            -I${PROJECT_ROOT}
+            -I${COM_TI_SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR}/source
+            -I${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/source/third_party/CMSIS/Include
+            -I${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/source/third_party/mbedtls/include/
+            --advice:power=none
+            -I${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/source/ti/posix/ccs
+            --silicon_version=7M4
+            --code_state=16
+            --little_endian
+            --display_error_number
+            --diag_warning=255
+            --diag_wrap=off
+            --gen_func_subsections=on
+            --float_support=FPv4SPD16
+            --symdebug:dwarf
+            -I${CG_TOOL_ROOT}/include
+        "
+        linkerBuildOptions="
+             -l${COM_TI_SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR}/source/ti/net/mqtt/lib/ccs/m4f/mqtt_release.a
+             -l${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/source/ti/display/lib/display.aem4f
+             -l${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/source/ti/drivers/lib/drivers_msp432e4.aem4f
+             -l${COM_TI_SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR}/source/ti/net/lib/ccs/m4f/slnetsock_release.a
+             -l${COM_TI_SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR}/source/ti/drivers/net/wifi/slnetif/ccs/Release/slnetifwifi.a
+             -l${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/source/third_party/fatfs/lib/ccs/m4f/fatfs.a
+             -l${COM_TI_SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR}/source/ti/drivers/net/wifi/ccs/rtos/simplelink.a
+             -l${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/kernel/tirtos/packages/ti/dpl/lib/dpl_msp432e4.aem4f
+             -l${GENERATED_LIBRARIES}
+             -l${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/source/ti/devices/msp432e4/driverlib/lib/ccs/m4f/msp432e4_driverlib.a
+             --warn_sections
+             --display_error_number
+             --diag_wrap=off
+             --rom_model
+             -i${CG_TOOL_ROOT}/lib
+             -llibc.a
+        "
+        preBuildStep="
+        "
+        postBuildStep="
+        "
+        description="MQTT Client  demo application">
+
+        <property name="buildProfile" value="release"/>
+        <property name="isHybrid" value="true"/>
+        <group id="mqtt_client.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN.MSP_EXP432E401Y.demos.TI"/>
+        <file path="../../uart_term.c" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../uart_term.h" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../ti_drivers_net_wifi_config.c" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../tirtos/main_tirtos.c" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../mqtt_client_app.c" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../mqtt_if.c" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../mqtt_if.h" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../debug_if.h" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../network_if.h" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../README.html" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../network_if.c" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../Board.html" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../ti_drivers_config.h" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../tirtos/ccs/MSP_EXP432E401Y_TIRTOS.cmd" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../ti_drivers_config.c" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+    </project>
+</projectSpec>
+

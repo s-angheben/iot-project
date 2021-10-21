@@ -1,0 +1,27 @@
+[
+    {
+        "files": [
+            "+../../msp432p4111_bootloader.c -> msp432p4111_bootloader.c",
+            "+../../ota_extended.h -> ota_extended.h",
+            "+../../uart_term.c -> uart_term.c",
+            "+../../uart_term.h -> uart_term.h",
+            "+../../ti_drivers_net_wifi_config.c -> ti_drivers_net_wifi_config.c",
+            "+../../ota_report_server_task.h -> ota_report_server_task.h",
+            "+../../ota_report_server_task.c -> ota_report_server_task.c",
+            "+MSP_EXP432P4111_TIRTOS.lds -> MSP_EXP432P4111_TIRTOS.lds",
+            "+../../platform.h -> platform.h",
+            "+../../local_ota.c -> local_ota.c",
+            "+../../local_ota_task.h -> local_ota_task.h",
+            "+../../local_ota.h -> local_ota.h",
+            "+../../link_local_task.h -> link_local_task.h",
+            "+../../local_ota_task.c -> local_ota_task.c",
+            "+../../platform.c -> platform.c",
+            "+../../link_local_task.c -> link_local_task.c",
+            "+../../README.html -> README.html",
+            "+../main_tirtos.c -> main_tirtos.c",
+            "+../../Board.html -> Board.html",
+            "+../../ti_drivers_config.h -> ti_drivers_config.h",
+            "+../../ti_drivers_config.c -> ti_drivers_config.c"
+        ]
+    }
+]

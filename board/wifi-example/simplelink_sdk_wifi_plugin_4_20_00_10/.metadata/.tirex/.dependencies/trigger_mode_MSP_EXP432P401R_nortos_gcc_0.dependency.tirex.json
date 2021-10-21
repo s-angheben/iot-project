@@ -1,0 +1,18 @@
+[
+    {
+        "files": [
+            "+../uart_term.c -> uart_term.c",
+            "+../uart_term.h -> uart_term.h",
+            "+../ti_drivers_net_wifi_config.c -> ti_drivers_net_wifi_config.c",
+            "+../main_nortos.c -> main_nortos.c",
+            "+../mqueue_nortos.c -> mqueue_nortos.c",
+            "+../mqueue.h -> mqueue.h",
+            "+../trigger_mode.c -> trigger_mode.c",
+            "+../README.html -> README.html",
+            "+../Board.html -> Board.html",
+            "+../ti_drivers_config.h -> ti_drivers_config.h",
+            "+../ti_drivers_config.c -> ti_drivers_config.c",
+            "+MSP_EXP432P401R_NoRTOS.lds -> MSP_EXP432P401R_NoRTOS.lds"
+        ]
+    }
+]

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IAR Project Connection File -->
+
+<iarProjectConnection version="1.8" name="trigger_mode" oneShot="true"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema"
+  xsi:noNamespaceSchemaLocation="IarProjectConnection_1.8.xsd">
+
+  <device>
+    <name>MSP432P401R</name>
+  </device>
+
+  <includePath>
+    <path>$PROJ_DIR$</path>
+    <path>$SIMPLELINK_MSP432_SDK_INSTALL_DIR$/source</path>
+    <path>$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/source</path>
+    <path>$SIMPLELINK_MSP432_SDK_INSTALL_DIR$/source/third_party/CMSIS/Include</path>
+    <path>$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/source/third_party/mbedtls/include/</path>
+    <path>$SIMPLELINK_MSP432_SDK_INSTALL_DIR$/kernel/nortos</path>
+    <path>$SIMPLELINK_MSP432_SDK_INSTALL_DIR$/kernel/nortos/posix</path>
+  </includePath>
+
+  <defines>
+    <define>__MSP432P401R__</define>
+    <define>DeviceFamily_MSP432P401x</define>
+    <define>NORTOS_SUPPORT</define>
+  </defines>
+
+  <extraOptions>
+      <arg></arg>
+      <arg>--debug</arg>
+      <arg>--silent</arg>
+      <arg>-e</arg>
+      <arg>--aeabi</arg>
+      <arg>--thumb</arg>
+      <arg>--diag_suppress=Pa050</arg>
+  </extraOptions>
+
+  <asmIncludePath>
+    <path>$PROJ_DIR$</path>
+  </asmIncludePath>
+
+  <asmDefines>
+  </asmDefines>
+
+  <linkerFile>
+    <override>true</override>
+    <path>$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/examples/nortos/MSP_EXP432P401R/demos/trigger_mode/iar/MSP_EXP432P401R_NoRTOS.icf</path>
+  </linkerFile>
+
+  <linkerExtraOptions>
+    <args>
+      <arg>$SIMPLELINK_MSP432_SDK_INSTALL_DIR$/source/ti/display/lib/display.arm4f</arg>
+      <arg>$SIMPLELINK_MSP432_SDK_INSTALL_DIR$/source/ti/drivers/lib/drivers_msp432p401x.arm4f</arg>
+      <arg>$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/source/ti/drivers/net/wifi/slnetif/iar/Release/slnetifwifi.a</arg>
+      <arg>$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/source/ti/net/lib/iar/m4f/slnetsock_release.a</arg>
+      <arg>$SIMPLELINK_MSP432_SDK_INSTALL_DIR$/source/third_party/fatfs/lib/iar/m4f/fatfs.a</arg>
+      <arg>$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/source/ti/drivers/net/wifi/iar/nortos/simplelink.a</arg>
+      <arg>$SIMPLELINK_MSP432_SDK_INSTALL_DIR$/kernel/nortos/lib/nortos_msp432p401x.arm4f</arg>
+      <arg>$SIMPLELINK_MSP432_SDK_INSTALL_DIR$/source/ti/devices/msp432p4xx/driverlib/iar/msp432p4xx_driverlib.a</arg>
+      <arg>--silent</arg>
+      <arg>--cpu=Cortex-M4F</arg>
+    </args>
+  </linkerExtraOptions>
+
+  <customBuildTools>
+  </customBuildTools>
+
+  <heaps>
+    <heap> <!-- If omitted, id="0" -->
+      <size>0</size>
+    </heap>
+    <heap id="1">
+      <size>0</size>
+    </heap>
+  </heaps>
+  <stacks>
+    <stack> <!-- If omitted, id="0" -->
+      <size>512</size>
+    </stack>
+  </stacks>
+
+
+  <files>
+      <path copyTo="$PROJ_DIR$/uart_term.c">$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/examples/nortos/MSP_EXP432P401R/demos/trigger_mode/uart_term.c</path>
+      <path copyTo="$PROJ_DIR$/uart_term.h">$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/examples/nortos/MSP_EXP432P401R/demos/trigger_mode/uart_term.h</path>
+      <path copyTo="$PROJ_DIR$/ti_drivers_net_wifi_config.c">$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/examples/nortos/MSP_EXP432P401R/demos/trigger_mode/ti_drivers_net_wifi_config.c</path>
+      <path copyTo="$PROJ_DIR$/main_nortos.c">$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/examples/nortos/MSP_EXP432P401R/demos/trigger_mode/main_nortos.c</path>
+      <path copyTo="$PROJ_DIR$/mqueue_nortos.c">$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/examples/nortos/MSP_EXP432P401R/demos/trigger_mode/mqueue_nortos.c</path>
+      <path copyTo="$PROJ_DIR$/mqueue.h">$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/examples/nortos/MSP_EXP432P401R/demos/trigger_mode/mqueue.h</path>
+      <path copyTo="$PROJ_DIR$/trigger_mode.c">$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/examples/nortos/MSP_EXP432P401R/demos/trigger_mode/trigger_mode.c</path>
+      <path copyTo="$PROJ_DIR$/README.html">$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/examples/nortos/MSP_EXP432P401R/demos/trigger_mode/README.html</path>
+      <path copyTo="$PROJ_DIR$/Board.html">$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/examples/nortos/MSP_EXP432P401R/demos/trigger_mode/Board.html</path>
+      <path copyTo="$PROJ_DIR$/ti_drivers_config.h">$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/examples/nortos/MSP_EXP432P401R/demos/trigger_mode/ti_drivers_config.h</path>
+      <path copyTo="$PROJ_DIR$/MSP_EXP432P401R_NoRTOS.icf">$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/examples/nortos/MSP_EXP432P401R/demos/trigger_mode/iar/MSP_EXP432P401R_NoRTOS.icf</path>
+      <path copyTo="$PROJ_DIR$/ti_drivers_config.c">$SIMPLELINK_MSP432_SDK_WIFI_PLUGIN_INSTALL_DIR$/examples/nortos/MSP_EXP432P401R/demos/trigger_mode/ti_drivers_config.c</path>
+  </files>
+</iarProjectConnection>
