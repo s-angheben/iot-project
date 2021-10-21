@@ -3,7 +3,7 @@ const fs = require('fs');
 const app = require('express')();
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
-const port = process.env.PORT || 3333;
+const port = process.env.PORT || 3030;
 
 var mqtt = require('mqtt')
 var client = mqtt.connect('mqtt:192.168.1.6:1883')
@@ -15,7 +15,7 @@ const dbclient = new Client({
   user: 'pi',
   host: '192.168.1.6',
   database: 'test',
-  password: 'pass',
+  password: 'dayiotdb',
   port: 5432,
 })
 process.env.TZ = 'Europe/Rome'
@@ -33,32 +33,33 @@ client.on('message', (topic, message) => {
         try {
             var mess = JSON.parse(message)
 //            console.log(mess)
+            messData = JSON.stringify(mess)
+            var querytext
+            if (mess.water == 0) {
+              querytext  = qtext0+messData+'\') as J, (select current_timestamp, coalesce ((select dayinfo.time as startTime from ( select time from dayinfo where water = 0 order by time desc limit 1 ) as t1, dayinfo where dayinfo.time > t1.time order by dayinfo.time asc limit 1), NULL) as startTime) as T;' 
+            } else if (mess.water = 1) {
+              querytext = qtext1+messData+'\') as J;'
+            } else {
+              alert("error")
+            }
+            dbclient.query(querytext, (err, res) => {
+              if(err!=null) {
+                console.log(err)
+              }
+            })
+            dbclient.query(qinfo, (err, res) => {
+              mess['time'] = res.rows[0].time
+              mess['count'] = res.rows[0].count
+              mess['seconds'] = res.rows[0].seconds
+            //      console.log(mess)
+              io.emit('chat message', mess)
+            })
         } catch(e) {
             console.log("error parsing json")
             //alert(e); // error in the above string (in this case, yes)!
         }
     }
-    messData = JSON.stringify(mess)
-    var querytext
-    if (mess.water == 0) {
-      querytext  = qtext0+messData+'\') as J, (select current_timestamp, coalesce ((select dayinfo.time as startTime from ( select time from dayinfo where water = 0 order by time desc limit 1 ) as t1, dayinfo where dayinfo.time > t1.time order by dayinfo.time asc limit 1), NULL) as startTime) as T;' 
-    } else if (mess.water = 1) {
-      querytext = qtext1+messData+'\') as J;'
-    } else {
-      alert("error")
-    }
-    dbclient.query(querytext, (err, res) => {
-      if(err!=null) {
-        console.log(err)
-      }
-    })
-    dbclient.query(qinfo, (err, res) => {
-      mess['time'] = res.rows[0].time
-      mess['count'] = res.rows[0].count
-      mess['seconds'] = res.rows[0].seconds
-//      console.log(mess)
-      io.emit('chat message', mess)
-    })
+
     
     //io.emit('chat message', mess)
 })
