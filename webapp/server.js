@@ -26,10 +26,10 @@ const qtext1 = 'insert into dayinfo(time, mode, water, umidity, temperature, lig
 const qinfo = 'select F.count, F.time, EXTRACT(EPOCH FROM F.time) as seconds from (select P.count, (CASE WHEN S.interv is NULL THEN P.sum WHEN P.sum is NULL THEN S.interv ELSE P.sum + S.interv END) as time from (select COUNT(D.ttime), SUM(D.ttime) from dayinfo D where water = 0 group by water) as P, (select coalesce ((select current_timestamp - dayinfo.time as interv  from ( select time from dayinfo where water = 0 order by time desc limit 1 ) as t1,  dayinfo where dayinfo.time > t1.time order by dayinfo.time asc limit 1), NULL) as interv) as S) as F;'
 
 client.on('message', (topic, message) => {
-    if(message) {
+   if(message) {
         try {
             var mess = JSON.parse(message)
-//            console.log(mess)
+            console.log(mess)
             messData = JSON.stringify(mess)
             var querytext
             if (mess.water == 0) {
@@ -53,11 +53,10 @@ client.on('message', (topic, message) => {
             })
         } catch(e) {
             console.log("error parsing json")
-            //alert(e); // error in the above string (in this case, yes)!
+//            alert(e); // error in the above string (in this case, yes)!
         }
     }
 
-    
     //io.emit('chat message', mess)
 })
 
