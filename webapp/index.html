@@ -139,6 +139,14 @@
             consumption.textContent = "Water consumption:\t\t" + "0 liters";
         }
 
+         var prezzo = document.createElement('li');
+         if (msg.seconds != undefined) {
+             money = msg.seconds * 0.5 * 0.00236
+             prezzo.textContent = "Price:\t\t" + money.toFixed(4) + "€";
+         } else {
+             prezzo.textContent = "Price:\t\t" + "0 €";
+         }
+
         messages.appendChild(water);
         messages.appendChild(mode);
         messages.appendChild(umidity);
@@ -148,6 +156,8 @@
         messages.appendChild(count)
         messages.appendChild(time);
         messages.appendChild(consumption)
+        messages.appendChild(prezzo)
+
 
 
     //    window.scrollTo(0, document.body.scrollHeight);
