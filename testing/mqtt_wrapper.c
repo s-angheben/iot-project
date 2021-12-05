@@ -27,6 +27,7 @@ int msgarrvd(void *context, char *topicName, int topicLen, MQTTClient_message *m
     int i;
     char* payloadptr;
 
+    memset(msg_control,0,MSGSIZE);
     strncpy(msg_control, message->payload, message->payloadlen);
     struct msgQueue queueElement;  
     queueElement.event = APP_COMMAND_RECEIVED;

@@ -24,7 +24,7 @@ struct msgQueue
     char* payload;
 };
 
-#define MSGSIZE 100
+#define MSGSIZE 300
 
 typedef struct {
     int mode;
@@ -34,16 +34,17 @@ typedef struct {
     float light;
 } info;
 
-/*
-info data_info;
-char msg_info_data[MSGSIZE];
-char msg_control[MSGSIZE];
-*/
+typedef struct {
+    int m3_humidity;
+    int m3_delta;
+} config;
 
-void formatdata(char msg[], info* info_data);
+void formatdata(char msg[], info* info_data, config* config_data);
 
 void sendinfo();
 
 void initialize_info(info* info_data);
+
+void initialize_config(config* config_data);
 
 #endif

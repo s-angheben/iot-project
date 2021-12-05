@@ -29,7 +29,6 @@ client.on('message', (topic, message) => {
    if(message) {
         try {
             var mess = JSON.parse(message)
-            console.log(mess)
             messData = JSON.stringify(mess)
             var querytext
             if (mess.water == 0) {
@@ -39,6 +38,7 @@ client.on('message', (topic, message) => {
             } else {
               alert("error")
             }
+            console.log(mess)
             dbclient.query(querytext, (err, res) => {
               if(err!=null) {
                 console.log(err)

@@ -146,17 +146,41 @@
          } else {
              prezzo.textContent = "Price:\t\t" + "0 €";
          }
+        
+        var saved = false;
+        var m3_humidity = document.createElement('li');
+        if (msg.m3_humidity == undefined && !saved) {
+            m3_humidity.textContent = "mode automatic:\t\thumidity limit: undefined";     
+        } else {
+          m3_humidity.textContent = "mode automatic:\t\thumidity limit: " + msg.m3_humidity;
+          saved = true
+        }
 
+        var m3_delta = document.createElement('li');
+        if (msg.m3_delta == undefined && !saved) {
+            m3_delta.textContent = "mode automatic:\t\thumidity delta: undefined";
+        } else {
+            m3_delta.textContent = "mode automatic:\t\thumidity delta: " + msg.m3_delta;
+            saved = true
+        }
+        
+
+        // INFO
         messages.appendChild(water);
         messages.appendChild(mode);
         messages.appendChild(umidity);
         messages.appendChild(temperature);
         messages.appendChild(light);
+        messages.appendChild(space);
+        // CONFIG
+        messages.appendChild(m3_humidity);
+        messages.appendChild(m3_delta);
+        // CALC
         messages.appendChild(space)
-        messages.appendChild(count)
+        messages.appendChild(count);
         messages.appendChild(time);
-        messages.appendChild(consumption)
-        messages.appendChild(prezzo)
+        messages.appendChild(consumption);
+        messages.appendChild(prezzo);
 
 
 
