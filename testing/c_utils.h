@@ -41,7 +41,7 @@ typedef struct {
 
 void formatdata(char msg[], info* info_data, config* config_data);
 
-void sendinfo();
+void sendinfo(info* p_info_data, config* p_config_data);
 
 void initialize_info(info* info_data);
 

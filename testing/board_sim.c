@@ -87,9 +87,10 @@ int main(int argc, char* argv[])
             printf("COMMAND RECEIVED: %s\n", msg_control);
             p_msg = msg_control;
             if (*p_msg == 'w') {
-                if ((char)msg_control[1] == '1') {
-                    printf("\tset water_pin to HIGH\n");
-                    data_info.water = 1;
+              p_msg++;
+              if (*p_msg == '1') {
+                printf("\tset water_pin to HIGH\n");
+                data_info.water = 1;
               } else {
                 printf("\tset water_pin to LOW\n");
                 data_info.water = 0;
