@@ -1,114 +1,54 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Socket.IO chat</title>
-    
-    <style>
-      body { margin: 0; padding-bottom: 3rem; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    <head>
+        <title>Socket.IO chat</title>
+    </head>
+    <body>
+        <table class="table table-striped table-responsive-md btn-table">
 
-     #channel { background: rgba(0, 0, 0, 0.15); padding: 0.25rem; position: fixed; bottom: 0; left: 0; right: 0; display: flex; height: 3rem; box-sizing: border-box; backdrop-filter: blur(10px); }
-     #command { border: none; padding: 0 1rem; flex-grow: 1; border-radius: 2rem; margin: 0.25rem; }
-     #command:focus { outline: none; }
-     #channel > button { background: #333; border: none; padding: 0 1rem; margin: 0.25rem; border-radius: 3px; outline: none; color: #fff; }
-
-     #messages { list-style-type: none; margin: 0; padding: 0; }
-     #messages > li { padding: 0.5rem 1rem; }
-     #messages > li:nth-child(odd) { background: #efefef; }
-    </style>
-  
-  </head>
-  <body>
-    <ul id="messages"></ul>
-    <form id="channel" action="">
-      <input id="command" autocomplete="off" /><button>Send</button>
-    </form>
-
-    <br>
-    <label>Water: </label>
-    <button id="water_open"> Open Water </button>
-    <button id="water_close"> Close Water </button>
-    <br>
-    <br>
-
-    <label>Mode: </label>
-    <button id="m1"> Off/Manual </button>
-    <button id="m2"> Sheduled </button>
-    <button id="m3"> Automatic </button>
-    <br>
-    <br>
-
-    <label>Config: </label>
-    <br>
-
-    <form id="time_setter">
-      <label for="appt">time:</label>
-      <input type="time" id="appt" name="appt"> <button> set</button>
-    </form>
-
-    <form id="set_humidity">
-      <label for="quantity">humidity limit:</label>
-      <input type="number" id="quantity_h" name="quantity" min="1" max="99"> <button> set</button>
-    </form>
-
-    <form id="set_delta">
-      <label for="quantity">humidity delta:</label>
-      <input type="number" id="quantity_d" name="quantity" min="3" max="14"> <button> set</button>
-    </form>
-
-    <script src="/socket.io/socket.io.js"></script>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Username</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>
+                        <button type="button" class="btn btn-indigo btn-sm m-0">Button</button>
+                    </td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>
+                        <button type="button" class="btn btn-indigo btn-sm m-0">Button</button>
+                    </td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>
+                        <button type="button" class="btn btn-indigo btn-sm m-0">Button</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <script src="/socket.io/socket.io.js"></script>
 
     <script>
       var socket = io();
 
       var messages = document.getElementById('messages');
-      var form = document.getElementById('channel');
-      var input = document.getElementById('command');
-      var water_open = document.getElementById('water_open');
-      var water_close = document.getElementById('water_close');
-      var m1 = document.getElementById('m1');
-      var m2 = document.getElementById('m2');
-      var m3 = document.getElementById('m3');
-      var set_h = document.getElementById('set_humidity');
-      var set_h_input = document.getElementById('quantity_h');
-      var set_d = document.getElementById('set_delta');
-      var set_d_input = document.getElementById('quantity_d');
-
-      
-      water_open.addEventListener('click', function() {
-        socket.emit('chat message', "w1");
-      });
-
-      water_close.addEventListener('click', function() {
-        socket.emit('chat message', "w0");
-      });
-
-      m1.addEventListener('click', function() {
-        socket.emit('chat message', "m1");
-      });
-
-      m2.addEventListener('click', function() {
-        socket.emit('chat message', "m2");
-      });
-
-      m3.addEventListener('click', function() {
-        socket.emit('chat message', "m3");
-      });
-
-      set_h.addEventListener('submit', function(e) {
-        e.preventDefault();
-        if (set_h_input.value) {
-          socket.emit('chat message', "sh" + set_h_input.value);
-          set_h_input.value = '';
-        }
-      });
-
-      set_d.addEventListener('submit', function(e) {
-        e.preventDefault();
-        if (set_d_input.value) {
-          socket.emit('chat message', "sd" + set_d_input.value);
-          set_d_input.value = '';
-        }
-      });
+      var form = document.getElementById('form');
+      var input = document.getElementById('input');
 
       form.addEventListener('submit', function(e) {
         e.preventDefault();
@@ -268,5 +208,4 @@
     //    window.scrollTo(0, document.body.scrollHeight);
       });
     </script>
-  </body>
-</html>
+    </body>
