@@ -1,4 +1,6 @@
 #### Info
 
-Nella cartella *tirtos_builds_MSP_EXP432P4111_release_ccs* c'e' il sistema operativo ti rtos, e' staccato dal progetto di default in ccstudio per non ricompilare ogni volta tutto.
-Nella cartella *project* c'e' il progetto, in particolare e' importante il file *mqtt_client_app.c*
+In the folder *tirtos_builds_MSP_EXP432P4111_release_ccs* there is the operating system ti rtos, is separated from the project folder because in this way ccstudio don't recompile all the things every time.
+In the folder *project_ok* there is tha actual code of the project, in particular the file *mqtt_client_app.c* is the core of the application.
+
+
