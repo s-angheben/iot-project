@@ -10,13 +10,15 @@ In this project the board communicate the data created by the sensors throght th
 
 ## Mode state of the system
 The system can be on three different State
-  - Off or Manual
+  - **Off or Manual**
 
     No automation is done, you can open and close the water with the web interface or with the button on the board.
-  - Scheduled
-  Not implemented! The idea is to set the time and the period.
-  - Automatic
-  A humidity and one hysteresis value must be set and the irrigation system try to keep the humidity in that range opening and closing the water when it is necessary
+  - **Scheduled**
+
+    Not implemented! The idea is to set the time and the period.
+  - **Automatic**
+
+    A humidity and one hysteresis value must be set and the irrigation system try to keep the humidity in that range opening and closing the water when it is necessary
 
 ## What can be seen in the web interface?
 #### Values
@@ -46,11 +48,13 @@ The system can be on three different State
 ### the communication between the board and the web server
 This is done with the MQTT protocol where 2 topic are used.
 
- - infoTopic (board -> webserver)
+ - **infoTopic** (board -> webserver)
+
    Used to communicate the state (eg: water open) and the sensor data to the webserver.
    This communication is synchronous if no command is sent to the board or there are no interaction (eg: button click) because the state and the data is sent every n seconds. But when an action listed above occurs the borad replies immediately, in this way the system is more responsive in the web interface.
 
- - controlTopic (webserver -> board)
+ - **controlTopic** (webserver -> board)
+
    Used to send commands from the web interface to the board.
 
 ### the sensors reading
