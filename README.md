@@ -59,10 +59,12 @@ This is done with the MQTT protocol where 2 topic are used.
 
 ### the sensors reading
  - DHT11
- can be see in the file *workspace/project_ok/dht11.h* and *workspace/project_ok/dht11.c*, reads the temperature and humidity
+
+   can be see in the file *workspace/project_ok/dht11.h* and *workspace/project_ok/dht11.c*, reads the temperature and humidity
 
  - photoresistor
- can be see in the file *workspace/project_ok/photoresistor.h* and *workspace/project_ok/photoresistor.c*, reads the light value
+
+   can be see in the file *workspace/project_ok/photoresistor.h* and *workspace/project_ok/photoresistor.c*, reads the light value
 
 ### physical interaction and behavior
 #### Input
