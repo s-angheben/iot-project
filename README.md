@@ -67,10 +67,13 @@ This is done with the MQTT protocol where 2 topic are used.
 ### physical interaction and behavior
 #### Input
  - Button1
-   Used to disconnect from the wifi
+
+     Used to disconnect from the wifi
  - Button2
-   Used to open or close the water, depends on the previus state
+
+     Used to open or close the water, depends on the previus state
 
 #### Output
  - Red Led
-   On indicates the water open
+
+    On indicates the water open
