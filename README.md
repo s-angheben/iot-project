@@ -11,6 +11,7 @@ In this project the board communicate the data created by the sensors throght th
 ## Mode state of the system
 The system can be on three different State
   - Off or Manual
+
   No automation is done, you can open and close the water with the web interface or with the button on the board.
   - Scheduled
   Not implemented! The idea is to set the time and the period.
