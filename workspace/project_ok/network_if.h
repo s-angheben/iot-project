@@ -59,11 +59,11 @@ extern "C"
 /* is executed.                                                               */
 
 /* AP SSID                                                                    */
-#define SSID_NAME               "uaifai"
+#define SSID_NAME               "wifi_SSID"
 /* Security type (OPEN or WEP or WPA)                                         */
 #define SECURITY_TYPE           SL_WLAN_SEC_TYPE_WPA_WPA2
 /* Password of the secured AP                                                 */
-#define SECURITY_KEY            "5JYSRJR34ACMC46H"
+#define SECURITY_KEY            "mypass"
 
 #define SSID_AP_MODE            "<ap-ssid>"
 #define SEC_TYPE_AP_MODE        SL_WLAN_SEC_TYPE_OPEN
