@@ -12,11 +12,11 @@ var topic = 'infoTopic'
 //DB
 const { Client } = require('pg')
 const dbclient = new Client({
-  user: 'pi',
-  host: '192.168.1.6',
-  database: 'test',
-  password: 'dayiotdb',
-  port: 5432,
+  user: 'user',
+  host: 'ip'
+  database: 'dbname',
+  password: 'dbpass',
+  port: 'port',
 })
 process.env.TZ = 'Europe/Rome'
 
