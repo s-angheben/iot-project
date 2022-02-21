@@ -31,7 +31,7 @@ typedef struct {
     int water;
     int temperature;
     int humidity;
-    float light;
+    int light;
 } info;
 
 typedef struct {

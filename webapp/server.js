@@ -12,17 +12,17 @@ var topic = 'infoTopic'
 //DB
 const { Client } = require('pg')
 const dbclient = new Client({
-  user: 'user',
-  host: 'ip'
-  database: 'dbname',
-  password: 'dbpass',
-  port: 'port',
+  user: 'pi',
+  host: '192.168.1.6',
+  database: 'test',
+  password: 'dayiotdb',
+  port: '5432',
 })
 process.env.TZ = 'Europe/Rome'
 
 dbclient.connect()
-const qtext0 = 'insert into dayinfo(time, mode, water, umidity, temperature, light, ttime) select T.current_timestamp, J.mode, J.water, J.umidity, J.temperature, J.light, T.current_timestamp-T.startTime from json_populate_record(NULL::dayinfo, \''
-const qtext1 = 'insert into dayinfo(time, mode, water, umidity, temperature, light, ttime) select current_timestamp, J.mode, J.water, J.umidity, J.temperature, J.light, J.ttime from json_populate_record(NULL::dayinfo, \''
+const qtext0 = 'insert into dayinfo(time, mode, water, humidity, temperature, light, ttime) select T.current_timestamp, J.mode, J.water, J.humidity, J.temperature, J.light, T.current_timestamp-T.startTime from json_populate_record(NULL::dayinfo, \''
+const qtext1 = 'insert into dayinfo(time, mode, water, humidity, temperature, light, ttime) select current_timestamp, J.mode, J.water, J.humidity, J.temperature, J.light, J.ttime from json_populate_record(NULL::dayinfo, \''
 const qinfo = 'select F.count, F.time, EXTRACT(EPOCH FROM F.time) as seconds from (select P.count, (CASE WHEN S.interv is NULL THEN P.sum WHEN P.sum is NULL THEN S.interv ELSE P.sum + S.interv END) as time from (select COUNT(D.ttime), SUM(D.ttime) from dayinfo D where water = 0 group by water) as P, (select coalesce ((select current_timestamp - dayinfo.time as interv  from ( select time from dayinfo where water = 0 order by time desc limit 1 ) as t1,  dayinfo where dayinfo.time > t1.time order by dayinfo.time asc limit 1), NULL) as interv) as S) as F;'
 
 client.on('message', (topic, message) => {
@@ -38,7 +38,7 @@ client.on('message', (topic, message) => {
             } else {
               alert("error")
             }
-            console.log(mess)
+//            console.log(mess)
             dbclient.query(querytext, (err, res) => {
               if(err!=null) {
                 console.log(err)

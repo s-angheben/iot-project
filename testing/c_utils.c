@@ -26,11 +26,11 @@ void initialize_config(config* config_data) {
 void formatdata(char msg[], info* info_data, config* config_data) {
     memset(msg,0,MSGSIZE);
     if (config_data == NULL) {
-        snprintf(msg, MSGSIZE, "{\"water\": %d, \"mode\":%d, \"umidity\":%d, \"temperature\":%d, \"light\":24.3}",
-             info_data->water, info_data->mode, info_data->humidity, info_data->temperature);
+        snprintf(msg, MSGSIZE, "{\"water\": %d, \"mode\":%d, \"humidity\":%d, \"temperature\":%d, \"light\":%d}",
+             info_data->water, info_data->mode, info_data->humidity, info_data->temperature, info_data->light);
     } else {
-        snprintf(msg, MSGSIZE, "{\"water\": %d, \"mode\":%d, \"umidity\":%d, \"temperature\":%d, \"light\":24.3, \"m3_humidity\":%d, \"m3_delta\":%d}",
-             info_data->water, info_data->mode, info_data->humidity, info_data->temperature, config_data->m3_humidity, config_data->m3_delta);
+        snprintf(msg, MSGSIZE, "{\"water\": %d, \"mode\":%d, \"humidity\":%d, \"temperature\":%d, \"light\":%d, \"m3_humidity\":%d, \"m3_delta\":%d}",
+             info_data->water, info_data->mode, info_data->humidity, info_data->temperature, info_data->light, config_data->m3_humidity, config_data->m3_delta);
     }
 
 }

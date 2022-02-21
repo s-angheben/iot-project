@@ -2,7 +2,7 @@
 <link_info>
    <banner>TI ARM Linker Unix v20.2.5.LTS</banner>
    <copyright>Copyright (c) 1996-2018 Texas Instruments Incorporated</copyright>
-   <link_time>0x61ebcddd</link_time>
+   <link_time>0x620d33cd</link_time>
    <link_errors>0x0</link_errors>
    <output_file>project_ok.out</output_file>
    <entry_point>
@@ -1352,15 +1352,8 @@
          <name>.text:formatdata</name>
          <load_address>0x9430</load_address>
          <run_address>0x9430</run_address>
-         <size>0x12e</size>
+         <size>0x12f</size>
          <input_file_ref idref="fl-4"/>
-      </object_component>
-      <object_component id="oc-fe3">
-         <name>.text</name>
-         <load_address>0x955e</load_address>
-         <run_address>0x955e</run_address>
-         <size>0x2</size>
-         <input_file_ref idref="fl-143"/>
       </object_component>
       <object_component id="oc-c5d">
          <name>.text:ti_sysbios_knl_Semaphore_pend__E</name>
@@ -1439,12 +1432,12 @@
          <size>0x112</size>
          <input_file_ref idref="fl-21"/>
       </object_component>
-      <object_component id="oc-11fb">
-         <name>.text:ti_sysbios_BIOS_nullFunc__I</name>
+      <object_component id="oc-fe3">
+         <name>.text</name>
          <load_address>0xa1b2</load_address>
          <run_address>0xa1b2</run_address>
          <size>0x2</size>
-         <input_file_ref idref="fl-15"/>
+         <input_file_ref idref="fl-143"/>
       </object_component>
       <object_component id="oc-169a">
          <name>.text:scalbn</name>
@@ -1599,6 +1592,13 @@
          <run_address>0xb5d4</run_address>
          <size>0xf6</size>
          <input_file_ref idref="fl-1f"/>
+      </object_component>
+      <object_component id="oc-11fb">
+         <name>.text:ti_sysbios_BIOS_nullFunc__I</name>
+         <load_address>0xb6ca</load_address>
+         <run_address>0xb6ca</run_address>
+         <size>0x2</size>
+         <input_file_ref idref="fl-15"/>
       </object_component>
       <object_component id="oc-f31">
          <name>.text:sl_SendTo</name>
@@ -69963,7 +69963,6 @@
             <object_component_ref idref="oc-1608"/>
             <object_component_ref idref="oc-1e57"/>
             <object_component_ref idref="oc-8d9"/>
-            <object_component_ref idref="oc-fe3"/>
             <object_component_ref idref="oc-c5d"/>
             <object_component_ref idref="oc-1f1b"/>
             <object_component_ref idref="oc-1686"/>
@@ -69975,7 +69974,7 @@
             <object_component_ref idref="oc-23c9"/>
             <object_component_ref idref="oc-fce"/>
             <object_component_ref idref="oc-255f"/>
-            <object_component_ref idref="oc-11fb"/>
+            <object_component_ref idref="oc-fe3"/>
             <object_component_ref idref="oc-169a"/>
             <object_component_ref idref="oc-226c"/>
             <object_component_ref idref="oc-1fb4"/>
@@ -69998,6 +69997,7 @@
             <object_component_ref idref="oc-eda"/>
             <object_component_ref idref="oc-1ae4"/>
             <object_component_ref idref="oc-14e3"/>
+            <object_component_ref idref="oc-11fb"/>
             <object_component_ref idref="oc-f31"/>
             <object_component_ref idref="oc-1e81"/>
             <object_component_ref idref="oc-2ae"/>
@@ -81497,7 +81497,7 @@
       </symbol>
       <symbol id="sm-f74">
          <name>ti_sysbios_BIOS_nullFunc__I</name>
-         <value>0xa1b3</value>
+         <value>0xb6cb</value>
          <object_component_ref idref="oc-11fb"/>
       </symbol>
       <symbol id="sm-f75">
@@ -85236,12 +85236,12 @@
       </symbol>
       <symbol id="sm-441b">
          <name>__aeabi_idiv0</name>
-         <value>0x955f</value>
+         <value>0xa1b3</value>
          <object_component_ref idref="oc-fe3"/>
       </symbol>
       <symbol id="sm-441c">
          <name>__aeabi_ldiv0</name>
-         <value>0x955f</value>
+         <value>0xa1b3</value>
          <object_component_ref idref="oc-fe3"/>
       </symbol>
       <symbol id="sm-442a">

@@ -24,7 +24,7 @@ void quit_mqtt_infoTopic();
 void quit_mqtt_controlTopic();
 void connect_mqtt_infoTopic();
 void connect_mqtt_controlTopic();
-int WifiInit();
+void WifiInit();
 
 
 #endif

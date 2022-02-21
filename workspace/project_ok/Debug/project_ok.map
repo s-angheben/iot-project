@@ -1,7 +1,7 @@
 ******************************************************************************
                   TI ARM Linker Unix v20.2.5                   
 ******************************************************************************
->> Linked Sat Jan 22 10:26:53 2022
+>> Linked Wed Feb 16 18:26:37 2022
 
 OUTPUT FILE NAME:   <project_ok.out>
 ENTRY POINT SYMBOL: "_c_int00"  address: 00013061
@@ -114,8 +114,8 @@ section   page    origin      length       input sections
                   000091ca    00000002                                   : _lock.c.obj (.text:_nop)
                   000091cc    00000134     simplelink.a : sl_socket.obj (.text:_SlSocketHandleAsync_StartTLS)
                   00009300    00000130     drivers_msp432p4x1xi.aem4f : UDMAMSP432.oem4f (.text:setupInterrupt)
-                  00009430    0000012e     mqtt_client_app.obj (.text:formatdata)
-                  0000955e    00000002     rtsv7M4_T_le_v4SPD16_eabi.lib : div0.asm.obj (.text)
+                  00009430    0000012f     mqtt_client_app.obj (.text:formatdata)
+                  0000955f    00000001     --HOLE-- [fill = 0]
                   00009560    0000012c     sysbios.aem4f : BIOS.obj (.text:ti_sysbios_knl_Semaphore_pend__E)
                   0000968c    00000128     simplelink.a : driver.obj (.text:_SlDrvClassifyRxMsg)
                   000097b4    00000124     rtsv7M4_T_le_v4SPD16_eabi.lib : _printfi.c.obj (.text:fcvt)
@@ -127,8 +127,8 @@ section   page    origin      length       input sections
                   00009e74    00000118                  : netapp.obj (.text:_SlNetAppHandleAsync_DnsGetHostByService)
                   00009f8c    00000114     rtsv7M4_T_le_v4SPD16_eabi.lib : fputs.c.obj (.text:fputs)
                   0000a0a0    00000112     mqtt_release.a : mqtt_common.oem4f (.text:MQTT_PacketRecv)
-                  0000a1b2    00000002     release_pem4f.oem4f (.text:ti_sysbios_BIOS_nullFunc__I)
-                  0000a1b4    00000110     rtsv7M4_T_le_v4SPD16_eabi.lib : s_scalbn.c.obj (.text:scalbn)
+                  0000a1b2    00000002     rtsv7M4_T_le_v4SPD16_eabi.lib : div0.asm.obj (.text)
+                  0000a1b4    00000110                                   : s_scalbn.c.obj (.text:scalbn)
                   0000a2c4    00000110                                   : strtoul.c.obj (.text:strtoul)
                   0000a3d4    00000108     slnetsock_release.a : slnetutils.oem4f (.text:SlNetUtil_str2BinIpV6)
                   0000a4dc    00000108     msp432p4xx_driverlib.lib : pcm.o (.text:__PCM_setCoreVoltageLevelAdvanced)
@@ -150,7 +150,7 @@ section   page    origin      length       input sections
                   0000b3e4    000000f8     simplelink.a : sl_socket.obj (.text:sl_Close)
                   0000b4dc    000000f8     mqtt_release.a : client_core.oem4f (.text:utf8ArraySend)
                   0000b5d4    000000f6                    : mqtt_net_func.oem4f (.text:MQTTNet_commOpen)
-                  0000b6ca    00000002     --HOLE-- [fill = 0]
+                  0000b6ca    00000002     release_pem4f.oem4f (.text:ti_sysbios_BIOS_nullFunc__I)
                   0000b6cc    000000f4     simplelink.a : sl_socket.obj (.text:sl_SendTo)
                   0000b7c0    000000f0     msp432p4xx_driverlib.lib : dma.o (.text:DMA_setChannelTransfer)
                   0000b8b0    000000f0     sysbios.aem4f : BIOS.obj (.text:pthread_create)
@@ -1386,7 +1386,7 @@ MODULE SUMMARY
        Module                       code    ro data   rw data
        ------                       ----    -------   -------
     ./
-       mqtt_client_app.obj          4453    68        1458   
+       mqtt_client_app.obj          4454    68        1458   
        network_if.obj               3859    82        116    
        mqtt_if.obj                  3408    0         56     
        ti_drivers_config.obj        42      371       1338   
@@ -1395,7 +1395,7 @@ MODULE SUMMARY
        main_tirtos.obj              104     0         0      
        photoresistor.obj            64      0         0      
     +--+----------------------------+-------+---------+---------+
-       Total:                       13236   521       3392   
+       Total:                       13237   521       3392   
                                                              
     /home/sam/workspace_final/tirtos_builds_MSP_EXP432P4111_release_ccs/Debug/configPkg/package/cfg/
        release_pem4f.oem4f          1790    1157      4380   
@@ -1567,7 +1567,7 @@ MODULE SUMMARY
        Stack:                       0       0         2048   
        Linker Generated:            0       934       0      
     +--+----------------------------+-------+---------+---------+
-       Grand Total:                 99625   4027      22452  
+       Grand Total:                 99626   4027      22452  
 
 
 LINKER GENERATED COPY TABLES
@@ -2054,8 +2054,8 @@ ffffffff  __TI_prof_data_start
 00006ad1  __aeabi_dsub                                                    
 00018601  __aeabi_errno_addr                                              
 000168af  __aeabi_i2d                                                     
-0000955f  __aeabi_idiv0                                                   
-0000955f  __aeabi_ldiv0                                                   
+0000a1b3  __aeabi_idiv0                                                   
+0000a1b3  __aeabi_ldiv0                                                   
 00011927  __aeabi_ldivmod                                                 
 00011171  __aeabi_memclr                                                  
 00011171  __aeabi_memclr4                                                 
@@ -2265,7 +2265,7 @@ ffffffff  binit
 00017d1d  ti_sysbios_BIOS_exitFunc__I                                     
 00018119  ti_sysbios_BIOS_exit__E                                         
 00018629  ti_sysbios_BIOS_linkedWithIncorrectBootLibrary__E               
-0000a1b3  ti_sysbios_BIOS_nullFunc__I                                     
+0000b6cb  ti_sysbios_BIOS_nullFunc__I                                     
 0001724d  ti_sysbios_BIOS_registerRTSLock__I                              
 00017271  ti_sysbios_BIOS_removeRTSLock__I                                
 00017509  ti_sysbios_BIOS_rtsLock__I                                      
@@ -2735,8 +2735,6 @@ address   name
 000091cb  _nop                                                            
 000091cd  _SlSocketHandleAsync_StartTLS                                   
 00009431  formatdata                                                      
-0000955f  __aeabi_idiv0                                                   
-0000955f  __aeabi_ldiv0                                                   
 00009561  ti_sysbios_knl_Semaphore_pend__E                                
 000098d9  sl_FsOpen                                                       
 000099fd  SPIMSP432DMA_transfer                                           
@@ -2745,7 +2743,8 @@ address   name
 00009e75  _SlNetAppHandleAsync_DnsGetHostByService                        
 00009f8d  fputs                                                           
 0000a0a1  MQTT_PacketRecv                                                 
-0000a1b3  ti_sysbios_BIOS_nullFunc__I                                     
+0000a1b3  __aeabi_idiv0                                                   
+0000a1b3  __aeabi_ldiv0                                                   
 0000a1b5  ldexp                                                           
 0000a1b5  ldexpl                                                          
 0000a1b5  scalbn                                                          
@@ -2768,6 +2767,7 @@ address   name
 0000b2ed  SlNetIfWifi_loadSecObj                                          
 0000b3e5  sl_Close                                                        
 0000b5d5  MQTTNet_commOpen                                                
+0000b6cb  ti_sysbios_BIOS_nullFunc__I                                     
 0000b6cd  sl_SendTo                                                       
 0000b7c1  DMA_setChannelTransfer                                          
 0000b8b1  pthread_create                                                  

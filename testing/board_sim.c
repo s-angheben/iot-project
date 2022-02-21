@@ -4,6 +4,7 @@
 #include "MQTTClient.h"
 #include "mqtt_wrapper.h"
 #include "dht11.h"
+#include "photoresistor.c"
 #include "c_utils.h"
 #include <mqueue.h>
 #include <errno.h>
@@ -34,7 +35,7 @@ void set_time(void)  // timer every 2 seconds
 
 void alarm_handle(int sig)
 {
-   printf("[-] timer: update data\n");
+   printf("\n[-] timer: update data\n");
 
    struct msgQueue queueElement;
    queueElement.event = APP_TIMER;
@@ -75,6 +76,8 @@ int main(int argc, char* argv[])
     printf("[-] Subscribed to all topics successfully\r\n");
 
     read_dht11(&data_info.temperature, &data_info.humidity);
+    read_photo_resistor(&data_info.light);
+
     humidity_curr = data_info.humidity;
 
     int ret = 0;
@@ -84,7 +87,7 @@ int main(int argc, char* argv[])
         if(ret == -1) exit(ret);
 
         if(queueElement.event == APP_COMMAND_RECEIVED) {
-            printf("COMMAND RECEIVED: %s\n", msg_control);
+            printf("\nCOMMAND RECEIVED: %s\n", msg_control);
             p_msg = msg_control;
             if (*p_msg == 'w') {
               p_msg++;
@@ -107,11 +110,8 @@ int main(int argc, char* argv[])
                 }
               }
             } else if (*p_msg == 's') {
-              printf("QUI");
               p_msg++;
               if (*p_msg == 'h') {
-                printf("QUO");
-
                 p_msg++;
                 int tmp = atoi(p_msg);
                 if (tmp > 0 && tmp < 99) {
@@ -132,6 +132,7 @@ int main(int argc, char* argv[])
             sendinfo(&data_info, &data_config);
         } else if(queueElement.event == APP_TIMER) {
             read_dht11(&data_info.temperature, &humidity_curr);
+	    read_photo_resistor(&data_info.light);
             if (data_info.mode == 3) {                                    // se automatica
               if((data_info.humidity < data_config.m3_humidity + data_config.m3_delta) && hysteresis_rising == 1) {
                 printf("\tset water_pin to HIGH\n");

@@ -4,7 +4,7 @@
 <stringAttribute key="com.ti.ccstudio.debug.debugModel.ATTR_PROGRAM.MSP432P4111.ccxml.Texas Instruments XDS110 USB Debug Probe/CORTEX_M4_0" value="${build_artifact:project_ok}"/>
 <stringAttribute key="com.ti.ccstudio.debug.debugModel.ATTR_PROJECT.MSP432P4111.ccxml.Texas Instruments XDS110 USB Debug Probe/CORTEX_M4_0" value="project_ok"/>
 <stringAttribute key="com.ti.ccstudio.debug.debugModel.ATTR_TARGET_CONFIG" value="${target_config_active_default:project_ok}"/>
-<stringAttribute key="com.ti.ccstudio.debug.debugModel.MRU_PROGRAM.MSP432P4111.ccxml.Texas Instruments XDS110 USB Debug Probe/CORTEX_M4_0" value="/home/sam/workspace_0/project_ok/Debug/project_ok.out"/>
+<stringAttribute key="com.ti.ccstudio.debug.debugModel.MRU_PROGRAM.MSP432P4111.ccxml.Texas Instruments XDS110 USB Debug Probe/CORTEX_M4_0" value="/home/sam/workspace_final/project_ok/Debug/project_ok.out"/>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
 <listEntry value="/project_ok"/>
 </listAttribute>

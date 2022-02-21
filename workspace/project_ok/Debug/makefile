@@ -152,7 +152,7 @@ all: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 	@$(MAKE) --no-print-directory -Onone "project_ok.out"
 
 dependents:
-	-cd /home/sam/workspace_final/tirtos_builds_MSP_EXP432P4111_release_ccs/Debug && $(MAKE) clean all
+	-cd /home/sam/workspace_final/tirtos_builds_MSP_EXP432P4111_release_ccs/Debug && $(MAKE) all
 
 # Tool invocations
 project_ok.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS) /home/sam/workspace_final/tirtos_builds_MSP_EXP432P4111_release_ccs/Debug/tirtos_builds_MSP_EXP432P4111_release_ccs.lib

@@ -18,7 +18,7 @@ void delivered(void *context, MQTTClient_deliveryToken dt)
     deliveredtoken = dt;
 }
 
-int WifiInit() {
+void WifiInit() {
     printf("[-] Wifi initialization\n");
 }
 
