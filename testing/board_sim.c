@@ -12,6 +12,7 @@
 #include<signal.h>
 #include<sys/time.h>
 
+int i = 0;
 
 extern int errno;
 
@@ -36,6 +37,9 @@ void set_time(void)  // timer every 2 seconds
 void alarm_handle(int sig)
 {
    printf("\n[-] timer: update data\n");
+   if (i == 10)
+	   exit(0);
+   i++;
 
    struct msgQueue queueElement;
    queueElement.event = APP_TIMER;

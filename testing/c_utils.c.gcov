@@ -1,0 +1,58 @@
+        -:    0:Source:c_utils.c
+        -:    0:Graph:c_utils.gcno
+        -:    0:Data:c_utils.gcda
+        -:    0:Runs:0
+        -:    1:#include "c_utils.h"
+        -:    2:
+        -:    3:mqd_t appQueue;
+        -:    4:config data_config;
+        -:    5:info data_info;
+        -:    6:char msg_info_data[MSGSIZE];
+        -:    7:char msg_control[MSGSIZE];
+        -:    8:
+function init_queue called 0 returned 0% blocks executed 0%
+    #####:    9:void init_queue() {
+    #####:   10:    appQueue = mq_open("appQueue", O_CREAT | O_RDWR);
+call    0 never executed
+    #####:   11:}
+        -:   12:
+function initialize_info called 0 returned 0% blocks executed 0%
+    #####:   13:void initialize_info(info* info_data) {
+    #####:   14:    info_data->mode = 1;
+    #####:   15:    info_data->water = 0;
+    #####:   16:    info_data->temperature = 0;
+    #####:   17:    info_data->humidity = 0;
+    #####:   18:    info_data->light = 0;
+    #####:   19:}
+        -:   20:
+function initialize_config called 0 returned 0% blocks executed 0%
+    #####:   21:void initialize_config(config* config_data) {
+    #####:   22:    config_data->m3_humidity = -1;
+    #####:   23:    config_data->m3_delta = 5;
+    #####:   24:}
+        -:   25:
+function formatdata called 0 returned 0% blocks executed 0%
+    #####:   26:void formatdata(char msg[], info* info_data, config* config_data) {
+    #####:   27:    memset(msg,0,MSGSIZE);
+    #####:   28:    if (config_data == NULL) {
+branch  0 never executed
+branch  1 never executed
+    #####:   29:        snprintf(msg, MSGSIZE, "{\"water\": %d, \"mode\":%d, \"humidity\":%d, \"temperature\":%d, \"light\":%d}",
+        -:   30:             info_data->water, info_data->mode, info_data->humidity, info_data->temperature, info_data->light);
+        -:   31:    } else {
+    #####:   32:        snprintf(msg, MSGSIZE, "{\"water\": %d, \"mode\":%d, \"humidity\":%d, \"temperature\":%d, \"light\":%d, \"m3_humidity\":%d, \"m3_delta\":%d}",
+        -:   33:             info_data->water, info_data->mode, info_data->humidity, info_data->temperature, info_data->light, config_data->m3_humidity, config_data->m3_delta);
+        -:   34:    }
+        -:   35:
+    #####:   36:}
+        -:   37:
+function sendinfo called 0 returned 0% blocks executed 0%
+    #####:   38:void sendinfo(info* p_info_data, config* p_config_data) {
+    #####:   39:    formatdata(msg_info_data, p_info_data, p_config_data);
+call    0 never executed
+    #####:   40:    publish_mgs(msg_info_data, strlen(msg_info_data));
+call    0 never executed
+    #####:   41:    printf("[-] pub :%s to %s\n", msg_info_data, INFO_TOPIC);
+call    0 never executed
+    #####:   42:}
+        -:   43:

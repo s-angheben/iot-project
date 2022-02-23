@@ -1,0 +1,258 @@
+        -:    0:Source:board_sim.c
+        -:    0:Graph:board_sim.gcno
+        -:    0:Data:board_sim.gcda
+        -:    0:Runs:1
+        -:    1:#include "stdio.h"
+        -:    2:#include "stdlib.h"
+        -:    3:#include "string.h"
+        -:    4:#include "MQTTClient.h"
+        -:    5:#include "mqtt_wrapper.h"
+        -:    6:#include "dht11.h"
+        -:    7:#include "photoresistor.c"
+        -:    8:#include "c_utils.h"
+        -:    9:#include <mqueue.h>
+        -:   10:#include <errno.h>
+        -:   11:#include<stdio.h>
+        -:   12:#include<signal.h>
+        -:   13:#include<sys/time.h>
+        -:   14:
+        -:   15:int i = 0;
+        -:   16:
+        -:   17:extern int errno;
+        -:   18:
+        -:   19:extern mqd_t appQueue;
+        -:   20:extern char msg_info_data[MSGSIZE];
+        -:   21:extern char msg_control[MSGSIZE];
+        -:   22:extern info data_info;
+        -:   23:extern config data_config;
+        -:   24:
+        -:   25:struct mq_attr attr;
+        -:   26:
+function set_time called 1 returned 100% blocks executed 100%
+        1:   27:void set_time(void)  // timer every 2 seconds
+        -:   28:{
+        -:   29:   struct itimerval itv;
+        1:   30:   itv.it_interval.tv_sec=5;
+        1:   31:   itv.it_interval.tv_usec=0;
+        1:   32:   itv.it_value.tv_sec=5;//Time of First Timing
+        1:   33:   itv.it_value.tv_usec=0;
+        1:   34:   setitimer(ITIMER_REAL,&itv,NULL);
+call    0 returned 1
+        1:   35:}
+        -:   36:
+function alarm_handle called 11 returned 91% blocks executed 100%
+       11:   37:void alarm_handle(int sig)
+        -:   38:{
+       11:   39:   printf("\n[-] timer: update data\n");
+call    0 returned 11
+       11:   40:   if (i == 10)
+branch  0 taken 1 (fallthrough)
+branch  1 taken 10
+        1:   41:	   exit(0);
+call    0 returned 0
+       10:   42:   i++;
+        -:   43:
+        -:   44:   struct msgQueue queueElement;
+       10:   45:   queueElement.event = APP_TIMER;
+        -:   46:
+       10:   47:   mq_send(appQueue, (const char*)&queueElement, sizeof(struct msgQueue), 0);
+call    0 returned 10
+        -:   48:
+       10:   49:}
+        -:   50:
+        -:   51:
+function main called 1 returned 0% blocks executed 86%
+        1:   52:int main(int argc, char* argv[])
+        -:   53:{
+        -:   54:    int rc, ch;
+        -:   55:    char* p_msg;
+        -:   56:    struct msgQueue queueElement;
+        1:   57:    int hysteresis_rising = 1;
+        -:   58:    int humidity_curr;
+        -:   59:
+        1:   60:    signal(SIGALRM,alarm_handle);
+call    0 returned 1
+        1:   61:    set_time();
+call    0 returned 1
+        -:   62:
+        1:   63:    attr.mq_maxmsg = 10;
+        1:   64:    attr.mq_msgsize = sizeof(struct msgQueue);
+        -:   65:    mqd_t res;
+        1:   66:    res = appQueue = mq_open("/appQueue", O_RDWR | O_CREAT, 0777, &attr);
+call    0 returned 1
+        1:   67:    if(res == -1)  {
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    #####:   68:        fprintf(stderr, "Value of errno: %d\n", errno);
+call    0 never executed
+    #####:   69:        perror("Error creating queue: ");
+call    0 never executed
+    #####:   70:        exit(4);
+call    0 never executed
+        -:   71:    }
+        -:   72:
+        1:   73:    initialize_info(&data_info);
+call    0 returned 1
+        1:   74:    initialize_config(&data_config);
+call    0 returned 1
+        -:   75:
+        1:   76:    dht11_init();
+call    0 returned 1
+        1:   77:    WifiInit();
+call    0 returned 1
+        1:   78:    connect_mqtt_infoTopic();
+call    0 returned 1
+        1:   79:    connect_mqtt_controlTopic();
+call    0 returned 1
+        1:   80:    printf("[-] Subscribed to all topics successfully\r\n");
+call    0 returned 1
+        -:   81:
+        1:   82:    read_dht11(&data_info.temperature, &data_info.humidity);
+call    0 returned 1
+        1:   83:    read_photo_resistor(&data_info.light);
+call    0 returned 1
+        -:   84:
+        1:   85:    humidity_curr = data_info.humidity;
+        -:   86:
+        1:   87:    int ret = 0;
+        -:   88:    while(1) {
+       22:   89:        ret = mq_receive(appQueue, (char*)&queueElement, sizeof(struct msgQueue),
+call    0 returned 21
+        -:   90:                   NULL);
+      21*:   91:        if(ret == -1) exit(ret);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 21
+call    2 never executed
+        -:   92:
+       21:   93:        if(queueElement.event == APP_COMMAND_RECEIVED) {
+branch  0 taken 11 (fallthrough)
+branch  1 taken 10
+       11:   94:            printf("\nCOMMAND RECEIVED: %s\n", msg_control);
+call    0 returned 11
+       11:   95:            p_msg = msg_control;
+       11:   96:            if (*p_msg == 'w') {
+branch  0 taken 2 (fallthrough)
+branch  1 taken 9
+        2:   97:              p_msg++;
+        2:   98:              if (*p_msg == '1') {
+branch  0 taken 1 (fallthrough)
+branch  1 taken 1
+        1:   99:                printf("\tset water_pin to HIGH\n");
+call    0 returned 1
+        1:  100:                data_info.water = 1;
+        -:  101:              } else {
+        1:  102:                printf("\tset water_pin to LOW\n");
+call    0 returned 1
+        1:  103:                data_info.water = 0;
+        -:  104:              }
+        9:  105:            } else if (*p_msg == 'm') {
+branch  0 taken 4 (fallthrough)
+branch  1 taken 5
+        4:  106:              p_msg++;
+        4:  107:              if (*p_msg == '1') {
+branch  0 taken 2 (fallthrough)
+branch  1 taken 2
+        2:  108:                data_info.mode = 1;
+        2:  109:              } else if (*p_msg == '2') {
+branch  0 taken 1 (fallthrough)
+branch  1 taken 1
+        1:  110:                data_info.mode = 2;
+        1:  111:              } else if (*p_msg == '3') {
+branch  0 taken 1 (fallthrough)
+branch  1 taken 0
+        1:  112:                if(data_config.m3_humidity != -1) {
+branch  0 taken 1 (fallthrough)
+branch  1 taken 0
+        1:  113:                  data_info.mode = 3;
+        -:  114:                }
+        -:  115:              }
+        5:  116:            } else if (*p_msg == 's') {
+branch  0 taken 3 (fallthrough)
+branch  1 taken 2
+        3:  117:              p_msg++;
+        3:  118:              if (*p_msg == 'h') {
+branch  0 taken 1 (fallthrough)
+branch  1 taken 2
+        1:  119:                p_msg++;
+        1:  120:                int tmp = atoi(p_msg);
+        1:  121:                if (tmp > 0 && tmp < 99) {
+branch  0 taken 1 (fallthrough)
+branch  1 taken 0
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0
+        1:  122:                  data_config.m3_humidity = tmp;
+        -:  123:                }
+        1:  124:                printf("%d", data_config.m3_humidity);
+call    0 returned 1
+        -:  125:              }
+        3:  126:              if (*p_msg == 'd') {
+branch  0 taken 2 (fallthrough)
+branch  1 taken 1
+        2:  127:                p_msg++;
+        2:  128:                int tmp = atoi(p_msg);
+        2:  129:                if (tmp > 2 && tmp < 15) {
+branch  0 taken 2 (fallthrough)
+branch  1 taken 0
+branch  2 taken 2 (fallthrough)
+branch  3 taken 0
+        2:  130:                  data_config.m3_delta = tmp;
+        -:  131:                }
+        2:  132:                printf("%d", data_config.m3_humidity);
+call    0 returned 2
+        -:  133:              }
+        -:  134:            }
+        -:  135:
+       11:  136:            sendinfo(&data_info, &data_config);
+call    0 returned 11
+       10:  137:        } else if(queueElement.event == APP_TIMER) {
+branch  0 taken 10 (fallthrough)
+branch  1 taken 0
+       10:  138:            read_dht11(&data_info.temperature, &humidity_curr);
+call    0 returned 10
+       10:  139:	    read_photo_resistor(&data_info.light);
+call    0 returned 10
+       10:  140:            if (data_info.mode == 3) {                                    // se automatica
+branch  0 taken 1 (fallthrough)
+branch  1 taken 9
+        1:  141:              if((data_info.humidity < data_config.m3_humidity + data_config.m3_delta) && hysteresis_rising == 1) {
+branch  0 taken 1 (fallthrough)
+branch  1 taken 0
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0
+        1:  142:                printf("\tset water_pin to HIGH\n");
+call    0 returned 1
+        1:  143:                data_info.water = 1;
+        -:  144:              }
+       1*:  145:              if((data_info.humidity >= data_config.m3_humidity + data_config.m3_delta) && hysteresis_rising == 1) {
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+branch  2 never executed
+branch  3 never executed
+    #####:  146:                printf("\tset water_pin to LOW\n");
+call    0 never executed
+    #####:  147:                data_info.water = 0;
+    #####:  148:                hysteresis_rising = 0;
+        -:  149:              }
+        1:  150:              if((data_info.humidity < data_config.m3_humidity - data_config.m3_delta) && hysteresis_rising == 0) {
+branch  0 taken 1 (fallthrough)
+branch  1 taken 0
+branch  2 taken 0 (fallthrough)
+branch  3 taken 1
+    #####:  151:                printf("\tset water_pin to HIGH\n");
+call    0 never executed
+    #####:  152:                data_info.water = 1;
+    #####:  153:                hysteresis_rising = 1;
+        -:  154:              }
+        -:  155:            }
+       10:  156:            data_info.humidity = humidity_curr;
+       10:  157:            sendinfo(&data_info, &data_config);
+call    0 returned 10
+        -:  158:        }
+        -:  159:
+        -:  160:    }
+        -:  161:
+        -:  162:    quit_mqtt_controlTopic();
+        -:  163:    quit_mqtt_infoTopic();
+        -:  164:
+        -:  165:    return rc;
+        -:  166:}

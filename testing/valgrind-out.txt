@@ -1,0 +1,1444 @@
+==11268== Memcheck, a memory error detector
+==11268== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==11268== Using Valgrind-3.16.1-36d6727e1d-20200622X and LibVEX; rerun with -h for copyright info
+==11268== Command: ./board_sim.o
+==11268== Parent PID: 9317
+==11268== 
+--11268-- 
+--11268-- Valgrind options:
+--11268--    --leak-check=full
+--11268--    --show-leak-kinds=all
+--11268--    --track-origins=yes
+--11268--    --verbose
+--11268--    --log-file=valgrind-out.txt
+--11268-- Contents of /proc/version:
+--11268--   Linux version 5.10.0-11-amd64 (debian-kernel@lists.debian.org) (gcc-10 (Debian 10.2.1-6) 10.2.1 20210110, GNU ld (GNU Binutils for Debian) 2.35.2) #1 SMP Debian 5.10.92-1 (2022-01-18)
+--11268-- 
+--11268-- Arch and hwcaps: AMD64, LittleEndian, amd64-cx16-lzcnt-rdtscp-sse3-ssse3-avx-avx2-bmi-f16c-rdrand
+--11268-- Page sizes: currently 4096, max supported 4096
+--11268-- Valgrind library directory: /usr/lib/x86_64-linux-gnu/valgrind
+--11268-- Reading syms from /home/sam/Documents/iot-project/testing/board_sim.o
+--11268-- Reading syms from /usr/lib/x86_64-linux-gnu/ld-2.31.so
+--11268--   Considering /usr/lib/debug/.build-id/32/438eb3b034da54caf58c7a65446639f7cfe274.debug ..
+--11268--   .. build-id is valid
+--11268-- Reading syms from /usr/lib/x86_64-linux-gnu/valgrind/memcheck-amd64-linux
+--11268--   Considering /usr/lib/debug/.build-id/54/299c4aec0e5e5f3d7b8135341351d0e1dbfc64.debug ..
+--11268--   .. build-id is valid
+--11268--    object doesn't have a dynamic symbol table
+--11268-- Scheduler: using generic scheduler lock implementation.
+--11268-- Reading suppressions file: /usr/lib/x86_64-linux-gnu/valgrind/default.supp
+==11268== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-11268-by-sam-on-???
+==11268== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-11268-by-sam-on-???
+==11268== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-11268-by-sam-on-???
+==11268== 
+==11268== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==11268== don't want to do, unless you know exactly what you're doing,
+==11268== or are doing some strange experiment):
+==11268==   /usr/bin/vgdb --pid=11268 ...command...
+==11268== 
+==11268== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==11268==   /path/to/gdb ./board_sim.o
+==11268== and then give GDB the following command
+==11268==   target remote | /usr/bin/vgdb --pid=11268
+==11268== --pid is optional if only one valgrind process is running
+==11268== 
+--11268-- REDIR: 0x401f970 (ld-linux-x86-64.so.2:strlen) redirected to 0x580ca5f2 (vgPlain_amd64_linux_REDIR_FOR_strlen)
+--11268-- REDIR: 0x401f750 (ld-linux-x86-64.so.2:index) redirected to 0x580ca60c (vgPlain_amd64_linux_REDIR_FOR_index)
+--11268-- Reading syms from /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_core-amd64-linux.so
+--11268--   Considering /usr/lib/debug/.build-id/f2/7641e081d3c37b410d7f31da4e2bf21040f356.debug ..
+--11268--   .. build-id is valid
+--11268-- Reading syms from /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so
+--11268--   Considering /usr/lib/debug/.build-id/25/7cdcdf80e04f91ca9e3b185ee3b52995e89946.debug ..
+--11268--   .. build-id is valid
+==11268== WARNING: new redirection conflicts with existing -- ignoring it
+--11268--     old: 0x0401f970 (strlen              ) R-> (0000.0) 0x580ca5f2 vgPlain_amd64_linux_REDIR_FOR_strlen
+--11268--     new: 0x0401f970 (strlen              ) R-> (2007.0) 0x0483bda0 strlen
+--11268-- REDIR: 0x401c190 (ld-linux-x86-64.so.2:strcmp) redirected to 0x483cc90 (strcmp)
+--11268-- REDIR: 0x401feb0 (ld-linux-x86-64.so.2:mempcpy) redirected to 0x4840740 (mempcpy)
+--11268-- Reading syms from /usr/lib/x86_64-linux-gnu/librt-2.31.so
+--11268--   Considering /usr/lib/debug/.build-id/7c/ce5ecadb7bf40c36fdb2834f9321707564fb3c.debug ..
+--11268--   .. build-id is valid
+--11268-- Reading syms from /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8
+--11268--    object doesn't have a symbol table
+--11268-- Reading syms from /usr/lib/x86_64-linux-gnu/libc-2.31.so
+--11268--   Considering /usr/lib/debug/.build-id/54/eef5ce96cf37cb175b0d93186836ca1caf470c.debug ..
+--11268--   .. build-id is valid
+--11268-- Reading syms from /usr/lib/x86_64-linux-gnu/libpthread-2.31.so
+--11268--   Considering /usr/lib/debug/.build-id/50/18237bbf012b4094027fd0b96fc22a24496ea4.debug ..
+--11268--   .. build-id is valid
+--11268-- REDIR: 0x49c2ea0 (libc.so.6:memmove) redirected to 0x482e1b0 (_vgnU_ifunc_wrapper)
+--11268-- REDIR: 0x49c2250 (libc.so.6:strncpy) redirected to 0x482e1b0 (_vgnU_ifunc_wrapper)
+--11268-- REDIR: 0x49c31c0 (libc.so.6:strcasecmp) redirected to 0x482e1b0 (_vgnU_ifunc_wrapper)
+--11268-- REDIR: 0x49c1b70 (libc.so.6:strcat) redirected to 0x482e1b0 (_vgnU_ifunc_wrapper)
+--11268-- REDIR: 0x49c22b0 (libc.so.6:rindex) redirected to 0x482e1b0 (_vgnU_ifunc_wrapper)
+--11268-- REDIR: 0x49c4550 (libc.so.6:rawmemchr) redirected to 0x482e1b0 (_vgnU_ifunc_wrapper)
+--11268-- REDIR: 0x49dc710 (libc.so.6:wmemchr) redirected to 0x482e1b0 (_vgnU_ifunc_wrapper)
+--11268-- REDIR: 0x49dc2b0 (libc.so.6:wcscmp) redirected to 0x482e1b0 (_vgnU_ifunc_wrapper)
+--11268-- REDIR: 0x49c3000 (libc.so.6:mempcpy) redirected to 0x482e1b0 (_vgnU_ifunc_wrapper)
+--11268-- REDIR: 0x49c2e30 (libc.so.6:bcmp) redirected to 0x482e1b0 (_vgnU_ifunc_wrapper)
+--11268-- REDIR: 0x49c21f0 (libc.so.6:strncmp) redirected to 0x482e1b0 (_vgnU_ifunc_wrapper)
+--11268-- REDIR: 0x49c1c20 (libc.so.6:strcmp) redirected to 0x482e1b0 (_vgnU_ifunc_wrapper)
+--11268-- REDIR: 0x49c2f60 (libc.so.6:memset) redirected to 0x482e1b0 (_vgnU_ifunc_wrapper)
+--11268-- REDIR: 0x49dc270 (libc.so.6:wcschr) redirected to 0x482e1b0 (_vgnU_ifunc_wrapper)
+--11268-- REDIR: 0x49c2150 (libc.so.6:strnlen) redirected to 0x482e1b0 (_vgnU_ifunc_wrapper)
+--11268-- REDIR: 0x49c1cf0 (libc.so.6:strcspn) redirected to 0x482e1b0 (_vgnU_ifunc_wrapper)
+--11268-- REDIR: 0x49c3210 (libc.so.6:strncasecmp) redirected to 0x482e1b0 (_vgnU_ifunc_wrapper)
+--11268-- REDIR: 0x49c1c90 (libc.so.6:strcpy) redirected to 0x482e1b0 (_vgnU_ifunc_wrapper)
+--11268-- REDIR: 0x49c3360 (libc.so.6:memcpy@@GLIBC_2.14) redirected to 0x482e1b0 (_vgnU_ifunc_wrapper)
+--11268-- REDIR: 0x49dd910 (libc.so.6:wcsnlen) redirected to 0x482e1b0 (_vgnU_ifunc_wrapper)
+--11268-- REDIR: 0x49dc2f0 (libc.so.6:wcscpy) redirected to 0x482e1b0 (_vgnU_ifunc_wrapper)
+--11268-- REDIR: 0x49c22f0 (libc.so.6:strpbrk) redirected to 0x482e1b0 (_vgnU_ifunc_wrapper)
+--11268-- REDIR: 0x49c1bd0 (libc.so.6:index) redirected to 0x482e1b0 (_vgnU_ifunc_wrapper)
+--11268-- REDIR: 0x49c2110 (libc.so.6:strlen) redirected to 0x482e1b0 (_vgnU_ifunc_wrapper)
+--11268-- REDIR: 0x49c88b0 (libc.so.6:memrchr) redirected to 0x482e1b0 (_vgnU_ifunc_wrapper)
+--11268-- REDIR: 0x49c3260 (libc.so.6:strcasecmp_l) redirected to 0x482e1b0 (_vgnU_ifunc_wrapper)
+--11268-- REDIR: 0x49c2df0 (libc.so.6:memchr) redirected to 0x482e1b0 (_vgnU_ifunc_wrapper)
+--11268-- REDIR: 0x49dc390 (libc.so.6:wcslen) redirected to 0x482e1b0 (_vgnU_ifunc_wrapper)
+--11268-- REDIR: 0x49c2590 (libc.so.6:strspn) redirected to 0x482e1b0 (_vgnU_ifunc_wrapper)
+--11268-- REDIR: 0x49c3160 (libc.so.6:stpncpy) redirected to 0x482e1b0 (_vgnU_ifunc_wrapper)
+--11268-- REDIR: 0x49c3100 (libc.so.6:stpcpy) redirected to 0x482e1b0 (_vgnU_ifunc_wrapper)
+--11268-- REDIR: 0x49c4590 (libc.so.6:strchrnul) redirected to 0x482e1b0 (_vgnU_ifunc_wrapper)
+--11268-- REDIR: 0x49c32b0 (libc.so.6:strncasecmp_l) redirected to 0x482e1b0 (_vgnU_ifunc_wrapper)
+--11268-- REDIR: 0x49c2d20 (libc.so.6:strstr) redirected to 0x482e1b0 (_vgnU_ifunc_wrapper)
+--11268-- REDIR: 0x4a938f0 (libc.so.6:__strrchr_avx2) redirected to 0x483b7b0 (rindex)
+--11268-- REDIR: 0x4a93ac0 (libc.so.6:__strlen_avx2) redirected to 0x483bc80 (strlen)
+--11268-- REDIR: 0x49be0f0 (libc.so.6:malloc) redirected to 0x4838710 (malloc)
+--11268-- REDIR: 0x4a96a90 (libc.so.6:__mempcpy_avx_unaligned_erms) redirected to 0x48403c0 (mempcpy)
+--11268-- REDIR: 0x4a95380 (libc.so.6:__strncpy_avx2) redirected to 0x483bf70 (strncpy)
+--11268-- REDIR: 0x4a8f430 (libc.so.6:__strncmp_avx2) redirected to 0x483c370 (strncmp)
+--11268-- REDIR: 0x49dafb0 (libc.so.6:__strstr_sse2_unaligned) redirected to 0x4840920 (strstr)
+--11268-- REDIR: 0x4a93700 (libc.so.6:__strchrnul_avx2) redirected to 0x48402b0 (strchrnul)
+--11268-- REDIR: 0x49c2a30 (libc.so.6:__GI_strstr) redirected to 0x4840990 (__strstr_sse2)
+--11268-- REDIR: 0x4a8f950 (libc.so.6:__memchr_avx2) redirected to 0x483cd10 (memchr)
+--11268-- REDIR: 0x4a96ab0 (libc.so.6:__memcpy_avx_unaligned_erms) redirected to 0x483f760 (memmove)
+--11268-- REDIR: 0x49be720 (libc.so.6:free) redirected to 0x4839940 (free)
+--11268-- REDIR: 0x4a94ff0 (libc.so.6:__strcpy_avx2) redirected to 0x483bdd0 (strcpy)
+--11268-- REDIR: 0x49bee50 (libc.so.6:calloc) redirected to 0x483aab0 (calloc)
+--11268-- REDIR: 0x4a3f920 (libc.so.6:__strcpy_chk) redirected to 0x4840320 (__strcpy_chk)
+--11268-- REDIR: 0x49be980 (libc.so.6:realloc) redirected to 0x483ad00 (realloc)
+==11268== Syscall param mq_timedsend(msg_ptr) points to uninitialised byte(s)
+==11268==    at 0x486EF80: mq_timedsend (mq_timedsend.c:28)
+==11268==    by 0x109412: alarm_handle (board_sim.c:47)
+==11268==    by 0x496FD5F: ??? (in /usr/lib/x86_64-linux-gnu/libc-2.31.so)
+==11268==    by 0x486F030: __mq_timedreceive (mq_timedreceive.c:29)
+==11268==    by 0x486F030: mq_timedreceive (mq_timedreceive.c:25)
+==11268==    by 0x10955C: main (board_sim.c:89)
+==11268==  Address 0x1ffefff044 is on thread 1's stack
+==11268==  in frame #1, created by alarm_handle (board_sim.c:38)
+==11268==  Uninitialised value was created
+==11268==    at 0x486F031: __mq_timedreceive (mq_timedreceive.c:29)
+==11268==    by 0x486F031: mq_timedreceive (mq_timedreceive.c:25)
+==11268==    by 0x10955C: main (board_sim.c:89)
+==11268== 
+--11268-- REDIR: 0x4a96f40 (libc.so.6:__memset_avx2_unaligned_erms) redirected to 0x483f650 (memset)
+--11268-- REDIR: 0x4a93c50 (libc.so.6:__strnlen_avx2) redirected to 0x483bc20 (strnlen)
+==11268== Thread 2:
+==11268== Syscall param mq_timedsend(msg_ptr) points to uninitialised byte(s)
+==11268==    at 0x486EF80: mq_timedsend (mq_timedsend.c:28)
+==11268==    by 0x1098DF: msgarrvd (mqtt_wrapper.c:35)
+==11268==    by 0x487B6B9: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x4B01EA6: start_thread (pthread_create.c:477)
+==11268==    by 0x4A31DEE: clone (clone.S:95)
+==11268==  Address 0x571ce64 is on thread 2's stack
+==11268==  in frame #1, created by msgarrvd (mqtt_wrapper.c:26)
+==11268==  Uninitialised value was created by a stack allocation
+==11268==    at 0x109870: msgarrvd (mqtt_wrapper.c:26)
+==11268== 
+==11268== Thread 1:
+==11268== Syscall param mq_timedsend(msg_ptr) points to uninitialised byte(s)
+==11268==    at 0x486EF80: mq_timedsend (mq_timedsend.c:28)
+==11268==    by 0x109412: alarm_handle (board_sim.c:47)
+==11268==    by 0x496FD5F: ??? (in /usr/lib/x86_64-linux-gnu/libc-2.31.so)
+==11268==    by 0x49F9C60: clock_nanosleep@@GLIBC_2.17 (clock_nanosleep.c:48)
+==11268==    by 0x49FF442: nanosleep (nanosleep.c:27)
+==11268==    by 0x4A2A124: usleep (usleep.c:32)
+==11268==    by 0x487DB94: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487A0E9: MQTTClient_yield (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D1A1: MQTTClient_waitForCompletion (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x1099AC: publish_mgs (mqtt_wrapper.c:54)
+==11268==    by 0x109DFB: sendinfo (c_utils.c:40)
+==11268==    by 0x109721: main (board_sim.c:136)
+==11268==  Address 0x1ffeffef24 is on thread 1's stack
+==11268==  in frame #1, created by alarm_handle (board_sim.c:38)
+==11268==  Uninitialised value was created
+==11268==    at 0x49F9C61: clock_nanosleep@@GLIBC_2.17 (clock_nanosleep.c:48)
+==11268==    by 0x49FF442: nanosleep (nanosleep.c:27)
+==11268==    by 0x4A2A124: usleep (usleep.c:32)
+==11268==    by 0x487DB94: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487A0E9: MQTTClient_yield (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D1A1: MQTTClient_waitForCompletion (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x1099AC: publish_mgs (mqtt_wrapper.c:54)
+==11268==    by 0x109DFB: sendinfo (c_utils.c:40)
+==11268==    by 0x109721: main (board_sim.c:136)
+==11268== 
+==11268== 
+==11268== HEAP SUMMARY:
+==11268==     in use at exit: 132,822 bytes in 130 blocks
+==11268==   total heap usage: 1,709 allocs, 1,579 frees, 201,320 bytes allocated
+==11268== 
+==11268== Searching for pointers to 130 not-freed blocks
+==11268== Checked 9,165,248 bytes
+==11268== 
+==11268== 15 bytes in 1 blocks are still reachable in loss record 1 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488F9FC: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x4883DE5: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x4884F23: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488906E: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487A520: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487AC67: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487B341: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487B414: MQTTClient_connect (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A59: connect_mqtt_infoTopic (mqtt_wrapper.c:77)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 15 bytes in 1 blocks are still reachable in loss record 2 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488F9FC: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x4883DE5: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x4884F23: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488906E: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487A520: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487AC67: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487B341: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487B414: MQTTClient_connect (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109B05: connect_mqtt_controlTopic (mqtt_wrapper.c:91)
+==11268==    by 0x109506: main (board_sim.c:79)
+==11268== 
+==11268== 19 bytes in 1 blocks are still reachable in loss record 3 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488F9FC: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488B479: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D92D: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A2F: connect_mqtt_infoTopic (mqtt_wrapper.c:72)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 19 bytes in 1 blocks are still reachable in loss record 4 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488F9FC: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488B479: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488AAC4: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x4883B8D: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D936: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A2F: connect_mqtt_infoTopic (mqtt_wrapper.c:72)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 19 bytes in 1 blocks are still reachable in loss record 5 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488F9FC: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488B479: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x4883B92: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D936: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A2F: connect_mqtt_infoTopic (mqtt_wrapper.c:72)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 19 bytes in 1 blocks are still reachable in loss record 6 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488F9FC: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488B479: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x4883B9E: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D936: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A2F: connect_mqtt_infoTopic (mqtt_wrapper.c:72)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 19 bytes in 1 blocks are still reachable in loss record 7 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488F9FC: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488B479: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x4883BAA: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D936: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A2F: connect_mqtt_infoTopic (mqtt_wrapper.c:72)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 19 bytes in 1 blocks are still reachable in loss record 8 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488F9FC: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488B479: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D947: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A2F: connect_mqtt_infoTopic (mqtt_wrapper.c:72)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 19 bytes in 1 blocks are still reachable in loss record 9 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488F9FC: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D630: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A2F: connect_mqtt_infoTopic (mqtt_wrapper.c:72)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 19 bytes in 1 blocks are still reachable in loss record 10 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488F9FC: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488B502: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D6E0: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A2F: connect_mqtt_infoTopic (mqtt_wrapper.c:72)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 19 bytes in 1 blocks are still reachable in loss record 11 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488F9FC: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D6F6: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A2F: connect_mqtt_infoTopic (mqtt_wrapper.c:72)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 19 bytes in 1 blocks are still reachable in loss record 12 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488F9FC: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488B479: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D75B: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A2F: connect_mqtt_infoTopic (mqtt_wrapper.c:72)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 19 bytes in 1 blocks are still reachable in loss record 13 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488F9FC: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488B479: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D76F: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A2F: connect_mqtt_infoTopic (mqtt_wrapper.c:72)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 19 bytes in 1 blocks are still reachable in loss record 14 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488F9FC: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488B479: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D783: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A2F: connect_mqtt_infoTopic (mqtt_wrapper.c:72)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 19 bytes in 1 blocks are still reachable in loss record 15 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488F9FC: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488B502: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D821: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A2F: connect_mqtt_infoTopic (mqtt_wrapper.c:72)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 19 bytes in 1 blocks are still reachable in loss record 16 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488F9FC: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488B502: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x4883E0D: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x4884F23: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488906E: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487A520: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487AC67: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487B341: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487B414: MQTTClient_connect (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A59: connect_mqtt_infoTopic (mqtt_wrapper.c:77)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 19 bytes in 1 blocks are still reachable in loss record 17 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488F9FC: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D630: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109AB2: connect_mqtt_controlTopic (mqtt_wrapper.c:86)
+==11268==    by 0x109506: main (board_sim.c:79)
+==11268== 
+==11268== 19 bytes in 1 blocks are still reachable in loss record 18 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488F9FC: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488B502: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D6E0: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109AB2: connect_mqtt_controlTopic (mqtt_wrapper.c:86)
+==11268==    by 0x109506: main (board_sim.c:79)
+==11268== 
+==11268== 19 bytes in 1 blocks are still reachable in loss record 19 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488F9FC: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D6F6: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109AB2: connect_mqtt_controlTopic (mqtt_wrapper.c:86)
+==11268==    by 0x109506: main (board_sim.c:79)
+==11268== 
+==11268== 19 bytes in 1 blocks are still reachable in loss record 20 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488F9FC: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488B479: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D75B: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109AB2: connect_mqtt_controlTopic (mqtt_wrapper.c:86)
+==11268==    by 0x109506: main (board_sim.c:79)
+==11268== 
+==11268== 19 bytes in 1 blocks are still reachable in loss record 21 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488F9FC: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488B479: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D76F: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109AB2: connect_mqtt_controlTopic (mqtt_wrapper.c:86)
+==11268==    by 0x109506: main (board_sim.c:79)
+==11268== 
+==11268== 19 bytes in 1 blocks are still reachable in loss record 22 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488F9FC: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488B479: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D783: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109AB2: connect_mqtt_controlTopic (mqtt_wrapper.c:86)
+==11268==    by 0x109506: main (board_sim.c:79)
+==11268== 
+==11268== 19 bytes in 1 blocks are still reachable in loss record 23 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488F9FC: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488B502: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D821: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109AB2: connect_mqtt_controlTopic (mqtt_wrapper.c:86)
+==11268==    by 0x109506: main (board_sim.c:79)
+==11268== 
+==11268== 19 bytes in 1 blocks are still reachable in loss record 24 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488F9FC: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488B502: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x4883E0D: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x4884F23: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488906E: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487A520: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487AC67: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487B341: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487B414: MQTTClient_connect (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109B05: connect_mqtt_controlTopic (mqtt_wrapper.c:91)
+==11268==    by 0x109506: main (board_sim.c:79)
+==11268== 
+==11268== 21 bytes in 1 blocks are still reachable in loss record 25 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488F9FC: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488A9C6: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488AA76: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x4883B8D: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D936: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A2F: connect_mqtt_infoTopic (mqtt_wrapper.c:72)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 21 bytes in 1 blocks are still reachable in loss record 26 of 129
+==11268==    at 0x483AD7B: realloc (vg_replace_malloc.c:834)
+==11268==    by 0x488FD16: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488ADB4: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x4884170: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488E709: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x4880B6A: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x4878C08: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487B78C: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x4B01EA6: start_thread (pthread_create.c:477)
+==11268==    by 0x4A31DEE: clone (clone.S:95)
+==11268== 
+==11268== 27 bytes in 1 blocks are still reachable in loss record 27 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488F9FC: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487FD44: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D6C5: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A2F: connect_mqtt_infoTopic (mqtt_wrapper.c:72)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 27 bytes in 1 blocks are still reachable in loss record 28 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488F9FC: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487FD44: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D79A: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A2F: connect_mqtt_infoTopic (mqtt_wrapper.c:72)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 27 bytes in 1 blocks are still reachable in loss record 29 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488F9FC: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487FD44: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D6C5: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109AB2: connect_mqtt_controlTopic (mqtt_wrapper.c:86)
+==11268==    by 0x109506: main (board_sim.c:79)
+==11268== 
+==11268== 27 bytes in 1 blocks are still reachable in loss record 30 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488F9FC: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487FD44: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D79A: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109AB2: connect_mqtt_controlTopic (mqtt_wrapper.c:86)
+==11268==    by 0x109506: main (board_sim.c:79)
+==11268== 
+==11268== 32 bytes in 1 blocks are still reachable in loss record 31 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488F9DC: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488B479: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D92D: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A2F: connect_mqtt_infoTopic (mqtt_wrapper.c:72)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 32 bytes in 1 blocks are still reachable in loss record 32 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488F9DC: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488A9C6: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488AA76: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x4883B8D: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D936: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A2F: connect_mqtt_infoTopic (mqtt_wrapper.c:72)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 32 bytes in 1 blocks are still reachable in loss record 33 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488F9DC: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488A9F3: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488AA76: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x4883B8D: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D936: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A2F: connect_mqtt_infoTopic (mqtt_wrapper.c:72)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 32 bytes in 1 blocks are still reachable in loss record 34 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488F9DC: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488B479: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488AAC4: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x4883B8D: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D936: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A2F: connect_mqtt_infoTopic (mqtt_wrapper.c:72)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 32 bytes in 1 blocks are still reachable in loss record 35 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488F9DC: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488B479: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x4883B92: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D936: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A2F: connect_mqtt_infoTopic (mqtt_wrapper.c:72)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 32 bytes in 1 blocks are still reachable in loss record 36 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488F9DC: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488B479: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x4883B9E: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D936: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A2F: connect_mqtt_infoTopic (mqtt_wrapper.c:72)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 32 bytes in 1 blocks are still reachable in loss record 37 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488F9DC: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488B479: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x4883BAA: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D936: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A2F: connect_mqtt_infoTopic (mqtt_wrapper.c:72)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 32 bytes in 1 blocks are still reachable in loss record 38 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488F9DC: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488B479: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D947: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A2F: connect_mqtt_infoTopic (mqtt_wrapper.c:72)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 32 bytes in 1 blocks are still reachable in loss record 39 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488F9DC: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D630: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A2F: connect_mqtt_infoTopic (mqtt_wrapper.c:72)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 32 bytes in 1 blocks are still reachable in loss record 40 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488F9DC: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487FD44: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D6C5: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A2F: connect_mqtt_infoTopic (mqtt_wrapper.c:72)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 32 bytes in 1 blocks are still reachable in loss record 41 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488F9DC: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488B502: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D6E0: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A2F: connect_mqtt_infoTopic (mqtt_wrapper.c:72)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 32 bytes in 1 blocks are still reachable in loss record 42 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488F9DC: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D6F6: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A2F: connect_mqtt_infoTopic (mqtt_wrapper.c:72)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 32 bytes in 1 blocks are still reachable in loss record 43 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488F9DC: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488B479: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D75B: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A2F: connect_mqtt_infoTopic (mqtt_wrapper.c:72)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 32 bytes in 1 blocks are still reachable in loss record 44 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488F9DC: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488B479: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D76F: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A2F: connect_mqtt_infoTopic (mqtt_wrapper.c:72)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 32 bytes in 1 blocks are still reachable in loss record 45 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488F9DC: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488B479: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D783: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A2F: connect_mqtt_infoTopic (mqtt_wrapper.c:72)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 32 bytes in 1 blocks are still reachable in loss record 46 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488F9DC: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487FD44: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D79A: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A2F: connect_mqtt_infoTopic (mqtt_wrapper.c:72)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 32 bytes in 1 blocks are still reachable in loss record 47 of 129
+==11268==    at 0x483AB65: calloc (vg_replace_malloc.c:760)
+==11268==    by 0x488FA30: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487FD44: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D79A: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A2F: connect_mqtt_infoTopic (mqtt_wrapper.c:72)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 32 bytes in 1 blocks are still reachable in loss record 48 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x48886C2: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D7A5: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A2F: connect_mqtt_infoTopic (mqtt_wrapper.c:72)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 32 bytes in 1 blocks are still reachable in loss record 49 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x48886C2: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D7B5: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A2F: connect_mqtt_infoTopic (mqtt_wrapper.c:72)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 32 bytes in 1 blocks are still reachable in loss record 50 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x48886C2: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D7C5: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A2F: connect_mqtt_infoTopic (mqtt_wrapper.c:72)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 32 bytes in 1 blocks are still reachable in loss record 51 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x48886C2: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D7D5: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A2F: connect_mqtt_infoTopic (mqtt_wrapper.c:72)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 32 bytes in 1 blocks are still reachable in loss record 52 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488F9DC: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488B502: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D821: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A2F: connect_mqtt_infoTopic (mqtt_wrapper.c:72)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 32 bytes in 1 blocks are still reachable in loss record 53 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488F9DC: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x4883DE5: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x4884F23: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488906E: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487A520: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487AC67: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487B341: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487B414: MQTTClient_connect (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A59: connect_mqtt_infoTopic (mqtt_wrapper.c:77)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 32 bytes in 1 blocks are still reachable in loss record 54 of 129
+==11268==    at 0x483AB65: calloc (vg_replace_malloc.c:760)
+==11268==    by 0x488FA30: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x4883DE5: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x4884F23: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488906E: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487A520: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487AC67: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487B341: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487B414: MQTTClient_connect (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A59: connect_mqtt_infoTopic (mqtt_wrapper.c:77)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 32 bytes in 1 blocks are still reachable in loss record 55 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488F9DC: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488B502: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x4883E0D: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x4884F23: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488906E: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487A520: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487AC67: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487B341: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487B414: MQTTClient_connect (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A59: connect_mqtt_infoTopic (mqtt_wrapper.c:77)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 32 bytes in 1 blocks are still reachable in loss record 56 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488F9DC: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D630: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109AB2: connect_mqtt_controlTopic (mqtt_wrapper.c:86)
+==11268==    by 0x109506: main (board_sim.c:79)
+==11268== 
+==11268== 32 bytes in 1 blocks are still reachable in loss record 57 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488F9DC: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487FD44: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D6C5: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109AB2: connect_mqtt_controlTopic (mqtt_wrapper.c:86)
+==11268==    by 0x109506: main (board_sim.c:79)
+==11268== 
+==11268== 32 bytes in 1 blocks are still reachable in loss record 58 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488F9DC: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488B502: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D6E0: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109AB2: connect_mqtt_controlTopic (mqtt_wrapper.c:86)
+==11268==    by 0x109506: main (board_sim.c:79)
+==11268== 
+==11268== 32 bytes in 1 blocks are still reachable in loss record 59 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488F9DC: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D6F6: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109AB2: connect_mqtt_controlTopic (mqtt_wrapper.c:86)
+==11268==    by 0x109506: main (board_sim.c:79)
+==11268== 
+==11268== 32 bytes in 1 blocks are still reachable in loss record 60 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488F9DC: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488B479: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D75B: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109AB2: connect_mqtt_controlTopic (mqtt_wrapper.c:86)
+==11268==    by 0x109506: main (board_sim.c:79)
+==11268== 
+==11268== 32 bytes in 1 blocks are still reachable in loss record 61 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488F9DC: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488B479: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D76F: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109AB2: connect_mqtt_controlTopic (mqtt_wrapper.c:86)
+==11268==    by 0x109506: main (board_sim.c:79)
+==11268== 
+==11268== 32 bytes in 1 blocks are still reachable in loss record 62 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488F9DC: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488B479: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D783: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109AB2: connect_mqtt_controlTopic (mqtt_wrapper.c:86)
+==11268==    by 0x109506: main (board_sim.c:79)
+==11268== 
+==11268== 32 bytes in 1 blocks are still reachable in loss record 63 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488F9DC: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487FD44: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D79A: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109AB2: connect_mqtt_controlTopic (mqtt_wrapper.c:86)
+==11268==    by 0x109506: main (board_sim.c:79)
+==11268== 
+==11268== 32 bytes in 1 blocks are still reachable in loss record 64 of 129
+==11268==    at 0x483AB65: calloc (vg_replace_malloc.c:760)
+==11268==    by 0x488FA30: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487FD44: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D79A: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109AB2: connect_mqtt_controlTopic (mqtt_wrapper.c:86)
+==11268==    by 0x109506: main (board_sim.c:79)
+==11268== 
+==11268== 32 bytes in 1 blocks are still reachable in loss record 65 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x48886C2: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D7A5: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109AB2: connect_mqtt_controlTopic (mqtt_wrapper.c:86)
+==11268==    by 0x109506: main (board_sim.c:79)
+==11268== 
+==11268== 32 bytes in 1 blocks are still reachable in loss record 66 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x48886C2: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D7B5: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109AB2: connect_mqtt_controlTopic (mqtt_wrapper.c:86)
+==11268==    by 0x109506: main (board_sim.c:79)
+==11268== 
+==11268== 32 bytes in 1 blocks are still reachable in loss record 67 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x48886C2: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D7C5: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109AB2: connect_mqtt_controlTopic (mqtt_wrapper.c:86)
+==11268==    by 0x109506: main (board_sim.c:79)
+==11268== 
+==11268== 32 bytes in 1 blocks are still reachable in loss record 68 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x48886C2: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D7D5: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109AB2: connect_mqtt_controlTopic (mqtt_wrapper.c:86)
+==11268==    by 0x109506: main (board_sim.c:79)
+==11268== 
+==11268== 32 bytes in 1 blocks are still reachable in loss record 69 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488F9DC: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488B502: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D821: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109AB2: connect_mqtt_controlTopic (mqtt_wrapper.c:86)
+==11268==    by 0x109506: main (board_sim.c:79)
+==11268== 
+==11268== 32 bytes in 1 blocks are still reachable in loss record 70 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488F9DC: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x4883DE5: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x4884F23: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488906E: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487A520: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487AC67: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487B341: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487B414: MQTTClient_connect (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109B05: connect_mqtt_controlTopic (mqtt_wrapper.c:91)
+==11268==    by 0x109506: main (board_sim.c:79)
+==11268== 
+==11268== 32 bytes in 1 blocks are still reachable in loss record 71 of 129
+==11268==    at 0x483AB65: calloc (vg_replace_malloc.c:760)
+==11268==    by 0x488FA30: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x4883DE5: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x4884F23: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488906E: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487A520: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487AC67: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487B341: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487B414: MQTTClient_connect (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109B05: connect_mqtt_controlTopic (mqtt_wrapper.c:91)
+==11268==    by 0x109506: main (board_sim.c:79)
+==11268== 
+==11268== 32 bytes in 1 blocks are still reachable in loss record 72 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488F9DC: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488B502: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x4883E0D: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x4884F23: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488906E: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487A520: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487AC67: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487B341: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487B414: MQTTClient_connect (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109B05: connect_mqtt_controlTopic (mqtt_wrapper.c:91)
+==11268==    by 0x109506: main (board_sim.c:79)
+==11268== 
+==11268== 48 bytes in 1 blocks are still reachable in loss record 73 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488307D: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488313F: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488FA8E: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488B479: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D92D: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A2F: connect_mqtt_infoTopic (mqtt_wrapper.c:72)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 48 bytes in 1 blocks are still reachable in loss record 74 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488307D: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488313F: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488FA8E: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488A9C6: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488AA76: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x4883B8D: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D936: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A2F: connect_mqtt_infoTopic (mqtt_wrapper.c:72)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 48 bytes in 1 blocks are still reachable in loss record 75 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488307D: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488313F: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488FA8E: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488B479: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488AAC4: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x4883B8D: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D936: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A2F: connect_mqtt_infoTopic (mqtt_wrapper.c:72)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 48 bytes in 1 blocks are still reachable in loss record 76 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488307D: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488313F: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488FA8E: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488B479: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x4883B92: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D936: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A2F: connect_mqtt_infoTopic (mqtt_wrapper.c:72)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 48 bytes in 1 blocks are still reachable in loss record 77 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488307D: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488313F: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488FA8E: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488B479: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x4883B9E: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D936: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A2F: connect_mqtt_infoTopic (mqtt_wrapper.c:72)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 48 bytes in 1 blocks are still reachable in loss record 78 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488307D: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488313F: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488FA8E: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488B479: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x4883BAA: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D936: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A2F: connect_mqtt_infoTopic (mqtt_wrapper.c:72)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 48 bytes in 1 blocks are still reachable in loss record 79 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488307D: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488313F: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488FA8E: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488B479: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D947: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A2F: connect_mqtt_infoTopic (mqtt_wrapper.c:72)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 48 bytes in 1 blocks are still reachable in loss record 80 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488307D: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488313F: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488FA8E: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D630: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A2F: connect_mqtt_infoTopic (mqtt_wrapper.c:72)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 48 bytes in 1 blocks are still reachable in loss record 81 of 129
+==11268==    at 0x483AB65: calloc (vg_replace_malloc.c:760)
+==11268==    by 0x488FA30: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487FD44: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D6C5: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A2F: connect_mqtt_infoTopic (mqtt_wrapper.c:72)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 48 bytes in 1 blocks are still reachable in loss record 82 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488307D: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488313F: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488FA8E: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487FD44: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D6C5: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A2F: connect_mqtt_infoTopic (mqtt_wrapper.c:72)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 48 bytes in 1 blocks are still reachable in loss record 83 of 129
+==11268==    at 0x483AB65: calloc (vg_replace_malloc.c:760)
+==11268==    by 0x488FA30: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488B502: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D6E0: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A2F: connect_mqtt_infoTopic (mqtt_wrapper.c:72)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 48 bytes in 1 blocks are still reachable in loss record 84 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488307D: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488313F: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488FA8E: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488B502: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D6E0: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A2F: connect_mqtt_infoTopic (mqtt_wrapper.c:72)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 48 bytes in 1 blocks are still reachable in loss record 85 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488307D: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488313F: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488FA8E: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D6F6: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A2F: connect_mqtt_infoTopic (mqtt_wrapper.c:72)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 48 bytes in 1 blocks are still reachable in loss record 86 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488307D: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488313F: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488FA8E: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488B479: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D75B: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A2F: connect_mqtt_infoTopic (mqtt_wrapper.c:72)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 48 bytes in 1 blocks are still reachable in loss record 87 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488307D: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488313F: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488FA8E: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488B479: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D76F: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A2F: connect_mqtt_infoTopic (mqtt_wrapper.c:72)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 48 bytes in 1 blocks are still reachable in loss record 88 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488307D: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488313F: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488FA8E: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488B479: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D783: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A2F: connect_mqtt_infoTopic (mqtt_wrapper.c:72)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 48 bytes in 1 blocks are still reachable in loss record 89 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488307D: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488313F: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488FA8E: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487FD44: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D79A: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A2F: connect_mqtt_infoTopic (mqtt_wrapper.c:72)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 48 bytes in 1 blocks are still reachable in loss record 90 of 129
+==11268==    at 0x483AB65: calloc (vg_replace_malloc.c:760)
+==11268==    by 0x488FA30: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488B502: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D821: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A2F: connect_mqtt_infoTopic (mqtt_wrapper.c:72)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 48 bytes in 1 blocks are still reachable in loss record 91 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488307D: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488313F: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488FA8E: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488B502: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D821: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A2F: connect_mqtt_infoTopic (mqtt_wrapper.c:72)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 48 bytes in 1 blocks are still reachable in loss record 92 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488307D: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488313F: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488FA8E: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x4884E4F: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488906E: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487A520: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487AC67: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487B341: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487B414: MQTTClient_connect (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A59: connect_mqtt_infoTopic (mqtt_wrapper.c:77)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 48 bytes in 1 blocks are still reachable in loss record 93 of 129
+==11268==    at 0x483AB65: calloc (vg_replace_malloc.c:760)
+==11268==    by 0x488FA30: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488B502: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x4883E0D: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x4884F23: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488906E: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487A520: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487AC67: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487B341: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487B414: MQTTClient_connect (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A59: connect_mqtt_infoTopic (mqtt_wrapper.c:77)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 48 bytes in 1 blocks are still reachable in loss record 94 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488307D: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488313F: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488FD4D: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488ADB4: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x4884170: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488E709: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x4880B6A: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x4878C08: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x4878FEB: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487A7D2: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487AC67: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268== 
+==11268== 48 bytes in 1 blocks are still reachable in loss record 95 of 129
+==11268==    at 0x483AB65: calloc (vg_replace_malloc.c:760)
+==11268==    by 0x488FA30: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487FD44: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D6C5: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109AB2: connect_mqtt_controlTopic (mqtt_wrapper.c:86)
+==11268==    by 0x109506: main (board_sim.c:79)
+==11268== 
+==11268== 48 bytes in 1 blocks are still reachable in loss record 96 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488307D: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488313F: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488FA8E: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487FD44: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D6C5: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109AB2: connect_mqtt_controlTopic (mqtt_wrapper.c:86)
+==11268==    by 0x109506: main (board_sim.c:79)
+==11268== 
+==11268== 48 bytes in 1 blocks are still reachable in loss record 97 of 129
+==11268==    at 0x483AB65: calloc (vg_replace_malloc.c:760)
+==11268==    by 0x488FA30: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488B502: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D6E0: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109AB2: connect_mqtt_controlTopic (mqtt_wrapper.c:86)
+==11268==    by 0x109506: main (board_sim.c:79)
+==11268== 
+==11268== 48 bytes in 1 blocks are still reachable in loss record 98 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488307D: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488313F: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488FA8E: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488B502: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D6E0: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109AB2: connect_mqtt_controlTopic (mqtt_wrapper.c:86)
+==11268==    by 0x109506: main (board_sim.c:79)
+==11268== 
+==11268== 48 bytes in 1 blocks are still reachable in loss record 99 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488307D: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488313F: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488FA8E: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D6F6: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109AB2: connect_mqtt_controlTopic (mqtt_wrapper.c:86)
+==11268==    by 0x109506: main (board_sim.c:79)
+==11268== 
+==11268== 48 bytes in 1 blocks are still reachable in loss record 100 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488307D: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488313F: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488FA8E: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488B479: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D75B: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109AB2: connect_mqtt_controlTopic (mqtt_wrapper.c:86)
+==11268==    by 0x109506: main (board_sim.c:79)
+==11268== 
+==11268== 48 bytes in 1 blocks are still reachable in loss record 101 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488307D: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488313F: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488FA8E: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488B479: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D76F: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109AB2: connect_mqtt_controlTopic (mqtt_wrapper.c:86)
+==11268==    by 0x109506: main (board_sim.c:79)
+==11268== 
+==11268== 48 bytes in 1 blocks are still reachable in loss record 102 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488307D: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488313F: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488FA8E: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488B479: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D783: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109AB2: connect_mqtt_controlTopic (mqtt_wrapper.c:86)
+==11268==    by 0x109506: main (board_sim.c:79)
+==11268== 
+==11268== 48 bytes in 1 blocks are still reachable in loss record 103 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488307D: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488313F: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488FA8E: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487FD44: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D79A: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109AB2: connect_mqtt_controlTopic (mqtt_wrapper.c:86)
+==11268==    by 0x109506: main (board_sim.c:79)
+==11268== 
+==11268== 48 bytes in 1 blocks are still reachable in loss record 104 of 129
+==11268==    at 0x483AB65: calloc (vg_replace_malloc.c:760)
+==11268==    by 0x488FA30: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488B502: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D821: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109AB2: connect_mqtt_controlTopic (mqtt_wrapper.c:86)
+==11268==    by 0x109506: main (board_sim.c:79)
+==11268== 
+==11268== 48 bytes in 1 blocks are still reachable in loss record 105 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488307D: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488313F: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488FA8E: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488B502: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D821: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109AB2: connect_mqtt_controlTopic (mqtt_wrapper.c:86)
+==11268==    by 0x109506: main (board_sim.c:79)
+==11268== 
+==11268== 48 bytes in 1 blocks are still reachable in loss record 106 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488307D: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488313F: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488FA8E: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x4884E4F: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488906E: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487A520: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487AC67: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487B341: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487B414: MQTTClient_connect (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109B05: connect_mqtt_controlTopic (mqtt_wrapper.c:91)
+==11268==    by 0x109506: main (board_sim.c:79)
+==11268== 
+==11268== 48 bytes in 1 blocks are still reachable in loss record 107 of 129
+==11268==    at 0x483AB65: calloc (vg_replace_malloc.c:760)
+==11268==    by 0x488FA30: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488B502: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x4883E0D: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x4884F23: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488906E: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487A520: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487AC67: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487B341: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487B414: MQTTClient_connect (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109B05: connect_mqtt_controlTopic (mqtt_wrapper.c:91)
+==11268==    by 0x109506: main (board_sim.c:79)
+==11268== 
+==11268== 48 bytes in 1 blocks are still reachable in loss record 108 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488307D: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488313F: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488FD4D: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488ADB4: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x4884170: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488E709: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x4880B6A: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x4878C08: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487B78C: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x4B01EA6: start_thread (pthread_create.c:477)
+==11268==    by 0x4A31DEE: clone (clone.S:95)
+==11268== 
+==11268== 64 bytes in 1 blocks are still reachable in loss record 109 of 129
+==11268==    at 0x483AB65: calloc (vg_replace_malloc.c:760)
+==11268==    by 0x488FA30: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488B479: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D92D: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A2F: connect_mqtt_infoTopic (mqtt_wrapper.c:72)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 64 bytes in 1 blocks are still reachable in loss record 110 of 129
+==11268==    at 0x483AB65: calloc (vg_replace_malloc.c:760)
+==11268==    by 0x488FA30: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488A9C6: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488AA76: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x4883B8D: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D936: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A2F: connect_mqtt_infoTopic (mqtt_wrapper.c:72)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 64 bytes in 1 blocks are still reachable in loss record 111 of 129
+==11268==    at 0x483AB65: calloc (vg_replace_malloc.c:760)
+==11268==    by 0x488FA30: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488B479: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488AAC4: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x4883B8D: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D936: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A2F: connect_mqtt_infoTopic (mqtt_wrapper.c:72)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 64 bytes in 1 blocks are still reachable in loss record 112 of 129
+==11268==    at 0x483AB65: calloc (vg_replace_malloc.c:760)
+==11268==    by 0x488FA30: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488B479: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x4883B92: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D936: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A2F: connect_mqtt_infoTopic (mqtt_wrapper.c:72)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 64 bytes in 1 blocks are still reachable in loss record 113 of 129
+==11268==    at 0x483AB65: calloc (vg_replace_malloc.c:760)
+==11268==    by 0x488FA30: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488B479: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x4883B9E: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D936: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A2F: connect_mqtt_infoTopic (mqtt_wrapper.c:72)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 64 bytes in 1 blocks are still reachable in loss record 114 of 129
+==11268==    at 0x483AB65: calloc (vg_replace_malloc.c:760)
+==11268==    by 0x488FA30: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488B479: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x4883BAA: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D936: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A2F: connect_mqtt_infoTopic (mqtt_wrapper.c:72)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 64 bytes in 1 blocks are still reachable in loss record 115 of 129
+==11268==    at 0x483AB65: calloc (vg_replace_malloc.c:760)
+==11268==    by 0x488FA30: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488B479: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D947: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A2F: connect_mqtt_infoTopic (mqtt_wrapper.c:72)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 64 bytes in 1 blocks are still reachable in loss record 116 of 129
+==11268==    at 0x483AB65: calloc (vg_replace_malloc.c:760)
+==11268==    by 0x488FA30: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488B479: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D75B: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A2F: connect_mqtt_infoTopic (mqtt_wrapper.c:72)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 64 bytes in 1 blocks are still reachable in loss record 117 of 129
+==11268==    at 0x483AB65: calloc (vg_replace_malloc.c:760)
+==11268==    by 0x488FA30: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488B479: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D76F: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A2F: connect_mqtt_infoTopic (mqtt_wrapper.c:72)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 64 bytes in 1 blocks are still reachable in loss record 118 of 129
+==11268==    at 0x483AB65: calloc (vg_replace_malloc.c:760)
+==11268==    by 0x488FA30: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488B479: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D783: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A2F: connect_mqtt_infoTopic (mqtt_wrapper.c:72)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 64 bytes in 1 blocks are still reachable in loss record 119 of 129
+==11268==    at 0x483AB65: calloc (vg_replace_malloc.c:760)
+==11268==    by 0x488FA30: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488B479: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D75B: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109AB2: connect_mqtt_controlTopic (mqtt_wrapper.c:86)
+==11268==    by 0x109506: main (board_sim.c:79)
+==11268== 
+==11268== 64 bytes in 1 blocks are still reachable in loss record 120 of 129
+==11268==    at 0x483AB65: calloc (vg_replace_malloc.c:760)
+==11268==    by 0x488FA30: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488B479: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D76F: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109AB2: connect_mqtt_controlTopic (mqtt_wrapper.c:86)
+==11268==    by 0x109506: main (board_sim.c:79)
+==11268== 
+==11268== 64 bytes in 1 blocks are still reachable in loss record 121 of 129
+==11268==    at 0x483AB65: calloc (vg_replace_malloc.c:760)
+==11268==    by 0x488FA30: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488B479: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D783: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109AB2: connect_mqtt_controlTopic (mqtt_wrapper.c:86)
+==11268==    by 0x109506: main (board_sim.c:79)
+==11268== 
+==11268== 96 bytes in 2 blocks are still reachable in loss record 122 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x488307D: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488313F: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488FA8E: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488B502: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x4883E0D: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x4884F23: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488906E: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487A520: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487AC67: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487B341: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487B414: MQTTClient_connect (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268== 
+==11268== 176 bytes in 1 blocks are still reachable in loss record 123 of 129
+==11268==    at 0x483AB65: calloc (vg_replace_malloc.c:760)
+==11268==    by 0x488FA30: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D630: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A2F: connect_mqtt_infoTopic (mqtt_wrapper.c:72)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 176 bytes in 1 blocks are still reachable in loss record 124 of 129
+==11268==    at 0x483AB65: calloc (vg_replace_malloc.c:760)
+==11268==    by 0x488FA30: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D630: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109AB2: connect_mqtt_controlTopic (mqtt_wrapper.c:86)
+==11268==    by 0x109506: main (board_sim.c:79)
+==11268== 
+==11268== 272 bytes in 1 blocks are possibly lost in loss record 125 of 129
+==11268==    at 0x483AB65: calloc (vg_replace_malloc.c:760)
+==11268==    by 0x4012D16: allocate_dtv (dl-tls.c:343)
+==11268==    by 0x4012D16: _dl_allocate_tls (dl-tls.c:589)
+==11268==    by 0x4B02B81: allocate_stack (allocatestack.c:622)
+==11268==    by 0x4B02B81: pthread_create@@GLIBC_2.2.5 (pthread_create.c:660)
+==11268==    by 0x488850A: Thread_start (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487A5FE: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487AC67: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487B341: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487B414: MQTTClient_connect (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109B05: connect_mqtt_controlTopic (mqtt_wrapper.c:91)
+==11268==    by 0x109506: main (board_sim.c:79)
+==11268== 
+==11268== 288 bytes in 1 blocks are still reachable in loss record 126 of 129
+==11268==    at 0x483AB65: calloc (vg_replace_malloc.c:760)
+==11268==    by 0x488FA30: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D6F6: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A2F: connect_mqtt_infoTopic (mqtt_wrapper.c:72)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== 288 bytes in 1 blocks are still reachable in loss record 127 of 129
+==11268==    at 0x483AB65: calloc (vg_replace_malloc.c:760)
+==11268==    by 0x488FA30: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D6F6: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109AB2: connect_mqtt_controlTopic (mqtt_wrapper.c:86)
+==11268==    by 0x109506: main (board_sim.c:79)
+==11268== 
+==11268== 2,224 bytes in 1 blocks are still reachable in loss record 128 of 129
+==11268==    at 0x483AD7B: realloc (vg_replace_malloc.c:834)
+==11268==    by 0x488FCC3: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488ADB4: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x4884170: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x488E709: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x4880B6A: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x4878C08: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487B78C: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x4B01EA6: start_thread (pthread_create.c:477)
+==11268==    by 0x4A31DEE: clone (clone.S:95)
+==11268== 
+==11268== 124,800 bytes in 1 blocks are still reachable in loss record 129 of 129
+==11268==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==11268==    by 0x4885D8A: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D921: MQTTClient_createWithOptions (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x109A2F: connect_mqtt_infoTopic (mqtt_wrapper.c:72)
+==11268==    by 0x1094FC: main (board_sim.c:78)
+==11268== 
+==11268== LEAK SUMMARY:
+==11268==    definitely lost: 0 bytes in 0 blocks
+==11268==    indirectly lost: 0 bytes in 0 blocks
+==11268==      possibly lost: 272 bytes in 1 blocks
+==11268==    still reachable: 132,550 bytes in 129 blocks
+==11268==         suppressed: 0 bytes in 0 blocks
+==11268== 
+==11268== ERROR SUMMARY: 26 errors from 4 contexts (suppressed: 0 from 0)
+==11268== 
+==11268== 3 errors in context 1 of 4:
+==11268== Syscall param mq_timedsend(msg_ptr) points to uninitialised byte(s)
+==11268==    at 0x486EF80: mq_timedsend (mq_timedsend.c:28)
+==11268==    by 0x109412: alarm_handle (board_sim.c:47)
+==11268==    by 0x496FD5F: ??? (in /usr/lib/x86_64-linux-gnu/libc-2.31.so)
+==11268==    by 0x49F9C60: clock_nanosleep@@GLIBC_2.17 (clock_nanosleep.c:48)
+==11268==    by 0x49FF442: nanosleep (nanosleep.c:27)
+==11268==    by 0x4A2A124: usleep (usleep.c:32)
+==11268==    by 0x487DB94: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487A0E9: MQTTClient_yield (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D1A1: MQTTClient_waitForCompletion (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x1099AC: publish_mgs (mqtt_wrapper.c:54)
+==11268==    by 0x109DFB: sendinfo (c_utils.c:40)
+==11268==    by 0x109721: main (board_sim.c:136)
+==11268==  Address 0x1ffeffef24 is on thread 1's stack
+==11268==  in frame #1, created by alarm_handle (board_sim.c:38)
+==11268==  Uninitialised value was created
+==11268==    at 0x49F9C61: clock_nanosleep@@GLIBC_2.17 (clock_nanosleep.c:48)
+==11268==    by 0x49FF442: nanosleep (nanosleep.c:27)
+==11268==    by 0x4A2A124: usleep (usleep.c:32)
+==11268==    by 0x487DB94: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487A0E9: MQTTClient_yield (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x487D1A1: MQTTClient_waitForCompletion (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x1099AC: publish_mgs (mqtt_wrapper.c:54)
+==11268==    by 0x109DFB: sendinfo (c_utils.c:40)
+==11268==    by 0x109721: main (board_sim.c:136)
+==11268== 
+==11268== 
+==11268== 7 errors in context 2 of 4:
+==11268== Syscall param mq_timedsend(msg_ptr) points to uninitialised byte(s)
+==11268==    at 0x486EF80: mq_timedsend (mq_timedsend.c:28)
+==11268==    by 0x109412: alarm_handle (board_sim.c:47)
+==11268==    by 0x496FD5F: ??? (in /usr/lib/x86_64-linux-gnu/libc-2.31.so)
+==11268==    by 0x486F030: __mq_timedreceive (mq_timedreceive.c:29)
+==11268==    by 0x486F030: mq_timedreceive (mq_timedreceive.c:25)
+==11268==    by 0x10955C: main (board_sim.c:89)
+==11268==  Address 0x1ffefff044 is on thread 1's stack
+==11268==  in frame #1, created by alarm_handle (board_sim.c:38)
+==11268==  Uninitialised value was created
+==11268==    at 0x486F031: __mq_timedreceive (mq_timedreceive.c:29)
+==11268==    by 0x486F031: mq_timedreceive (mq_timedreceive.c:25)
+==11268==    by 0x10955C: main (board_sim.c:89)
+==11268== 
+==11268== 
+==11268== 15 errors in context 3 of 4:
+==11268== Thread 2:
+==11268== Syscall param mq_timedsend(msg_ptr) points to uninitialised byte(s)
+==11268==    at 0x486EF80: mq_timedsend (mq_timedsend.c:28)
+==11268==    by 0x1098DF: msgarrvd (mqtt_wrapper.c:35)
+==11268==    by 0x487B6B9: ??? (in /usr/lib/x86_64-linux-gnu/libpaho-mqtt3c.so.1.3.8)
+==11268==    by 0x4B01EA6: start_thread (pthread_create.c:477)
+==11268==    by 0x4A31DEE: clone (clone.S:95)
+==11268==  Address 0x571ce64 is on thread 2's stack
+==11268==  in frame #1, created by msgarrvd (mqtt_wrapper.c:26)
+==11268==  Uninitialised value was created by a stack allocation
+==11268==    at 0x109870: msgarrvd (mqtt_wrapper.c:26)
+==11268== 
+==11268== ERROR SUMMARY: 26 errors from 4 contexts (suppressed: 0 from 0)
